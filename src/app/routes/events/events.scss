@@ -20,9 +20,14 @@
 //  padding-top: 30px;
 //}
 
+.frame-padding {
+  margin-top:15px;
+  padding-bottom: 15px;
+}
+
 .events-page{
   padding-top:110px;
-  padding-bottom: 20;
+  padding-bottom: 20px;
   padding-left: 40px;
   padding-right: 40px;
   color: white;
@@ -31,4 +36,5 @@
 
 .header-text-events {
   padding-left: 40px;
+  text-align:center;
 }

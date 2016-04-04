@@ -18,6 +18,7 @@
   //min-height: 100%;
 
   padding-top:110px;
+  overflow-y:auto;
 
 }
 
@@ -27,6 +28,7 @@
   padding:5px;
   margin: 10px;
   max-width: 350px;
+  line-height: 1.5em;
 }
 
 .card-header {
@@ -52,6 +54,7 @@
   text-align: center;
   padding:15px;
   color: white;
+  overflow:hidden;
 }
 
 .extra-padding-top {

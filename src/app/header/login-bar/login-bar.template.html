@@ -1,0 +1,20 @@
+<!--<div class="branding"><a ng-href="#/login">Psychic Reader</a></div>-->
+
+
+<div class="login-bar">
+  <form name="myform"
+        ng-submit="self.login()" novalidate ng-show="!self.userLoggedIn">
+    <a ui-sref="register" class="register-text">Register</a> <span class="white-text">or Sign in: </span>
+    <input type="text" ng-model="self.loginUser.email">
+    <input type="text" ng-model="self.loginUser.password">
+    <button type="submit">SIGN IN</button>
+    <div ng-if="self.feedbackMessage != ''" class="feedback-text"><span ng-bind="self.feedbackMessage"></span></div>
+  </form>
+
+  <div ng-show="self.userLoggedIn" class="welcome-text">
+    <p>Welcome, <span ng-bind="self.authenticatedUser.firstName"></span></p>
+  </div>
+
+</div>
+
+
