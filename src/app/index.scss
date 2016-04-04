@@ -45,7 +45,12 @@
 }
 
 html {
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto",sans-serif;
+}
+
+body {
+  background: #0c4eb2;
+
 }
 
 [layout=row] {
@@ -66,7 +71,7 @@ md-toolbar.md-default-theme {
 section.jumbotron {
   margin-bottom: 30px;
   padding: 1px 30px;
-  background-color: #5aadbb;
+  background-color: #0C4EB2;
   text-align: center;
 
   color: white;
@@ -74,6 +79,20 @@ section.jumbotron {
   h1 {
     font-size: 3em;
   }
+}
+
+.blue-bg {
+  background-color: rgba(12, 78, 178, 1);
+}
+
+.bluer-bg {
+  overflow: auto;
+}
+
+
+
+.footer {
+  z-index: 1000;
 }
 
 .techs {

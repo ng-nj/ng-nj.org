@@ -1,0 +1,59 @@
+
+.video-container {
+
+//background: linear-gradient(to top,#0c4eb2 20%,rgba(255,255,255,0)100%);
+//background-image: linear-gradient(to top, rgb(12, 78, 178) 20%, rgba(255, 255, 255, 0) 100%);
+//background-position-x: initial;
+//background-position-y: initial;
+//background-size: initial;
+//background-repeat-x: initial;
+//background-repeat-y: initial;
+//background-attachment: initial;
+//background-origin: initial;
+//background-clip: initial;
+//background-color: initial;
+  background-color: rgba(12, 78, 178, 1);
+  color:#E6E6E6;
+
+  //min-height: 100%;
+
+  padding-top:110px;
+
+}
+
+.card {
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding:5px;
+  margin: 10px;
+  max-width: 350px;
+}
+
+.card-header {
+  color: #0C4EB2;
+  cursor: pointer;
+}
+
+.card-container {
+  padding: 13px;
+  justify-content: center;
+  text-align: center;
+}
+
+.card-text {
+  color: dimgrey;
+  padding-bottom: 20px;
+}
+
+.blue-jumbo {
+  background-color: rgba(12, 78, 178, 1);
+  justify-content: center;
+  //max-height: 500px;
+  text-align: center;
+  padding:15px;
+  color: white;
+}
+
+.extra-padding-top {
+  margin-top: 55px;
+}

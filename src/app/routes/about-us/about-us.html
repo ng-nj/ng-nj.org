@@ -1,0 +1,65 @@
+<div class="about-us">
+
+  <div class="md-whiteframe-z1">
+  <div class="blue-jumbo-about-us extra-padding-top">
+
+    <h1>NG-NJ: An Angular Community in New Jersey</h1>
+    <p class="smaller-width-header-text">
+      We are a group of developers who are passionate about creating
+      great web applications with Google's Angular Front-End Framework.</p>
+
+  </div>
+  </div>
+
+  <div class="about-us-header">
+  <h1>Members</h1>
+  </div>
+  <div>
+
+
+    <!--<img src="../../../assets/images/angular.png">-->
+
+<div class="profile-card">
+    <div>Jim Lynch</div>
+    <div>Jim is the organizer of ng-nj and developer of this website. He enjoys deeveloping Angular web applications and prefers version 1.4 with the Gulp-Angular generator.</div>
+    <br>
+    <div>Current Location: Matawan, NJ</div>
+    <div>Hometown: Egg Harbor Township, NJ</div>
+    <div>Fav Angular Version: 1.4 with Javascrip ES5</div>
+    <div>Fav Yeoman Generator: Gulp-Angular</div>
+    <div>Fav Coding Quote: "You just need the describe's full of it's with some beforeEach's"</div>
+  <br>
+
+  <!--<div>github: </div>-->
+  <div><a href="http://www.github.com/JimTheMan">github.com/JimTheMan</a></div>
+  <div><a href="http://www.twitter.com/webWhizJim">twitter.com/webWhizJim"</a></div>
+  <div><a href="http://www.linkedin.com/in/JimTheMan">linkedin.com/in/JimTheMan</a></div>
+    <div></div>
+
+</div>
+
+
+<div class="all-members-section">
+    <h2>All Members</h2>
+
+    <!--<div ng-bind="ctrl.title"></div>-->
+
+    <div ng-repeat="(key, member) in ctrl.membersList">
+      <!--<hr>-->
+
+    –&nbsp; <a ui-sref="about-us"><span ng-bind="member.firstName"></span>
+       <span ng-bind="member.lastName"></span></a>
+
+
+      <!--<hr>-->
+    </div>
+
+</div>
+<hr>
+    <div class="make-an-account-text">
+      If you would like be displayed on this page you can <a ui-sref="register">make an account for free here</a>.
+    </div>
+
+
+  </div>
+</div>

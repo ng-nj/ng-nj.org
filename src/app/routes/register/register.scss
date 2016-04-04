@@ -1,0 +1,137 @@
+//input {
+//  width: 100%;
+//  display: inline-block;
+//  font-weight: 100;
+//  padding: 15px;
+//  margin: 5px 0;
+//  font-size: 1rem;
+//  font-weight: 100;
+//  color: #475B62;
+//  border: 1px solid #C5C5C5;
+//  border-radius: 4px;
+//  outline: 0;
+//}
+
+.register-page input {
+  font-size: 30px;
+  width: 60%;
+  //position:absolute;
+  left:35%;
+  margin-top: 25px;
+  padding:5px;
+  border-radius:10px;
+}
+
+.register-labels {
+  //position:absolute;
+  //left:11%;
+  //top:293px;
+  //max-width: 17%;
+  //padding:2px;
+
+
+}
+.fieldset {
+
+}
+
+
+.center-register {
+  text-align: center;
+}
+
+.register-header-text {
+  color:white;
+}
+
+.register-page {
+  padding-top:140px;
+  padding-bottom:20px;
+  padding-left:40px;
+  padding-right:40px;
+  background-color: rgba(12, 78, 178, 1);
+  //background-color: white;
+}
+
+.email-privacy-text {
+  max-width: 50%;
+  font-size: 12px;
+  margin-left:auto;
+  margin-right:auto;
+  padding-top:20px;
+}
+
+.register-message {
+  padding-bottom: 20px;
+}
+
+.register-btn {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding:10px;
+  border-radius:2px;
+}
+
+.input-label {
+  min-width: 50px;
+}
+
+.register-text-intro {
+  color: rgba(12, 78, 178, 1);
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+//
+//input[type=text], select {
+//  width: 100%;
+//  padding: 12px 20px;
+//  margin: 8px 0;
+//  display: inline-block;
+//  border: 1px solid #ccc;
+//  border-radius: 4px;
+//  box-sizing: border-box;
+//}
+//
+//input[type=submit] {
+//  width: 100%;
+//  background-color: #4CAF50;
+//  color: white;
+//  padding: 14px 20px;
+//  margin: 8px 0;
+//  border: none;
+//  border-radius: 4px;
+//  cursor: pointer;
+//}
+//
+//input[type=submit]:hover {
+//  background-color: #45a049;
+//}
+//
+//div {
+//  border-radius: 5px;
+//  background-color: #f2f2f2;
+//  padding: 40px;
+//}
+
+.register-card {
+  background-color:white;
+  //border-style: solid;
+  //border-color: lightgray;
+  //border-width:2px;
+}
+
+
+.form-horizontal {
+
+}
+
+.ng-valid.ng-touched {
+  border-width: 3px;
+  border-color: green;
+}
+
+.ng-invalid.ng-touched {
+  border-width: 3px;
+  border-color: red;
+}
