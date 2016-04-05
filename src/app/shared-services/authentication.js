@@ -20,8 +20,6 @@
 
 
 
-
-
     var favoriteFoods = [
       'Burgers',
       'Pizza',

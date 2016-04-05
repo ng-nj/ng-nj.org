@@ -1,9 +1,9 @@
-(function() {
+(function () {
   'use strict';
 
   angular
     .module('ngNjOrg')
-    .controller('EventsController',function ($log) {
+    .controller('EventsController', function ($log) {
       var self = this;
 
       self.upcomingEvents = [{
@@ -15,14 +15,9 @@
 
       getUpcomingEvents();
 
-      function getUpcomingEvents () {
-        //$resource
-
-        <!-- Use ngResource here to pull current events info -->
-
+      function getUpcomingEvents() {
 
       }
-
 
 
     })

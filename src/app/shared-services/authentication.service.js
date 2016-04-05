@@ -32,6 +32,7 @@
           var childString = "users/" + registeredUser.uid;
 
           $log.log("getting object for: " + childString);
+
           self.newref = new Firebase(FIREBASE_URL)
           var firebaseUserObj = $firebaseObject(self.newref.child(childString))
             return firebaseUserObj.$loaded().then(function(data) {
@@ -43,13 +44,9 @@
             })
 
 
-
-          //return self.loggedInObject;
         })
           .catch(function(error) {
 
-            //deferred.resolve(error);
-            //$rootScope.message = error.message;
             console.log("Firebase auth Error: " + error);
             var errorString = "" + error;
             $log.log("error string: " + errorString.code);
@@ -59,7 +56,6 @@
             return $q.reject(error);
           });
 
-        // $rootScope.message = "Welcome " + $rootScope.user.email
 
       },
 

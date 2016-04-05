@@ -19,7 +19,7 @@
     return directive;
 
     /** @ngInject */
-    function LoginBarController(moment, AuthenticationService, $log) {
+    function LoginBarController(AuthenticationService, $log) {
       var self = this;
       self.loginUser = '';
       self.feedbackMessage = '';

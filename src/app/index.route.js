@@ -5,11 +5,6 @@
     .module('ngNjOrg')
     .config(routerConfig);
 
-
-  // USE UI-SREF ACTIVE TO HIGHLIGHT THE CURRENT PAGE IN NAVBAR
-
-
-
   /** @ngInject */
   function routerConfig($stateProvider, $urlRouterProvider) {
     $stateProvider
