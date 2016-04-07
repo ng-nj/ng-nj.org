@@ -3,7 +3,7 @@
 
   angular
     .module('ngNjOrg')
-    .filter('checkmark', function () {
+    .filter('bannedUser', function () {
       return function (inputUsername) {
         var self = this;
         self.nameMatchesBannedUser = false;
@@ -14,12 +14,12 @@
 
         angular.forEach(bannedUserList, function (bannedUser) {
           if (inputUsername == bannedUser) {
-            self.nameMatchesBannedUser = false;
+            self.nameMatchesBannedUser = true;
           }
 
         });
 
-        if (self.nameMatchesBannedUser) {
+        if (!self.nameMatchesBannedUser) {
           return inputUsername;
         } else {
           return;
