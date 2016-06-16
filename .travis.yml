@@ -1,5 +1,9 @@
 sudo: false
 language: node_js
+
+env:
+  - TRAVIS=true
+
 addons:
   sauce_connect:
     username: 'JimTheMan'
@@ -16,9 +20,10 @@ script:
   - 'npm install bower'
   - 'bower install'
   - "gulp test"
-  - 'gulp protractor'
+
 after_script:
   - "npm install coveralls@2.11.x && cat coverage/lcov.info | coveralls"
+  
 matrix:
   fast_finish: true
 notifications:
