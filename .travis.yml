@@ -8,7 +8,7 @@ node_js:
 before_install:
   - 'if [ "${TRAVIS_NODE_VERSION}" == "0.8" ]; then npm install -g npm@2.11.1; fi'
 script:
-  - "npm run test-travis"
+  - "gulp test"
 after_script:
   - "npm install coveralls@2.11.x && cat coverage/lcov.info | coveralls"
 matrix:
