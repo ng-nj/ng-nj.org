@@ -1,5 +1,10 @@
 sudo: false
 language: node_js
+addons:
+  sauce_connect:
+    username: 'JimTheMan'
+    access_key: '7c90507b-1930-450d-826e-6aa236b40e03'
+
 node_js:
   - "0.12"
   - "0.10"
