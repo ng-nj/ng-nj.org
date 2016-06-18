@@ -18,6 +18,7 @@ script:
 - sh -e /etc/init.d/xvfb start
 - webdriver-manager update
 - npm install bower
+- npm install protractor
 - bower install
 #- gulp test
 - gulp protractor
