@@ -20,6 +20,7 @@ script:
 - npm install bower
 - npm install protractor
 - bower install
+- ls
 #- gulp test
 - gulp protractor
 
