@@ -19,7 +19,7 @@ script:
 - webdriver-manager update
 - npm install bower
 - bower install
-- gulp test
+#- gulp test
 - gulp protractor
 
 after_script:
