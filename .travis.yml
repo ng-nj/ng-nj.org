@@ -18,9 +18,9 @@ script:
 - bower install
 - ls
 #- gulp protractor
--  chmod +x ./scripts/deploy.sh
+#-  chmod +x ./scripts/deploy.sh
 after_script:
--  ./scripts/deploy.sh
+#-  ./scripts/deploy.sh
 - npm install coveralls@2.11.x && cat coverage/lcov.info | coveralls
 matrix:
   fast_finish: true
