@@ -1,30 +1,25 @@
 sudo: false
 language: node_js
-
-addons:
-  sauce_connect:true
-
+addons: sauce_connect:true
 node_js:
 - '0.12'
 - '0.10'
 - iojs
-
 before_install:
 - if [ "${TRAVIS_NODE_VERSION}" == "0.8" ]; then npm install -g npm@2.11.1; fi
-
 script:
 - export TRAVIS=:true
 - export DISPLAY=:99.0
 - sh -e /etc/init.d/xvfb start
 - webdriver-manager update
 - npm install bower
-- npm install protractor
+#- npm install protractor
 - bower install
 - ls
-#- gulp test
-- gulp protractor
-
+#- gulp protractor
+-  chmod +x ./scripts/deploy.sh
 after_script:
+-  ./scripts/deploy.sh
 - npm install coveralls@2.11.x && cat coverage/lcov.info | coveralls
 matrix:
   fast_finish: true
@@ -38,3 +33,4 @@ env:
   global:
   - secure: GEsJbjbkV8p+ebsW3hTBZ91h7PlqbYCy+1OhlGRdUMap6fWd9e9HxC0wKO9N9MozVfYkWr2GO5u621IYrZcZTQM0OjE0Wjk7/0zDORIEy7AR6xNlO6p/2Jz4ppR+S1yP3UqZPOEF8fht1lXhXcbZsrMWodbtLRHn4eC6QT/Rjptbfjvn+LnG7X3Na2RMBOQYp10j/xogOuOkAzFjoZeZ10s6VtiqK/gtRUwAqFeKvc67VTurc3vptdWFNTOgaiAJpktRvoSzd8d7zL9m23nb6opexr3vxaqxJiMzUlRxamiHo3c+iR8hqdbgMS1KP0vlGFCsNO1X44Ms5hM4Tp424/L6DOwH5ClnGHQZVtSB63JzC7kFNVUJAh1OJu17gK/ZkZJhzmpmDkG3VqsH3nOu0WOeS+m7CQKPvTAyEyDU1J20mcYKpiVyJtJ90H1P5zxkWSxwfI9hpCG7WbULoCA/f9TIlOTH8G9MYCQmC9AswzMuY/PkTxZ+Q4Mf5ytX1SNZSGWabPkz2+K0zvmxg8ldUfF7AVJKWINMBgxZeHypfBm1diyYa+DffLsUL0/eVO+vyzFhuXotGTW0rB1RdVY15dlkRyQQGHG80pv1d67JCn5KKvBueu9qNmiTQ5FK5umhXsrJ8/3Hbfvz6FQd/gEouy9zM9uBP8sQA2ZtdM/L7TU=
   - secure: VIBwouxZJ1t/Zx+zzmjcbNeOY3mxBsws28223sn0XpVX14IgQCcg6Vpuk+b8DDMHQTfgPK85Otpk77SreWHyjE9FGi3cT8jL2U0TfqdbKZ7fDVL6wds3w4sGMkkYxJUeB/ISHt1zwT+l4f5yvy1ejJNn2Dq9BOSq0pHur7k3ERLrYn+FxQKn2U4rx1bD6R+0ZghRXinzvXWCWJ8rC2/96O3ebdsFLN3HteaPEqNXrc0LbLUo/ElHlgxaIp8n4HsrfiMYCTwBzQ+nXI25gTmzjsgJnOIOaIbzX1sjozo4JQ+m710k7FwpupDXoUTDMXBS09eFOYxJbZSVVghibSkNCrUhlvpBTIYOljXJXUDwVq2iQBr+GgvlrBfKLqxh3IQuhtg5uUWu3mAjBfFfttfDwNBdt6ttlq+grxya2RnN67u1n/aYauG4GRto/qbTB4aDATuH2jv3LgEkTTy7IIxZPxgboPXlRglDoiNvGnEFUEamLODrXY0RSY3iRJ9inFrcgQCMJSNujKDs7YhGZVkxw9vEPLEcE+kA+nJdZ9JsPlXGieds901NtMmAmF28ery7zpxmR2Zkmy7xDlhnEWdqlZDbBuWKnpFbCyWPolz+tH/Y93/AL5tMQiy8mKNvgRGcll/fm/0e8zP7csxvy+jxKerK6pUA3hmjiyqsgJYDFVc=
+  - secure: SDiPVruHCq4R/cgXP9zdF8OcOyP7fx9LR/RX/slC9uDgnxVq0edwVSkOro/9qt7HZZ/lcADom2wg1rmpaW7BFyVBftTmAa6ihjQV0wWJ5zZWAgVuRUZyixk1U5S0wN3UfjJKkWbR8Z1li+VTCtlC3emlxC4E/8smIp64v3Ajj0kQT5CyqK0VEurtCTXVyB2A3cNdIG61pI8UlWr0bJqiFac+rEIXEv99Lfmdzy1x/mZYD3TzocsmLNmuWvknuKexyrvbe02UtThEsBdrmFEUG9UfFIjhGMhqSzia8wR0FXjZoyp5qYv1qa/p09YwElpGz8wlxiBvNpBe5Sbtjo36JbvvBmiUvrFzoXrHJW2bm8VHZ0DnSyOk8LLGPqE7hgu4eijhdVdI61tbm2wyZSzvzI99LRM9ePjAej05X42ff7pwM9CIt9EGgUsnm3je/ozrbB96jLt9BpdE1X5vlrv/dPtybp7lucVLFa1F7zQfMjeLKWEu21ycq5R6MsPIwdpTFE4wFNVZypetxsJfknWyog03ymmvhL2aLKYFtaTavZxzWAeIZksSRzkNTL80xJgvZQo0qNHFKAS4nSey5IFv5Tt0fB7sBJarkHwfPm5ubxsDdPV/350sK5b+IIxF81OuhjIzZok/C+IC3r/4bQ4s977Uo1PFpMtwEIf3fEpgGIo=
