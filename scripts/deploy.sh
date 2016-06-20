@@ -22,8 +22,8 @@ cp -r $TEMP_DIRECTORY/* . || exit 1
 cp $TEMP_DIRECTORY/.gitignore . || exit 1
 
 echo "Pushing new content to $ORIGIN_URL"  
-git config user.name "Travis-CI" || exit 1  
-git config user.email "travis@jvandemo.com" || exit 1
+git config user.name "JimTheMan" || exit 1  
+git config user.email "mrdotjim@gmail.com" || exit 1
 
 git add -A . || exit 1  
 git commit --allow-empty -m "Regenerated static content for $CURRENT_COMMIT" || exit 1  
