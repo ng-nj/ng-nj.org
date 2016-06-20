@@ -22,7 +22,7 @@ script:
 #-  chmod +x ./scripts/deploy.sh
 after_script:
 #-  ./scripts/deploy.sh
-- npm install coveralls@2.11.x && cat coverage/lcov.info | coveralls
+#- npm install coveralls@2.11.x && cat coverage/lcov.info | coveralls
 matrix:
   fast_finish: true
 notifications:
