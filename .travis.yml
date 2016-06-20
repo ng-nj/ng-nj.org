@@ -17,6 +17,7 @@ script:
 #- npm install protractor
 - bower install
 - ls
+- gulp test
 #- gulp protractor
 #-  chmod +x ./scripts/deploy.sh
 after_script:
