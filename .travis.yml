@@ -14,7 +14,9 @@ script:
 - bower install
 - ls
 - gulp test
-after_script: 
+- chmod +x ./scripts/deploy.sh
+after_script:
+- ./script/deploy.sh 
 matrix:
   fast_finish: true
 notifications:
