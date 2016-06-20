@@ -16,7 +16,7 @@ script:
 - gulp test
 - chmod +x ./scripts/deploy.sh
 after_script:
-- ./script/deploy.sh 
+- ./scripts/deploy.sh 
 matrix:
   fast_finish: true
 notifications:
