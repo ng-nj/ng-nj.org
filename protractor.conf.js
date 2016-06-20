@@ -1,14 +1,14 @@
 'use strict';
 
-if (process.env.TRAVIS) {
- config.sauceUser = process.env.SAUCE_USERNAME;
-  config.sauceKey = process.env.SAUCE_ACCESS_KEY;
-  config.capabilities = {
-    'browserName': 'chrome',
-    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-    'build': process.env.TRAVIS_BUILD_NUMBER
-  };
-}
+//if (process.env.TRAVIS) {
+// config.sauceUser = process.env.SAUCE_USERNAME;
+//  config.sauceKey = process.env.SAUCE_ACCESS_KEY;
+//  config.capabilities = {
+//    'browserName': 'chrome',
+//    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+//    'build': process.env.TRAVIS_BUILD_NUMBER
+//  };
+// }
 
 //config.sauceUser = 'JimTheMan';
 //config.sauceKey = '7c90507b-1930-450d-826e-6aa236b40e03';
