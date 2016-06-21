@@ -14,6 +14,7 @@ script:
 - bower install
 - ls
 - gulp test
+- gulp
 - chmod +x ./scripts/deploy.sh
 after_script:
 - ./scripts/deploy.sh 
