@@ -15,7 +15,7 @@ script:
 - ls
 - gulp test
 - gulp
-- chmod +x ./scripts/deploy.sh
+- chmod 700 scripts/deploy.sh 
 after_script:
 - ./scripts/deploy.sh 
 matrix:
