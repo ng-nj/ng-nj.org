@@ -176,13 +176,12 @@
             })
 
 
-
-
-        }).catch(function(error){
-          $rootScope.message = "Uh oh! And error occurred: " + error.message;
-
-         $state.go("home");
-        })
+        });
+        //   .catch(function(error){
+        //   $rootScope.message = "Uh oh! And error occurred: " + error.message;
+        //
+        //  $state.go("home");
+        // })
       }
     }
 
