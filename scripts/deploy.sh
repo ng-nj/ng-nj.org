@@ -23,8 +23,8 @@ echo "Copying newly generated static content"
 #cp $TEMP_DIRECTORY/.gitignore . || exit 1
 
 echo "Pushing new content to $ORIGIN_URL"  
-git config user.name "JimTheMan" || exit 1  
-git config user.email "mrdotjim@gmail.com" || exit 1
+git config --global user.name "JimTheMan" || exit 1  
+git config --global user.email "mrdotjim@gmail.com" || exit 1
 
 # git add -A . || exit 1  
 # git commit --allow-empty -m "Regenerated static content for $CURRENT_COMMIT" || exit 1  
