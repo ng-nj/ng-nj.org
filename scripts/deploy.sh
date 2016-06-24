@@ -39,6 +39,6 @@ echo "Deployed successfully."
 # git push origin :gh-pages
 
 git push origin :gh-pages
-git commit -am 'commit from over there.'
+git commit -am 'commit from wazzoo.'
 git subtree push --prefix dist/ origin gh-pages
   
