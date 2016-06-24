@@ -17,7 +17,9 @@ script:
 - gulp
 - chmod 700 scripts/deploy.sh 
 after_script:
-- bash ./scripts/deploy.sh 
+- chmod 700 scripts/derp.sh
+- ./scripts/derp.sh
+# - bash ./scripts/deploy.sh 
 matrix:
   fast_finish: true
 notifications:
