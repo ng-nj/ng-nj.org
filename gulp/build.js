@@ -8,6 +8,13 @@ var $ = require('gulp-load-plugins')({
   pattern: ['gulp-*', 'main-bower-files', 'uglify-save-license', 'del']
 });
 
+gulp.task('cucumber-report', function () {
+  gulp.src('features/reports/cucumber_report.html.json')
+    .pipe(protractorReport({
+      dest: 'reports/'
+    }));
+});
+
 gulp.task('partials', function () {
   return gulp.src([
     path.join(conf.paths.src, '/app/**/*.html'),
