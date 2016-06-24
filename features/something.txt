@@ -1,0 +1,75 @@
+[
+  {
+    "description": "    In order to perform any action in the app, login\n\n    I want to apply my credentials",
+    "elements": [
+      {
+        "id": "title-of-my-first-feature;user-is-on-th-elogin-page",
+        "keyword": "Scenario",
+        "line": 7,
+        "name": "User is on th elogin page",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "name": "the user iis on the login page",
+            "result": {
+              "status": "passed",
+              "duration": 2602129
+            },
+            "line": 8,
+            "match": {
+              "location": "/Users/jim/Git-Projects/ng-nj.org/features/step_definitions/logins-step-def.js:3"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "name": "cha cha cha",
+            "result": {
+              "status": "passed",
+              "duration": 643518
+            },
+            "line": 9,
+            "match": {
+              "location": "/Users/jim/Git-Projects/ng-nj.org/features/step_definitions/logins-step-def.js:13"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "name": "I do somehitng",
+            "result": {
+              "status": "passed",
+              "duration": 142624
+            },
+            "line": 10,
+            "match": {
+              "location": "/Users/jim/Git-Projects/ng-nj.org/features/step_definitions/logins-step-def.js:9"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "name": "I should have something else",
+            "result": {
+              "status": "passed",
+              "duration": 100319
+            },
+            "line": 11,
+            "match": {
+              "location": "/Users/jim/Git-Projects/ng-nj.org/features/step_definitions/logins-step-def.js:17"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "title-of-my-first-feature",
+    "keyword": "Feature",
+    "line": 2,
+    "name": "Title of my first Feature",
+    "tags": [],
+    "uri": "/Users/jim/Git-Projects/ng-nj.org/features/login.feature"
+  }
+]

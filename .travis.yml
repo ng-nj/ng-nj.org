@@ -1,7 +1,7 @@
 sudo: false
 language: node_js
 node_js:
-- '0.12' 
+- '0.12'
 - '0.10'
 - iojs
 before_install:
@@ -13,13 +13,12 @@ script:
 - npm install bower
 - bower install
 - ls
-- gulp test
+#- gulp test
 - gulp
-- chmod 700 ./scripts/deploy.sh 
 after_script:
+- chmod a+x ./scripts/deploy.sh
 - chmod a+x ./scripts/derp.sh
-- bash ./scripts/derp.sh
-# - bash ./scripts/deploy.sh 
+- bash ./scripts/deploy.sh
 matrix:
   fast_finish: true
 notifications:
@@ -30,4 +29,4 @@ notifications:
     on_failure: change
 env:
   global:
-    secure: picmVfZA7SRfU52/cBscNGxJK2Hw32a0C72ItVCzY6CaJe22PJRqDqt/FqOE9mCkGEqFNmqbD6oWSIkkCCQTcQUYL0eF+LbcmiSML6tAkywiejjG9W1/zOxuiuOP++JfCWEx5EAQvQpUJkJKA2o2EDNJ+EJMi/BQFHEndKjbl0zRVxPlnEf+05hFbDV+0xBx30vxW/3ckSXxu7NMGjIjYPV//QXHKpOqc6Cfko7gHJqFdOKl0ko2Va19RAkSBxJSV7VTWDybckYkKVqKIC0PlU2dqIHdChCLk1Q29WFE3Dwk0qED93IFsuVQew6j2Mckkt98Uc6W9NFhbMrBSj8fZ0NqSbk9AI3xPu4DVwZdMOH+F6nUjRhbfIVGH9ZV3v4qE8VdBxxXCfuFd/maQ2v5TMF0jc0BVsvUPFZ7BQ4QZOogToDyiTRniAGqxfszh/GZ4majdgaR1PfHQgQz9QzsSb4V+1pEFVsM6Q8pHR8M6SUvyb86yYJlb4Yt5aLWDGsQKoTyMp0dR016+vijgUadzI4kBB24a5EZccoV9U8zBrhIdw2SEYRiPlJO3PiFMXdxxLn9/DsRJULQEi3cLhqkAWg6e3cDtcgcZlGI2Mt3x3IWQBe05+TyHkWeTjxTTLr5aV1rWlsOxSVvQ39tv8jc1i+ISGdlZMysbcbJAdCMySM=
+    secure: hsD7rZdqEVp3CN/Ryu2vrRrr8t1Z7GKfnuhleCgsRdOzWzWMZdOZ28qZLZF2/8Rjc+iFHMuK4B5UHX8Rq25lDxX2/zc2LoJzNLhTPCiNhfNyzLvAoHnpt944sCV5JpP9x+bpUvjuF1cpD3AGG524clDmUd8UsAfcfipPf2/4x3E1+TXVmQ+f13P5/6AxVjhDO/0+sRJjvx6Aa50NPAD8KH0YSbf0NWydz6yNzAEQ8SGmXv5byEhm3mFNTPlgNoVwvbJM9OYsEhtNnQyls/uPsTjmKyhYx4G9PKFwn3BY2XyZHJXMpAZvex+qtjHoUlpKptahEPQUq4CYtm6rrB1/GodepAlArQrlRnLyZBLPKHRvFatQYCsj2aNyINV9+Az64a24zmZKwggFaSYj70TC5mMJeod65IMQpP+p0JfxS69qqlDh1U1Pkp4jIBjpEXG4Ufkd11qu5s1X89qqltnaN8sqim3Cyw8bmiIDnMUCucqP+6i9yo40nNZtqa/fHe9vI/R6q9vHmixfX5MZ1w41KRt1h4ukzlwl3zYaCzdNy1TMhiJ8umNw2UeYbLKS7hRzzCDBduPMgG6S4sfBWRqCtv9tRKRqyjSBhCJYyOtiE4ib/DE4zp5qnYmOtTjRuboPzJwut7n3XEmfrhws0MRsJ/WRlPQgqnVQhhghUbqSY18=
