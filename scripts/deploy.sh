@@ -39,6 +39,6 @@ echo "Deployed successfully."
 # git push origin :gh-pages
 
 git push origin :gh-pages
-git commit -am 'commit from here.'
+git commit -am 'commit from over there.'
 git subtree push --force --quiet "https://${GH_TOKEN}@${GH_REF}" --prefix dist/ origin gh-pages
   
