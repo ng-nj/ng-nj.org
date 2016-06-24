@@ -15,10 +15,10 @@ script:
 - ls
 - gulp test
 - gulp
-- chmod 700 scripts/deploy.sh 
+- chmod 700 ./scripts/deploy.sh 
 after_script:
-- chmod a+x scripts/derp.sh
-- ./scripts/derp.sh
+- chmod a+x ./scripts/derp.sh
+- bash ./scripts/derp.sh
 # - bash ./scripts/deploy.sh 
 matrix:
   fast_finish: true
