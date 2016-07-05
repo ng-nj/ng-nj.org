@@ -19,7 +19,8 @@
     return directive;
 
     /** @ngInject */
-    function LoginBarController(AuthenticationService, $log) {
+    // function LoginBarController(AuthenticationService, $log) {
+    function LoginBarController($log) {
       var self = this;
       self.loginUser = '';
       self.feedbackMessage = '';
@@ -28,16 +29,16 @@
 
       self.login = function () {
 
-        self.feedbackMessage = AuthenticationService.login(self.loginUser)
-          .then(function (data) {
-
-            self.userLoggedIn = true;
-            self.authenticatedUser = data;
-
-          }, function (error) {
-            $log.log("promise rejected!" + error);
-            self.feedbackMessage = error;
-          });
+        // self.feedbackMessage = AuthenticationService.login(self.loginUser)
+        //   .then(function (data) {
+        //
+        //     self.userLoggedIn = true;
+        //     self.authenticatedUser = data;
+        //
+        //   }, function (error) {
+        //     $log.log("promise rejected!" + error);
+        //     self.feedbackMessage = error;
+        //   });
 
         $log.log("feedbackMessage is :" + self.feedbackMessage);
 

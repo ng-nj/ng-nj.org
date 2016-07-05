@@ -1,0 +1,126 @@
+[21:11:12] Using gulpfile ~/Git-Projects/ng-nj.org/gulpfile.js
+[21:11:12] Starting 'scripts'...
+[21:11:14] Starting 'styles'...
+[21:11:19] Starting 'webdriver-update'...
+selenium standalone is up to date.
+chromedriver is up to date.
+[21:11:23] Finished 'webdriver-update' after 4.61 s
+[21:11:23] gulp-inject 10 files into index.scss.
+[21:11:25] Finished 'styles' after 11 s
+[21:11:25] 
+/Users/jim/Git-Projects/ng-nj.org/src/app/index.constants.js
+  1:11  error  "malarkey" is defined but never used  no-unused-vars
+  1:27  error  "moment" is defined but never used    no-unused-vars
+
+/Users/jim/Git-Projects/ng-nj.org/src/app/index.run.js
+  9:21  error  "$log" is defined but never used  no-unused-vars
+
+/Users/jim/Git-Projects/ng-nj.org/src/app/header/login-bar/login-bar.directive.js
+  1:1  error  Unnecessary semicolon  no-extra-semi
+
+/Users/jim/Git-Projects/ng-nj.org/src/app/routes/about-us/about-us.controller.js
+   1:1   error  Unnecessary semicolon                                                      no-extra-semi
+   7:18  error  You should assign "this" to a consistent variable across your project: vm  angular/controller-as-vm
+  10:21  error  "Firebase" is not defined                                                  no-undef
+
+/Users/jim/Git-Projects/ng-nj.org/src/app/routes/code/code.controller.js
+  6:44  error  "$log" is defined but never used                                           no-unused-vars
+  7:11  error  "self" is defined but never used                                           no-unused-vars
+  7:18  error  You should assign "this" to a consistent variable across your project: vm  angular/controller-as-vm
+
+/Users/jim/Git-Projects/ng-nj.org/src/app/routes/events/events.controller.js
+   7:18  error  You should assign "this" to a consistent variable across your project: vm  angular/controller-as-vm
+  16:23  error  "Firebase" is not defined                                                  no-undef
+  19:52  error  "data" is defined but never used                                           no-unused-vars
+  50:13  error  "hackathons" is already defined                                            no-redeclare
+
+/Users/jim/Git-Projects/ng-nj.org/src/app/routes/forgot-password/forgot-password.controller.js
+  6:54  error  "$log" is defined but never used                                           no-unused-vars
+  7:11  error  "self" is defined but never used                                           no-unused-vars
+  7:18  error  You should assign "this" to a consistent variable across your project: vm  angular/controller-as-vm
+
+/Users/jim/Git-Projects/ng-nj.org/src/app/routes/login/login.controller.js
+  6:47  error  "$log" is defined but never used                                           no-unused-vars
+  7:18  error  You should assign "this" to a consistent variable across your project: vm  angular/controller-as-vm
+
+/Users/jim/Git-Projects/ng-nj.org/src/app/routes/main/main.controller.js
+   9:37  error  "$log" is defined but never used  no-unused-vars
+  10:9   error  "vm" is defined but never used    no-unused-vars
+
+/Users/jim/Git-Projects/ng-nj.org/src/app/routes/my-profile/register.controller.js
+  6:50  error  "$log" is defined but never used  no-unused-vars
+
+/Users/jim/Git-Projects/ng-nj.org/src/app/routes/privacy/privacy.js
+  6:47  error  "$log" is defined but never used                                           no-unused-vars
+  7:18  error  You should assign "this" to a consistent variable across your project: vm  angular/controller-as-vm
+
+/Users/jim/Git-Projects/ng-nj.org/src/app/routes/privacy/privacy.spec.js
+   1:1   error  Unnecessary semicolon         no-extra-semi
+   8:7   error  "$controller" is not defined  no-undef
+  12:14  error  "$controller" is not defined  no-undef
+
+/Users/jim/Git-Projects/ng-nj.org/src/app/routes/register/register.controller.js
+  7:18  error  You should assign "this" to a consistent variable across your project: vm  angular/controller-as-vm
+
+/Users/jim/Git-Projects/ng-nj.org/src/app/routes/terms/terms.js
+  6:45  error  "$log" is defined but never used                                           no-unused-vars
+  7:11  error  "self" is defined but never used                                           no-unused-vars
+  7:18  error  You should assign "this" to a consistent variable across your project: vm  angular/controller-as-vm
+
+/Users/jim/Git-Projects/ng-nj.org/src/app/routes/terms/terms.spec.js
+  1:1  error  Unnecessary semicolon         no-extra-semi
+  9:7  error  "$controller" is not defined  no-undef
+
+/Users/jim/Git-Projects/ng-nj.org/src/app/routes/tweets/tweets.controller.js
+  6:46  error  "$log" is defined but never used  no-unused-vars
+
+/Users/jim/Git-Projects/ng-nj.org/src/app/routes/about-us/filters/banned-users.filter.js
+   1:1   error  Unnecessary semicolon            no-extra-semi
+  15:25  error  "bannedUserList" is not defined  no-undef
+
+/Users/jim/Git-Projects/ng-nj.org/src/app/routes/about-us/services/about-members-retriever.service.js
+   1:1   error  Unnecessary semicolon                                       no-extra-semi
+  15:23  error  "Firebase" is not defined                                   no-undef
+  19:35  error  You should use the toJson method instead of JSON.stringify  angular/json-functions
+
+/Users/jim/Git-Projects/ng-nj.org/src/app/routes/events/services/event.factory.spec.js
+   1:1   error  Unnecessary semicolon          no-extra-semi
+   8:7   error  "EventFactory" is not defined  no-undef
+  13:23  error  "EventFactory" is not defined  no-undef
+
+✖ 42 problems (42 errors, 0 warnings)
+
+[21:11:25] all files 21.87 kB
+[21:11:25] Finished 'scripts' after 13 s
+[21:11:25] Starting 'inject'...
+[21:11:26] gulp-inject 1 files into index.html.
+[21:11:26] gulp-inject 23 files into index.html.
+[21:11:26] Finished 'inject' after 324 ms
+[21:11:26] Starting 'serve:e2e'...
+[21:11:26] Finished 'serve:e2e' after 149 ms
+[21:11:26] Starting 'protractor:src'...
+[BS] [BrowserSync SPA] Running...
+[BS] Access URLs:
+ ---------------------------------------
+       Local: http://localhost:3002/
+    External: http://192.168.11.12:3002/
+ ---------------------------------------
+          UI: http://localhost:3003
+ UI External: http://192.168.11.12:3003
+ ---------------------------------------
+[BS] Serving files from: .tmp/serve
+[BS] Serving files from: src
+Starting selenium standalone server...
+[launcher] Running 1 instances of WebDriver
+Selenium standalone server started at http://192.168.11.12:50643/wd/hub
+..
+
+Finished in 3.324 seconds
+2 tests, 0 assertions, 0 failures
+
+Shutting down selenium standalone server.
+[launcher] 0 instance(s) of WebDriver still running
+[launcher] chrome #1 passed
+[21:11:37] Finished 'protractor:src' after 11 s
+[21:11:37] Starting 'protractor'...
+[21:11:37] Finished 'protractor' after 4.95 μs

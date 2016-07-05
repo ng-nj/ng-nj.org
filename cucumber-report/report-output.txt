@@ -1,0 +1,77 @@
+[
+  {
+    "description": "User is on th elogin page",
+    "assertions": [],
+    "duration": null
+  },
+  {
+    "description": "Generate report using default template",
+    "assertions": [],
+    "duration": null
+  },
+  {
+    "description": "Generate report using custom template",
+    "assertions": [],
+    "duration": null
+  },
+  {
+    "description": "Verify source JSON exists",
+    "assertions": [],
+    "duration": null
+  },
+  {
+    "description": "Verify template exists",
+    "assertions": [],
+    "duration": null
+  },
+  {
+    "description": "Calculate summary for a report",
+    "assertions": [],
+    "duration": null
+  },
+  {
+    "description": "Get status of a passing feature",
+    "assertions": [],
+    "duration": null
+  },
+  {
+    "description": "Get status of a failing feature",
+    "assertions": [],
+    "duration": null
+  },
+  {
+    "description": "Get status of a passing scenario",
+    "assertions": [],
+    "duration": null
+  },
+  {
+    "description": "Get status of a failed scenario",
+    "assertions": [],
+    "duration": null
+  },
+  {
+    "description": "Get status of a skipped scenario",
+    "assertions": [],
+    "duration": null
+  },
+  {
+    "description": "Using the About Us Page",
+    "assertions": [],
+    "duration": null
+  },
+  {
+    "description": "Using the About Us Page",
+    "assertions": [
+      {
+        "passed": true
+      },
+      {
+        "passed": true
+      },
+      {
+        "passed": true
+      }
+    ],
+    "duration": 2742093
+  }
+]

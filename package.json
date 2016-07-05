@@ -11,6 +11,7 @@
     "chalk": "~1.1.1",
     "cucumber": "^1.0.0",
     "cucumber-html-report": "^0.3.5",
+    "cucumber-html-reporter": "^0.1.4",
     "del": "~2.0.2",
     "eslint-plugin-angular": "~0.12.0",
     "estraverse": "~4.1.0",
@@ -50,6 +51,7 @@
     "lodash": "~3.10.1",
     "main-bower-files": "~2.9.0",
     "phantomjs": "~1.9.18",
+    "protractor-cucumber-framework": "^0.6.0",
     "uglify-save-license": "~0.4.1",
     "wiredep": "~2.2.2",
     "wrench": "~1.5.8"

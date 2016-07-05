@@ -1,0 +1,11 @@
+Starting selenium standalone server...
+[launcher] Running 1 instances of WebDriver
+Selenium standalone server started at http://192.168.11.12:53136/wd/hub
+..
+
+Finished in 4.276 seconds
+2 tests, 0 assertions, 0 failures
+
+Shutting down selenium standalone server.
+[launcher] 0 instance(s) of WebDriver still running
+[launcher] chrome #1 passed
