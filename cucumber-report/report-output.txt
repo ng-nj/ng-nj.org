@@ -55,6 +55,68 @@
     "duration": null
   },
   {
+    "description": "Fred wants to see passing scenarios in the HTML report",
+    "assertions": [],
+    "duration": null
+  },
+  {
+    "description": "Fred wants to run scenario outline and print on HTML report",
+    "assertions": [],
+    "duration": null
+  },
+  {
+    "description": "Fred wants to run scenario outline and print on HTML report",
+    "assertions": [],
+    "duration": null
+  },
+  {
+    "description": "Fred wants to print test data in the HTML reports for debugging purpose",
+    "assertions": [],
+    "duration": null
+  },
+  {
+    "description": "Fred wants to use data table and print on HTML report",
+    "assertions": [],
+    "duration": null
+  },
+  {
+    "description": "Fred wants to see a Screenshot attached to the HTML report",
+    "assertions": [],
+    "duration": null
+  },
+  {
+    "description": "Fred wants to see if steps are pending in the HTML report",
+    "assertions": [],
+    "duration": null
+  },
+  {
+    "description": "Fred wants to see if steps are undefined on the HTML report",
+    "assertions": [],
+    "duration": null
+  },
+  {
+    "description": "Fred wants to see if steps are skipped on the HTML report",
+    "assertions": [],
+    "duration": null
+  },
+  {
+    "description": "Copyright text shows",
+    "assertions": [
+      {
+        "passed": true
+      },
+      {
+        "passed": true
+      },
+      {
+        "passed": false,
+        "errorMsg": "expected '\"Copyright 2016 WoJ\"' to equal { Object (ptor_, parentElementArrayFinder, ...) }",
+        "stackTrace": "AssertionError: expected '\"Copyright 2016 WoJ\"' to equal { Object (ptor_, parentElementArrayFinder, ...) }\n    at World.<anonymous> (/Users/jim/Git-Projects/ng-nj.org/src/app/footer/tests/footer.step.js:26:23)\n    at _combinedTickCallback (internal/process/next_tick.js:67:7)\n    at process._tickCallback (internal/process/next_tick.js:98:9)"
+      }
+    ],
+    "duration": 36929118
+  },
+  {
     "description": "Using the About Us Page",
     "assertions": [],
     "duration": null
@@ -72,6 +134,6 @@
         "passed": true
       }
     ],
-    "duration": 2742093
+    "duration": 771232
   }
 ]

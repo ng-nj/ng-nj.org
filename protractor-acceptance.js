@@ -8,7 +8,6 @@ exports.config = {
   // seleniumAddress: 'http://localhost:4444/wd/hub',
   //seleniumServerJar: deprecated, this should be set on node_modules/protractor/config.json
 
-  // framework: 'cucumber',
   framework: 'custom',
   frameworkPath: require.resolve('protractor-cucumber-framework'),
 
@@ -16,8 +15,8 @@ exports.config = {
   capabilities: {
     'browserName': 'chrome'
   },
-  resultJsonOutputFile: 'cucumber-report/report-output.txt',
 
+  resultJsonOutputFile: 'cucumber-report/report-output.txt',
 
   baseUrl: 'http://localhost:3000',
 
@@ -37,7 +36,7 @@ exports.config = {
     // require: paths.features + './**/*.js'
     // require: paths.features + '/my-component/my-component.js'
     // require: 'features/my-component/my-component.step.js'
-    require: './**/*.step.js'
+    require: './**/*.step.js' || './**/*.steps.js'
     // tags: '@dev',
     // profile: false,
     // 'no-source': true
@@ -45,11 +44,7 @@ exports.config = {
 
   jasmineNodeOpts: {
     defaultTimeoutInterval: 25000
+    //   showColors: true,
   }
 
-  // Options to be passed to Jasmine-node.
-  // jasmineNodeOpts: {
-  //   showColors: true,
-  //   defaultTimeoutInterval: 30000
-  // }
 };
