@@ -30,6 +30,9 @@ exports.config = {
     'browserName': 'chrome'
   },
 
+
+  resultJsonOutputFile: 'e2e/report/my-test.json',
+
   baseUrl: 'http://localhost:3000',
 
   // Spec patterns are relative to the current working directory when

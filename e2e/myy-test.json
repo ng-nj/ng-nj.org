@@ -1,0 +1,12 @@
+[
+  {
+    "description": "should include jumbotron with correct data",
+    "assertions": [],
+    "duration": 1594
+  },
+  {
+    "description": "should do nothing",
+    "assertions": [],
+    "duration": 2465
+  }
+]
