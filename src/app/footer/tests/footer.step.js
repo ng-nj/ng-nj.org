@@ -10,6 +10,7 @@ var page;
 
 var myStepDefinitionsWrapper = function () {
 
+  console.log('Ooga Booga!');
 
   this.Given(/^I land on the home page$/, function (callback) {
 
@@ -26,6 +27,7 @@ var myStepDefinitionsWrapper = function () {
   this.Then(/^the footer should contain the text, (.*)$/, function (myText, callback) {
 
     // expect(myText).to.be("Copyright 2016 WoJ");
+
 
     expect(page.textContainer.getAttribute('value')).to.eventually.equal(myText);
 

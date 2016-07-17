@@ -6,6 +6,9 @@
     .controller('RegisterController', function ($log, Authentication) {
       var self = this;
 
+
+      self.fauxCount = 0;
+
       self.login = function () {
         Authentication.login(self.user)
       }
@@ -17,6 +20,14 @@
         $log.log("Registering new user!");
         Authentication.register(self.user)
       };
+
+
+    self.booyah = function () {
+
+      self.fauxCount = 1;
+
+    };
+
 
     });
 

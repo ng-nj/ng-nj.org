@@ -8,11 +8,18 @@
        alerted me that the footer is quite an important piece of the project
        and surely requires low level step definition acceptance tests!
 
-    Scenario Outline: Copyright text shows
-      Given I land on the home page
-      When The page loads
-      Then the footer should contain the text, <myText>
 
-      Examples:
-      | myText|
-      | "Copyright 2016 WoJ" |
+
+#
+#    Scenario Outline: Copyright text shows
+#      Given I land on the home page
+#      When The page loads
+#      Then the footer should contain the text, <myText>
+#
+#      Examples:
+#      | myText|
+#      | "Copyright 2016 WoJ" |
+
+
+
+

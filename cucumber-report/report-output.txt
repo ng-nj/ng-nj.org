@@ -100,21 +100,15 @@
     "duration": null
   },
   {
-    "description": "Copyright text shows",
+    "description": "Doing some shiznit",
     "assertions": [
       {
-        "passed": true
-      },
-      {
-        "passed": true
-      },
-      {
         "passed": false,
-        "errorMsg": "expected '\"Copyright 2016 WoJ\"' to equal { Object (ptor_, parentElementArrayFinder, ...) }",
-        "stackTrace": "AssertionError: expected '\"Copyright 2016 WoJ\"' to equal { Object (ptor_, parentElementArrayFinder, ...) }\n    at World.<anonymous> (/Users/jim/Git-Projects/ng-nj.org/src/app/footer/tests/footer.step.js:26:23)\n    at _combinedTickCallback (internal/process/next_tick.js:67:7)\n    at process._tickCallback (internal/process/next_tick.js:98:9)"
+        "errorMsg": "inject is not defined",
+        "stackTrace": "ReferenceError: inject is not defined\n    at World.<anonymous> (/Users/jim/Git-Projects/ng-nj.org/src/app/footer/tests/step_definitions/my.step.js:16:5)\n    at _combinedTickCallback (internal/process/next_tick.js:67:7)\n    at process._tickCallback (internal/process/next_tick.js:98:9)"
       }
     ],
-    "duration": 36929118
+    "duration": null
   },
   {
     "description": "Using the About Us Page",
@@ -134,6 +128,6 @@
         "passed": true
       }
     ],
-    "duration": 771232
+    "duration": 964740
   }
 ]

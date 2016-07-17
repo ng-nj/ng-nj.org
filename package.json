@@ -6,6 +6,7 @@
     "test": "gulp test"
   },
   "devDependencies": {
+    "angular-mocks": "^1.5.7",
     "browser-sync": "~2.9.11",
     "browser-sync-spa": "~1.0.3",
     "chai-as-promised": "^5.3.0",
