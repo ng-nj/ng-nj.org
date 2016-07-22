@@ -6,7 +6,7 @@
         "passed": true
       }
     ],
-    "duration": 1021
+    "duration": 1926
   },
   {
     "description": "should do nothing",
@@ -15,7 +15,6 @@
         "passed": true
       }
     ],
-
     "duration": 1661
   }
 ]
