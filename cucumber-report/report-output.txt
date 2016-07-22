@@ -60,12 +60,12 @@
     "duration": null
   },
   {
-    "description": "Fred wants to run scenario outline and print on HTML report",
+    "description": "Fred runs scenario outline for John and print on HTML report",
     "assertions": [],
     "duration": null
   },
   {
-    "description": "Fred wants to run scenario outline and print on HTML report",
+    "description": "Fred runs scenario outline for Bob and print on HTML report",
     "assertions": [],
     "duration": null
   },
@@ -100,15 +100,69 @@
     "duration": null
   },
   {
+    "description": "easy maths",
+    "assertions": [],
+    "duration": null
+  },
+  {
+    "description": "much more complex stuff",
+    "assertions": [],
+    "duration": null
+  },
+  {
+    "description": "Developer is curious",
+    "assertions": [],
+    "duration": null
+  },
+  {
+    "description": "add recipe",
+    "assertions": [],
+    "duration": null
+  },
+  {
+    "description": "The green box is clicked on turning it red (non-tagged scenario)",
+    "assertions": [],
+    "duration": null
+  },
+  {
+    "description": "The green box is clicked on turning it red (tagged scenario)",
+    "assertions": [],
+    "duration": null
+  },
+  {
     "description": "Doing some shiznit",
+    "assertions": [],
+    "duration": null
+  },
+  {
+    "description": "Copyright text shows",
     "assertions": [
       {
-        "passed": false,
-        "errorMsg": "inject is not defined",
-        "stackTrace": "ReferenceError: inject is not defined\n    at World.<anonymous> (/Users/jim/Git-Projects/ng-nj.org/src/app/footer/tests/step_definitions/my.step.js:16:5)\n    at _combinedTickCallback (internal/process/next_tick.js:67:7)\n    at process._tickCallback (internal/process/next_tick.js:98:9)"
+        "passed": true
+      },
+      {
+        "passed": true
+      },
+      {
+        "passed": true
       }
     ],
-    "duration": null
+    "duration": 14023179
+  },
+  {
+    "description": "User logs in successfully",
+    "assertions": [
+      {
+        "passed": true
+      },
+      {
+        "passed": true
+      },
+      {
+        "passed": true
+      }
+    ],
+    "duration": 8005711
   },
   {
     "description": "Using the About Us Page",
@@ -117,17 +171,12 @@
   },
   {
     "description": "Using the About Us Page",
-    "assertions": [
-      {
-        "passed": true
-      },
-      {
-        "passed": true
-      },
-      {
-        "passed": true
-      }
-    ],
-    "duration": 964740
+    "assertions": [],
+    "duration": null
+  },
+  {
+    "description": "Displaying Terms Information",
+    "assertions": [],
+    "duration": null
   }
 ]

@@ -11,14 +11,14 @@
 
 
 #
-#    Scenario Outline: Copyright text shows
-#      Given I land on the home page
-#      When The page loads
-#      Then the footer should contain the text, <myText>
-#
-#      Examples:
-#      | myText|
-#      | "Copyright 2016 WoJ" |
+    Scenario Outline: Copyright text shows
+      Given I land on the home page
+      When The page loads
+      Then the footer should contain the text, <myText>
+
+      Examples:
+      | myText|
+      | Copyright 2016 WoJ |
 
 
 
