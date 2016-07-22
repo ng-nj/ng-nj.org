@@ -38,7 +38,7 @@ var myStepDefinitionsWrapper = function () {
     page.textContainer.getText().then(function(value) {
       // expect(value).to.eventually.equal('hello there, sir');
 
-      console.log('$$$$$$$$$ ' + value)
+      console.log('$$$$$$$$$$$ ' + value)
     });
 
 
