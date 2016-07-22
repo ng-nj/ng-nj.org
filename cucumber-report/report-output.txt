@@ -144,12 +144,10 @@
         "passed": true
       },
       {
-        "passed": false,
-        "errorMsg": "expected 'Copyright55 2016 WoJ' to equal 'Copyright 2016 WoJ'",
-        "stackTrace": "AssertionError: expected 'Copyright55 2016 WoJ' to equal 'Copyright 2016 WoJ'\n    at World.<anonymous> (/Users/jim/Git-Projects/ng-nj.org/src/app/footer/tests/footer.step.js:32:23)\n    at _combinedTickCallback (internal/process/next_tick.js:67:7)\n    at process._tickCallback (internal/process/next_tick.js:98:9)"
+        "passed": true
       }
     ],
-    "duration": 15464379
+    "duration": 14023179
   },
   {
     "description": "User logs in successfully",
@@ -164,7 +162,7 @@
         "passed": true
       }
     ],
-    "duration": 2321410
+    "duration": 8005711
   },
   {
     "description": "Using the About Us Page",

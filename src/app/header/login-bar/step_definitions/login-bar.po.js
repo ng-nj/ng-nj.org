@@ -9,9 +9,11 @@
 var LoginBar = function() {
   // this.termsContent = element(by.name('terms-content'));
 
-  this.usernameField = element(by.name('username-tf'));
-  this.passwordField = element(by.name('password-tf'));
-  this.welcomeMessage = element(by.name('welcome-text'));
+  // this.usernameField = element(by.name('username-tf'));
+  // this.passwordField = element(by.name('password-tf'));
+  // this.welcomeMessage = element(by.name('welcome-text'));
+  this.usernameField = element(by.css('.a'));
+
 
 
 };

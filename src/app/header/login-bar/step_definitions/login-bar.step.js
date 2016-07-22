@@ -9,12 +9,13 @@ var myStepDefinitionsWrapper = function () {
   var chaiAsPromised = require('chai-as-promised');
   chai.use(chaiAsPromised);
 
-  'use strict';
   var page;
 
   console.log('Ooga Booga!');
 
   this.Given(/^that I am a person not logged in$/, function (callback) {
+
+    browser.get('http://localhost:3000/#/');
 
     // browser.get('localhost:3000/#/events');
     // page = require('./login-bar.po.js');
@@ -24,9 +25,19 @@ var myStepDefinitionsWrapper = function () {
 
   this.When(/^enter successful credentials$/, function (callback) {
 
+    // console.log('$$$$$$$$$ passwordField: ' + page.passwordField.getText())
+    page = require('./login-bar.po');
     // page.usernameField.sendKeys('hi');
 
-    // browser.pause();
+    // page.passwordField.setValue("yoyoyoyo");
+
+
+    element(by.css('.a')).sendKeys('hello');
+
+
+    browser.pause();
+
+    // expect(page.usernameField.getText()).to.eventually.equal("Copyright 2016 WoJ");
 
     callback();
   });
@@ -39,7 +50,7 @@ var myStepDefinitionsWrapper = function () {
     // (2 + 2).should.equal(4);
     // (myText).should.equal('Copyright 2016 WoJ');
     //
-    // expect(page.textContainer.getAttribute('value')).to.eventually.equal(myText);
+
 
     // .and.notify(callback);
 

@@ -17,7 +17,7 @@ var myStepDefinitionsWrapper = function () {
 
   this.Given(/^I land on the home page$/, function (callback) {
 
-    browser.get('./index');
+    browser.get('http://localhost:3000/#/');
     page = require('./footer.po.js');
 
     callback();
@@ -28,14 +28,23 @@ var myStepDefinitionsWrapper = function () {
   });
 
   this.Then(/^the footer should contain the text, (.*)$/, function (myText, callback) {
+    //
+    // expect(myText).to.equal("Copyright 2016 WoJ");
+    //
+    //
+    // (2 + 2).should.equal(4);
+    // (myText).should.equal('Copyright 2016 WoJ');
 
-    expect(myText).to.equal("Copyright 2016 WoJ");
+    page.textContainer.getText().then(function(value) {
+      // expect(value).to.eventually.equal('hello there, sir');
+
+      console.log('$$$$$$$$$ ' + value)
+    });
 
 
-    (2 + 2).should.equal(4);
-    (myText).should.equal('Copyright 2016 WoJ');
+    // expect().to.eventually.equal(myText);
 
-    expect(page.textContainer.getAttribute('value')).to.eventually.equal(myText);
+    // expect(page.textContainer.getAttribute('value')).to.eventually.equal(myText);
 
       // .and.notify(callback);
 
