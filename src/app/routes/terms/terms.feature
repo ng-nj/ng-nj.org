@@ -7,3 +7,9 @@ Feature: About us page
     Given that I am a Gperson
     When I do Gstuff
     Then I have some Gother stuff
+
+
+  Scenario: Displaying Terms Information
+    Given the user is on the terms page
+    When the terms page loads
+    Then the terms text should be displayed

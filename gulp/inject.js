@@ -26,6 +26,10 @@ gulp.task('inject', ['scripts', 'styles'], function () {
     path.join(conf.paths.src, '/app/**/*.js'),
     path.join('!' + conf.paths.src, '/app/**/*.spec.js'),
     path.join('!' + conf.paths.src, '/app/**/*.mock.js'),
+    path.join('!' + conf.paths.src, '/app/**/*.step.js'),
+    path.join('!' + '/**/*.steps.js'),
+    path.join('!' + conf.paths.src, '/app/**/*.feature'),
+    path.join('!' + conf.paths.src, '/app/**/*.po.js'),
   ])
   .pipe($.angularFilesort()).on('error', conf.errorHandler('AngularFilesort'));
 

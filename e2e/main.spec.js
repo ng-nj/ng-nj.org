@@ -19,7 +19,7 @@ describe('The main view', function () {
   it('should do nothing', function () {
     //expect(page.thumbnailEls.count()).toBeGreaterThan(5);
 
-    expect("some stuff").toEqual('oh,  whoops');
+    expect("some stuff").toEqual('some stuff');
   });
 
 });

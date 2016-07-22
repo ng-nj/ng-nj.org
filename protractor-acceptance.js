@@ -36,7 +36,7 @@ exports.config = {
     // require: paths.features + './**/*.js'
     // require: paths.features + '/my-component/my-component.js'
     // require: 'features/my-component/my-component.step.js'
-    require: './**/*.step.js'
+    require: './**/*.step.js',
     // tags: '@dev',
     // profile: false,
     // 'no-source': true
