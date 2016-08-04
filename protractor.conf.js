@@ -11,6 +11,7 @@
 // }
 
 var paths = require('./.yo-rc.json')['generator-gulp-angular'].props.paths;
+var ProtractorReporter = require('protractor-html-screenshot-reporter');
 
 // An example configuration file.
 exports.config = {
@@ -23,6 +24,11 @@ exports.config = {
     'browserName': 'chrome'
   },
 
+  onPrepare: function () {
+    jasmine.getEnv().addReporter(new ProtractorReporter({
+      baseDirectory: paths.e2e + '/screenshots'
+    }))
+  },
 
   resultJsonOutputFile: 'e2e/report/my-test.json',
 

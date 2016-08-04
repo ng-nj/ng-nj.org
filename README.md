@@ -31,11 +31,20 @@ coverage
 
 `gulp test:auto` - Reruns tests with hot reload on file changes.
 
+`gulp protractor` - Runs protractor and recreates a ui/e2e report.
+
+`gulp protractor:dist` - Runs protractor against the production build files
+and recreates a ui/e2e report.
+
+
 `./node_modules/protractor/bin/protractor protractor-acceptance.js` - runs the 
 cucumber acceptance tests with protractor ui tests in step definitions. 
 
-Reports. Yes there are cucumber reports!
+Reports. Yes there are reports!
 View current status:
 
-Protractor acceptance outputs a json file to __. This folder then gets deployed
-to the gh-pages site. Simple, yet oh so amazing useful.
+## Classic UI / E2e Reports
+e2e/screenshots/report.html
+
+## Classic Code Coverage Report
+e2e/screenshots/report.html

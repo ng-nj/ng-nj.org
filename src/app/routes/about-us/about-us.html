@@ -19,8 +19,8 @@
 
 
     <div class="profile-card">
-      <div>Jim Lynch</div>
-      <div>First Name: <span ng-bind="ctrl.currentUserSelected.firstName"></span></div>
+      <div>{{vm.currentFirstName}} &nbsp; {{vm.lastName}}</div>
+      <div>First Name: <span ng-bind="vm.currentUserSelected.firstName"></span></div>
       <div>Jim is the organizer of ng-nj and developer of this website. He enjoys deeveloping Angular web applications
         and prefers version 1.4 with the Gulp-Angular generator.
       </div>
@@ -31,6 +31,10 @@
       <div>Fav Angular Version: 1.4 with Javascrip ES5</div>
       <div>Fav Yeoman Generator: Gulp-Angular</div>
       <div>Fav Coding Quote: "You just need the describe's full of it's with some beforeEach's"</div>
+
+      <div>Fav Food: {{vm.favoriteFood}}</div>
+      <div>Spirit Animal: {{vm.spiritAnimal}}</div>
+
       <br>
 
       <div><a href="http://www.github.com/JimTheMan">github.com/JimTheMan</a></div>
@@ -44,9 +48,9 @@
     <div class="all-members-section">
       <h2>All Members</h2>
 
-      <div ng-repeat="(key, member) in ctrl.membersList">
+      <div ng-repeat="(key, member) in vm.membersList">
 
-        –&nbsp; <a ui-sref="about-us"><span ng-bind="member.firstName"></span>
+        –&nbsp; <a ui-sref="about-us({ userId: key})"><span ng-bind="member.firstName"></span>
         <span ng-bind="member.lastName"></span></a>
 
       </div>

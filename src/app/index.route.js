@@ -21,10 +21,10 @@
         controllerAs: 'ctrl'
       })
       .state('about-us', {
-        url: '/about-us',
+        url: '/about-us/:userId',
         templateUrl: 'app/routes/about-us/about-us.html',
         controller: 'AboutUsController',
-        controllerAs: 'ctrl'
+        controllerAs: 'vm'
       })
       .state('code', {
         url: '/code',
