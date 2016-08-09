@@ -19,9 +19,11 @@ function listFiles() {
   var patterns = wiredep(wiredepOptions).js
     .concat([
       path.join(conf.paths.src, '/app/**/*.module.js'),
-      path.join(conf.paths.src, '/app/**/login.controller.js'),
-      path.join(conf.paths.src, '/**/*.specy.js'),
-      path.join(conf.paths.src, '/**/*.mock.js'),
+      // path.join(conf.paths.src, '/app/**/*.js'),
+      // path.join(conf.paths.sr),
+      path.join(conf.paths.src, '/app/**/*.specy.js'),
+      path.join(conf.paths.src, '/app/**/*.mock.js')
+      // '!**/*.po.js'
     ])
     .concat(pathSrcHtml);
 
@@ -50,23 +52,22 @@ module.exports = function(config) {
 
     ngHtml2JsPreprocessor: {
       stripPrefix: conf.paths.src + '/',
-      moduleName: 'flexboxPushDrawerExample'
+      moduleName: 'ngNjOrg'
     },
 
     logLevel: 'WARN',
 
-    frameworks: ['phantomjs-shim', 'jasmine', 'angular-filesort'],
+    frameworks: ['jasmine', 'angular-filesort'],
 
     angularFilesort: {
-      whitelist: [path.join(conf.paths.src, '/**/!(*.html|*.specy|*.mock).js')]
-    },
+      whitelist: [path.join(conf.paths.src, '/app/**/!(*.html|*.spec|*.mock).js')]
+},
 
     browsers : ['PhantomJS'],
 
     plugins : [
       'karma-phantomjs-launcher',
       'karma-angular-filesort',
-      'karma-phantomjs-shim',
       'karma-coverage',
       'karma-jasmine',
       'karma-ng-html2js-preprocessor'
@@ -79,7 +80,8 @@ module.exports = function(config) {
 
     reporters: ['progress'],
 
-    exclude:['/app/**/*.spec.js', '/app/**/*.step.js', '/app/**/*.steps.js'],
+    // exclude: ['/app/**.*.po.js'],
+
 
     proxies: {
       '/assets/': path.join('/base/', conf.paths.src, '/assets/')

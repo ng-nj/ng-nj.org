@@ -42,33 +42,35 @@ function listFiles() {
 module.exports = function(config) {
 
   var configuration = {
-    files: [
-      // These are not watched because they're not expected to change.
-      // These are not included because they are not JavaScript files and Karma inserts
-      // these as <script> tags.
-      // These are served however, as the adapter will load them into the captured browsers.
-      // The cucumber-html.css file can be copied and customized, simply change the path.
-      // The adapter will load any file ending with '.css' into the captured browsers.
-      {pattern: 'node_modules/karma-cucumberjs/vendor/cucumber-html.css', watched: false,
-        included: false, served: true},
-      {pattern: 'path/to/app.template', watched: false, included: false, served: true},
+      files: [
+        // These are not watched because they're not expected to change.
+        // These are not included because they are not JavaScript files and Karma inserts
+        // these as <script> tags.
+        // These are served however, as the adapter will load them into the captured browsers.
+        // The cucumber-html.css file can be copied and customized, simply change the path.
+        // The adapter will load any file ending with '.css' into the captured browsers.
+        {pattern: 'node_modules/karma-cucumberjs/vendor/cucumber-html.css', watched: false,
+          included: false, served: true},
+        {pattern: '/app.unit.template.html', watched: false, included: false, served: true},
 
 
-      // These are not included because they're text feature files and shouldn't go in script tags.
-      // These are watched because feature files will change during dev and you want Karma to run
-      // tests when these change.
-      // These are served by Karma so the adapter can load their contents when its time to test.
-      {pattern: 'path/to/features/**/*.feature', watched: true, included: false, served: true},
+        // These are not included because they're text feature files and shouldn't go in script tags.
+        // These are watched because feature files will change during dev and you want Karma to run
+        // tests when these change.
+        // These are served by Karma so the adapter can load their contents when its time to test.
+        {pattern: '/**/*.unit.feature', watched: true, included: false, served: true},
 
 
 
-      // The step definitions should be loaded last so the adapter can load the global functions
-      // needed by the step defs.
-      // The step defs are watched and served so Karma runs when they change.
-      {pattern: 'path/to/features/step_definitions/**/*.step.js', watched: true, included: true, served: true}
-    ],
+        // The step definitions should be loaded last so the adapter can load the global functions
+        // needed by the step defs.
+        // The step defs are watched and served so Karma runs when they change.
+        {pattern: '/**/*.unit.step.js', watched: true, included: true, served: true}
+      ],
 
-    frameworks: ['jasmine', 'angular-filesort','karma-cucumberjs'],
+    // frameworks: ['jasmine', 'angular-filesort','karma-cucumberjs'],
+    framework: ['cucumberjs'],
+
 
     singleRun: true,
 
@@ -100,7 +102,7 @@ module.exports = function(config) {
 
     coverageReporter: {
       type : 'html',
-      dir : 'coverage/'
+      dir : 'dist/reports/acceptance-unit'
     },
 
     reporters: ['progress'],

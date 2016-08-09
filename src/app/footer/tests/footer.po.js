@@ -6,6 +6,10 @@
 
 'use strict';
 
+(function() {
+
+
+
 var FooterElement = function() {
   this.textContainer = element(by.css('.gg-text-container'));
   //this.h1El = this.jumbEl.element(by.css('h1'));
@@ -14,3 +18,4 @@ var FooterElement = function() {
 };
 
 module.exports = new FooterElement();
+})();

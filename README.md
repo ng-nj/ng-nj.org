@@ -40,6 +40,9 @@ and recreates a ui/e2e report.
 `./node_modules/protractor/bin/protractor protractor-acceptance.js` - runs the 
 cucumber acceptance tests with protractor ui tests in step definitions. 
 
+`./node_modules/protractor/bin/protractor protractor-acceptance.js` - runs the 
+cucumber acceptance tests with protractor ui tests in step definitions. 
+
 Reports. Yes there are reports!
 View current status:
 

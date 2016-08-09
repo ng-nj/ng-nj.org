@@ -30,7 +30,7 @@ exports.config = {
     }))
   },
 
-  resultJsonOutputFile: 'e2e/report/my-test.json',
+  resultJsonOutputFile: 'dist/reports/ui-e2e/ui-e2e-results.json',
 
   baseUrl: 'http://localhost:3000',
 

@@ -16,7 +16,7 @@ exports.config = {
     'browserName': 'chrome'
   },
 
-  resultJsonOutputFile: 'cucumber-report/report-output.txt',
+  resultJsonOutputFile: 'dist/reports/acceptance-protractor/acceptance-protractor-results.json',
 
   baseUrl: 'http://localhost:3000',
 
