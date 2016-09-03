@@ -7,26 +7,27 @@ node_js:
  - '0.8'
 before_install:
 - if [ "${TRAVIS_NODE_VERSION}" == "0.8" ]; then npm install -g npm@2.11.1; fi
-- npm update -g node
+- npm install -g node
+- node --version
 script:
-- export DISPLAY=:99.0
-- sh -e /etc/init.d/xvfb start
-- pwd
-- npm install
-- npm install bower
-- bower install
-- ls
-- mkdir reports && mkdir reports/acceptance-protractor && mkdir reports/acceptance-unit && mkdir reports/protrator && mkdir reports/unit && mkdir reports/combined
-- gulp
-- gulp test
+#- export DISPLAY=:99.0
+#- sh -e /etc/init.d/xvfb start
+#- pwd
+#- npm install
+#- npm install bower
+#- bower install
+#- ls
+#- mkdir reports && mkdir reports/acceptance-protractor && mkdir reports/acceptance-unit && mkdir reports/protrator && mkdir reports/unit && mkdir reports/combined
+#- gulp
+#- gulp test
 # - gulp protractor
 # - gulp acceptance-protractor
 # - gulp acceptance-unit
 after_script:
-- git remote rm origin
-- git remote add origin https://JimTheMan:${GH_TOKEN}@github.com/ng-nj/ng-nj.org.git
-- chmod a+x ./scripts/deploy.sh
-- bash ./scripts/deploy.sh
+#- git remote rm origin
+#- git remote add origin https://JimTheMan:${GH_TOKEN}@github.com/ng-nj/ng-nj.org.git
+#- chmod a+x ./scripts/deploy.sh
+#- bash ./scripts/deploy.sh
 
 matrix:
   fast_finish: true
