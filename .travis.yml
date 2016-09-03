@@ -9,6 +9,7 @@ before_install:
 script:
 - export DISPLAY=:99.0
 - sh -e /etc/init.d/xvfb start
+- pwd
 - npm install
 - npm install bower
 - bower install
