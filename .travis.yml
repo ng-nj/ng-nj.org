@@ -7,9 +7,8 @@ node_js:
  - '5.11.1'
 before_install:
 - if [ "${TRAVIS_NODE_VERSION}" == "0.8" ]; then npm install -g npm@2.11.1; fi
-- npm install -g node
-- node --version
 script:
+- node --version
 #- export DISPLAY=:99.0
 #- sh -e /etc/init.d/xvfb start
 #- pwd
@@ -18,8 +17,8 @@ script:
 #- bower install
 #- ls
 #- mkdir reports && mkdir reports/acceptance-protractor && mkdir reports/acceptance-unit && mkdir reports/protrator && mkdir reports/unit && mkdir reports/combined
-#- gulp
-#- gulp test
+# - gulp
+# - gulp test
 # - gulp protractor
 # - gulp acceptance-protractor
 # - gulp acceptance-unit
