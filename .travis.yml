@@ -4,7 +4,7 @@ node_js:
 #- '0.12'
 #- '0.10'
 #- iojs
- - '0.8'
+ - '5.11.1'
 before_install:
 - if [ "${TRAVIS_NODE_VERSION}" == "0.8" ]; then npm install -g npm@2.11.1; fi
 - npm install -g node
