@@ -37,7 +37,7 @@ echo "Deployed successfully."
 # exit 0
 
 # git push origin :gh-pages
-
+cd ..
 git push origin :gh-pages
 git commit -am 'commit from paris, france.'
 git subtree push --prefix dist/ origin gh-pages
