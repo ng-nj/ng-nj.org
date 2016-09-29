@@ -41,7 +41,7 @@ and recreates a ui/e2e report.
 cucumber acceptance tests with protractor ui tests in step definitions. 
 
 `./node_modules/karma/bin/karma start karma.acceptance.conf.js` - runs the 
-cucumber acceptance tests with protractor ui tests in step definitions. 
+cucumber acceptance tests with karma unit tests in step definitions. 
 
 Reports. Yes there are reports!
 View current status:
