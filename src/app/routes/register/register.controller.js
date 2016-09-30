@@ -6,7 +6,7 @@
     .controller('RegisterController', function ($log, Authentication) {
       var self = this;
 
-
+      self.validFirstName = false
       self.fauxCount = 0;
 
       self.login = function () {
@@ -18,8 +18,11 @@
       self.register = function () {
 
         $log.log("Registering new user!");
+        $log.log('files are: ' + JSON.stringify(self.filesSelected));
         Authentication.register(self.user)
       };
+
+
 
 
     self.booyah = function () {

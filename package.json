@@ -2,7 +2,8 @@
   "name": "ngNjOrg",
   "version": "0.0.0",
   "dependencies": {
-    "angularfire": "^2.0.2"
+    "angularfire": "^2.0.2",
+    "firebase": "^3.4.1"
   },
   "scripts": {
     "test": "gulp test"

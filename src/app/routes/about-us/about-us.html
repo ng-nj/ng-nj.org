@@ -19,27 +19,31 @@
 
 
     <div class="profile-card">
-      <div>{{vm.currentFirstName}} &nbsp; {{vm.lastName}}</div>
+      <div><span ng-bind="vm.currentUserSelected.firstName"></span> &nbsp; <span ng-bind="vm.currentUserSelected.lastName"></span></div>
       <div>First Name: <span ng-bind="vm.currentUserSelected.firstName"></span></div>
-      <div>Jim is the organizer of ng-nj and developer of this website. He enjoys deeveloping Angular web applications
-        and prefers version 1.4 with the Gulp-Angular generator.
+      <div><span ng-bind="vm.currentUserSelected.firstName"></span> is a <span ng-bind="vm.currentUserSelected.accountType"></span></div>
+      <div><span ng-bind="vm.currentUserSelected.profileBlurb"></span>
       </div>
       <br>
 
-      <div>Current Location: Matawan, NJ</div>
-      <div>Hometown: Egg Harbor Township, NJ</div>
-      <div>Fav Angular Version: 1.4 with Javascrip ES5</div>
-      <div>Fav Yeoman Generator: Gulp-Angular</div>
-      <div>Fav Coding Quote: "You just need the describe's full of it's with some beforeEach's"</div>
+      <img src="./assets/images/angular.png"/>
+      <!--<img src="vm.currentUser.imagePath"/>-->
 
-      <div>Fav Food: {{vm.favoriteFood}}</div>
-      <div>Spirit Animal: {{vm.spiritAnimal}}</div>
 
-      <br>
+      <!--<div>Current Location: Matawan, NJ</div>-->
+      <!--<div>Hometown: Egg Harbor Township, NJ</div>-->
+      <!--<div>Fav Angular Version: 1.4 with Javascrip ES5</div>-->
+      <!--<div>Fav Yeoman Generator: Gulp-Angular</div>-->
+      <!--<div>Fav Coding Quote: "You just need the describe's full of it's with some beforeEach's"</div>-->
 
-      <div><a href="http://www.github.com/JimTheMan">github.com/JimTheMan</a></div>
-      <div><a href="http://www.twitter.com/webWhizJim">twitter.com/webWhizJim"</a></div>
-      <div><a href="http://www.linkedin.com/in/JimTheMan">linkedin.com/in/JimTheMan</a></div>
+      <!--<div>Fav Food: {{vm.favoriteFood}}</div>-->
+      <!--<div>Spirit Animal: {{vm.spiritAnimal}}</div>-->
+
+      <!--<br>-->
+
+      <!--<div><a href="http://www.github.com/JimTheMan">github.com/JimTheMan</a></div>-->
+      <!--<div><a href="http://www.twitter.com/webWhizJim">twitter.com/webWhizJim"</a></div>-->
+      <!--<div><a href="http://www.linkedin.com/in/JimTheMan">linkedin.com/in/JimTheMan</a></div>-->
       <div></div>
 
     </div>

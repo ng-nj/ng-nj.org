@@ -21,7 +21,9 @@
                ng-model="ctrl.user.firstName" ng-required="true" top="50px">
 
         <p class="form-control error validationerror"
-           ng-show="myform.firstname.$invalid && myform.firstname.$touched">Please enter your first name.</p>
+           ng-show="!myform.firstName.$valid && myform.firstname.$touched">Pleause enter your first name.</p>
+           <!--ng-show='ctrl.valifFirstName'>Please enter your first name.</p>-->
+
 
         <br>
         <input type="text" name="lastName" placeholder="Last Name"
@@ -53,7 +55,36 @@
            ng-show="myform.password.$invalid && myform.password.$touched">Please enter a password with at least 6
           characters.</p>
 
-        <br>
+        <input class="register-input" type="text" name="confirmPassword" placeholder="Confirm"
+               ng-model="ctrl.user.confirmPassword" ng-required="true" ng-minlength="6">
+
+
+        <br/>
+         <h3>Account Type</h3>
+
+        <label>
+          <input type="radio" ng-model="ctrl.user.accountType" value="developer">
+          Developer
+        </label><br/>
+        <label>
+          <input type="radio" ng-model="ctrl.user.accountType" value="student">
+          Student
+        </label><br/>
+        <label>
+          <input type="radio" ng-model="ctrl.user.accountType" value="recruiter">
+          Recruiter
+        </label>
+
+
+        <br/>
+        Profile Blurb:
+        <textarea class="register-input" type="text" name="blurb" placeholder="About me..."
+               ng-model="ctrl.user.profileBlurb" ng-required="true" ng-minlength="6"></textarea>
+
+<br/>
+
+        <input type="file" name="file" id="nameImg" accept="image/*">
+
         <button type="submit" class="btn register-btn" ng-disabled="myform.$invalid">Register!</button>
 
         <p class="register-message" ng-show="message">{{ message }}</p>

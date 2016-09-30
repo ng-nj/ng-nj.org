@@ -1,11 +1,11 @@
-/*
+
 
 (function() {
 
   angular
     .module('ngNjOrg')
   .factory('Authentication',
-  function($rootScope, $firebaseAuth, $firebaseObject, $location, FIREBASE_URL, $log, $state) {
+  function($rootScope, $firebaseAuth, $firebaseObject, $location, FIREBASE_URL, $log, $state, $firebase) {
 
 
     var ref = new Firebase(FIREBASE_URL)
@@ -18,70 +18,6 @@
         var userObj = $firebaseObject(userRef);
       }
     })
-
-
-
-    var favoriteFoods = [
-      'Burgers',
-      'Pizza',
-      'Steak & Potatoes',
-      'Macaroni & Cheese',
-      'Chicken Salad'
-    ];
-    var favoriteVacationDestinations = [
-      'San Francisco, CA',
-      'Paris France',
-      'Swiss Alps',
-      'Orlando, Florida',
-      'Waimanalo Beach, Hawaii',
-      'Sydney, Australia',
-      'Kamalame Cay, The Bahamas',
-      'Playa del Carmen, Mexico',
-      'Peter Island, British Virgin Islands',
-      'Costa Alegre, Mexico',
-      'Gold Coast, Barbados'
-    ]
-    var numbersOfKidsAmounts = [
-      '3',
-      '4',
-      '5',
-      '9',
-      '14!'
-    ]
-    var futureCauseOfDeaths = [
-      'Drowning.',
-      'Being struck by lightening.',
-      'Cancer caused by your cell phone.',
-      'A brain tumor.',
-      'You will be eaten by a zombie.',
-      'A Food-borne illness',
-      'You will be trapped inside of a derailed roller coaster cart',
-      'You will be hit by a bullet accidentally shot at you.',
-    ]
-    var biggestFears = [
-      'Speaking in front of a large crowd',
-      'Getting fired.',
-      'Psycho killers.',
-      'Not reaching your full potential',
-      'Note having enough money',
-      'Never finding your true love.',
-      'Being sad and alone.',
-      'Dieing.',
-      'Being a mediocre programmer your whole life.'
-    ];
-    var skillsNeedToWorkOn = [
-      'Try to be more in touch with your feelings.',
-      'Be more considerate of others.',
-      'Hit the gym more often.',
-      'Try to cook something new.',
-      'Be less selfish.',
-      'Read more books.',
-      'Spend more time with your family.',
-      'Give yourself some time to relax.'
-
-    ]
-    var spiritAnimals = ['Zebroid', 'Liger', 'Dzo', 'Unicorn',
-      'Guinea Bear', 'Frogodile', 'Squirrelnocerous']
 
 
     auth.$onAuth(function(authUser) {
@@ -112,7 +48,6 @@
             console.log("Firebase auth Error: " + error)
           });
 
-        // $rootScope.message = "Welcome " + $rootScope.user.email
 
       },
 
@@ -144,37 +79,31 @@
           $rootScope.message = "Welcome " + user.firstName + ". Thanks for registering!";
 
 
+          var storageRef = $firebase.storage().ref();
+
+          var userImageRef = storageRef.child(registeredUser.uid + '.jpg');
+
+          var file = document.getElementById("nameImg").files; // use the Blob or File API
+          userImageRef.put(file).then(function(snapshot) {
+            console.log('Uploaded a blob or file!');
+          });
+
           var regRef = new Firebase(FIREBASE_URL + 'users')
-            // .child(registeredUser.uid).set({
-            //   // date: Firebase.ServerValue.TIMESTAMP.toDateString(),
-            //   date: new Date().toString(),
-            //   userId: registeredUser.uid,
-            //   firstName: user.firstName,
-            //   lastName: user.lastName,
-            //   email: user.email,
-            //   favoriteFood: favoriteFoods[
-            //     Math.floor(Math.random() * favoriteFoods.length)
-            //     ],
-            //   vacationSpot: favoriteVacationDestinations[
-            //     Math.floor(Math.random() * favoriteVacationDestinations.length)
-            //     ],
-            //   numberOfKids: numbersOfKidsAmounts[
-            //     Math.floor(Math.random() * numbersOfKidsAmounts.length)
-            //     ],
-            //   biggestFear: biggestFears[
-            //     Math.floor(Math.random() * biggestFears.length)
-            //     ],
-            //   causeOfDeath: futureCauseOfDeaths[
-            //     Math.floor(Math.random() * futureCauseOfDeaths.length)
-            //     ]
-              // ,
-              // skillToWorkOn: skillsNeedToWorkOn [
-              //   Math.floor(Math.random() * favoriteFoods.length)
-              //   ],
-              // spiritAnimal: spiritAnimals [
-              //   Math.floor(Math.random() * spiritAnimals.length)
-              //   ]
-            // })
+            .child(registeredUser.uid).set({
+              // date: Firebase.ServerValue.TIMESTAMP.toDateString(),
+              date: new Date().toString(),
+              userId: registeredUser.uid,
+              firstName: user.firstName,
+              lastName: user.lastName,
+              email: user.email,
+              accountType: user.accountType,
+              profileBlurb: user.profileBlurb,
+              imgPath: user.imgPath
+            }).then(function() {
+              console.log('worked!')
+            }, function () {
+              console.log('didnt work...');
+            })
 
 
         });
@@ -190,4 +119,4 @@
 
 
 })()
-*/
+
