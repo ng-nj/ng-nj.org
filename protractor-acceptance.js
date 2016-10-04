@@ -16,9 +16,9 @@ exports.config = {
     'browserName': 'chrome'
   },
 
-  resultJsonOutputFile: 'dist/reports/acceptance-protractor/acceptance-protractor-results.json',
+  // resultJsonOutputFile: 'dist/reports/acceptance-protractor/acceptance-protractor-results.json',
 
-  baseUrl: 'http://localhost:3000',
+  baseUrl: 'http://localhost:3004/#/',
 
   // Spec patterns are relative to the current working directory when
   // protractor is called.
@@ -27,7 +27,7 @@ exports.config = {
   //   'cucumber/*.feature'
   // ],
   // specs: [paths.features + '/**/*.js'],
-  specs: [paths.features + '/**/*.feature'],
+  specs: [paths.features + '/**/footer.feature'],
   // [paths.features + '/**/*.step.js'],
   // specs: ['features/my-component/my-component.feature'],
 
@@ -36,7 +36,7 @@ exports.config = {
     // require: paths.features + './**/*.js'
     // require: paths.features + '/my-component/my-component.js'
     // require: 'features/my-component/my-component.step.js'
-    require: './**/*.step.js',
+    require: './**/footer.step.js',
     // tags: '@dev',
     // profile: false,
     // 'no-source': true

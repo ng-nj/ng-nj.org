@@ -11,7 +11,7 @@
 
 
 #
-    Scenario Outline: Copyright text shows
+    Scenario Outline:  Copyright text shows
       Given I land on the home page
       When The page loads
       Then the footer should contain the text, <myText>

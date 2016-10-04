@@ -17,13 +17,24 @@ var myStepDefinitionsWrapper = function () {
 
   this.Given(/^I land on the home page$/, function (callback) {
 
-    browser.get('http://localhost:3000/#/');
+      console.log('Running Given.')
+    browser.get('http://localhost:3004/#/');
     page = require('./footer.po.js');
+
+    // var whoops = ;
+    // console.log('whoops ' + whoops);
+
+
 
     callback();
   });
 
   this.When(/^The page loads$/, function (callback) {
+      console.log('Running When.')
+    expect(true).to.equal(false);
+    // var gg = "hello";
+    // gg.whoops();
+
     callback();
   });
 
@@ -35,10 +46,17 @@ var myStepDefinitionsWrapper = function () {
     // (2 + 2).should.equal(4);
     // (myText).should.equal('Copyright 2016 WoJ');
 
+
+
+
+
     page.textContainer.getText().then(function(value) {
       // expect(value).to.eventually.equal('hello there, sir');
 
-      console.log('$$$$$$$$$$$ ' + value)
+      // console.log('$$$$$$$$$$$ ' + value)
+
+
+      console.log('Running Then.')
     });
 
 
