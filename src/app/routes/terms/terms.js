@@ -6,5 +6,7 @@
     .controller('TermsController',function ($log) {
       var self = this;
 
+      
+
     })
 })();

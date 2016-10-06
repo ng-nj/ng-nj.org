@@ -5,6 +5,7 @@
     .module('ngNjOrg')
     .controller('AboutUsController', function ($log, AboutMembersRetriever, $firebaseObject, $stateParams) {
       var self = this;
+      
 
       self.title = 'Members List';
       var ref = new Firebase("https://ng-nj.firebaseio.com/");
