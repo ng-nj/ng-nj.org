@@ -18,11 +18,11 @@
     "animate.css": "~3.4.0",
     "angular": "~1.4.2",
     "gsap": "^1.18.2",
-    "firebase": "^2.4.1",
-    "angularfire": "^1.1.4",
     "font-awesome": "^4.5.0",
     "angular-bootstrap": "^1.2.5",
-    "jquery": "^2.2.2"
+    "jquery": "^2.2.2",
+    "firebase": "^3.4.1",
+    "angularfire": "^2.0.2"
   },
   "devDependencies": {
     "angular-mocks": "~1.4.2",
