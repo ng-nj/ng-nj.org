@@ -13,7 +13,12 @@ Looking for contributors! If you are an Angular developer and happen to find you
 ### Setup
 
 First, install dependencies:
-`npm install`
+
+`bower i`
+
+and then
+
+`npm i`
 
 Then update webdriver for running protractor:
 `./node_modules/protractor/bin/webdriver-manager update`
