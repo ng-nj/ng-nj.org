@@ -36,7 +36,7 @@ git config --global user.email "mrdotjim@gmail.com" || exit 1
 # git push origin :gh-pages
 # cd ..
 git push origin :gh-pages
-git commit -am 'commit from jim, france.'
+git commit -am 'commit from paris, france.'
 git subtree push --prefix dist/ origin gh-pages
 
 echo "Deployed successfully."  
