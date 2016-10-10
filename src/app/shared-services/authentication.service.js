@@ -4,12 +4,12 @@
   angular
     .module('ngNjOrg')
     .service('AuthenticationService',
-    function($rootScope, $firebaseAuth, $firebaseObject, $location, FIREBASE_URL, $log, $state, $q) {
+    function($rootScope, $firebaseAuth, $q, $firebaseObject, $location, FIREBASE_URL, $log, $state, $q) {
 
       var self = this;
 
-      self.ref = new Firebase(FIREBASE_URL);
-      self.auth = $firebaseAuth(self.ref);
+      // self.ref = new Firebase(FIREBASE_URL);
+      self.auth = firebase.auth();
       self.loggedInObject = {
         isLoggedIn: false,
         currentUserObject: ""
@@ -19,13 +19,13 @@
 
 
 
-        return self.auth.$authWithPassword({
-          email: user.email,
-          password: user.password
-        }).then(function(registeredUser){
+        return self.auth.signInWithEmailAndPassword(
+          user.email,
+          user.password
+        ).then(function(registeredUser){
 
           $log.log("logged in!");
-          $location.path('/home');
+          // $location.path('/home');
           self.loggedInObject.isLoggedIn = true;
           self.loggedInObject.currentUserObject = registeredUser;
 
@@ -33,19 +33,30 @@
 
           $log.log("getting object for: " + childString);
 
-          self.newref = new Firebase(FIREBASE_URL)
-          var firebaseUserObj = $firebaseObject(self.newref.child(childString))
-            return firebaseUserObj.$loaded().then(function(data) {
-              $log.log("got firebase obj data: " + data.email);
-              $log.log("data like firstName: " + data.firstName);
-              return data;
-            }, function(error) {
 
+          var prom = $q.defer();
+
+
+          // Loading the User's data that just logged in.
+          var firebaseUserObj = firebase.database().ref(childString);
+
+
+            firebaseUserObj.on('value', function(data) {
+              $log.log("data like " + data.key + ": " + data.val().firstName);
+
+
+              $log.log('And ' + data.val().favoriteLanguage)
+              return prom.resolve(data.val());
+            }, function(error) {
+              console.log('There was a database error: ' + error);
             })
 
+          return prom.promise;
+          
+          // console.log('returning user! ' + registeredUser);
+          // return registeredUser;
 
-        })
-          .catch(function(error) {
+        },function(error) {
 
             console.log("Firebase auth Error: " + error);
             var errorString = "" + error;
@@ -54,19 +65,23 @@
             $log.log("error is :" + JSON.stringify(error));
 
             return $q.reject(error);
-          });
-
+          }
+        );
 
       };
 
-      // self.logout = function() {
-      //   self.loggedInObject.isLoggedIn = false;
-      //   self.loggedInObject.currentUserObject = "";
-      //   $location.path('/home');
-      //   // return self.auth.$unauth();
-      //
-      //   // return false;
-      // }
+      self.logout = function() {
+
+        self.auth.signout().then(function() {
+        self.loggedInObject.isLoggedIn = false;
+          self.loggedInObject.currentUserObject = "";
+          $location.path('/home');
+
+        })
+        // return self.auth.$unauth();
+
+        // return false;
+      }
      })
 
 

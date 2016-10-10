@@ -46,14 +46,44 @@
 
         <br>
 
-        <input class="register-input" type="text" name="password" placeholder="Password"
-               ng-model="ctrl.user.password" ng-required="true" ng-minlength="6">
+        <input class="register-input" type="password" name="password" placeholder="Password"
+               ng-model="ctrl.pw" ng-required="true" ng-minlength="6">
 
         <p class="error validation-error"
            ng-show="myform.password.$invalid && myform.password.$touched">Please enter a password with at least 6
           characters.</p>
 
         <br>
+
+        Account Type:
+        <md-radio-group ng-model="ctrl.user.accountType">
+
+          <md-radio-button value="Developer" class="md-primary">Developer</md-radio-button>
+          <md-radio-button value="Recruiter">Recruiter</md-radio-button>
+          <md-radio-button value="Student">Student</md-radio-button>
+
+        </md-radio-group><br>
+
+        <br>
+
+        Current Location:
+        <input type="text" name="currentLocation" placeholder=""
+               ng-model="ctrl.user.currentLocation" ng-required="true" top="150px">
+
+        Favorite Programming Language:
+        <input type="text" name="favoriteLanguage" placeholder=""
+               ng-model="ctrl.user.favoriteLanguage" ng-required="true" top="150px">
+
+        About Me:
+        <textarea class="blurb" cols="25" rows="5" name="about" placeholder="blurb"
+               ng-model="ctrl.user.blurb" ng-required="false" ng-minlength="0"></textarea>
+
+
+        <br>
+        <!--<textarea class="longInput" cols="30" rows="10"></textarea>-->
+        <br>
+
+
         <button type="submit" class="btn register-btn" ng-disabled="myform.$invalid">Register!</button>
 
         <p class="register-message" ng-show="message">{{ message }}</p>

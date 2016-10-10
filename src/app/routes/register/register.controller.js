@@ -8,6 +8,7 @@
 
 
       self.fauxCount = 0;
+      self.pw;
 
       self.login = function () {
         Authentication.login(self.user)
@@ -18,7 +19,7 @@
       self.register = function () {
 
         $log.log("Registering new user!");
-        Authentication.register(self.user)
+        Authentication.register(self.user, self.pw)
       };
 
 

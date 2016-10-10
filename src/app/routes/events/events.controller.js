@@ -3,9 +3,9 @@
 
   angular
     .module('ngNjOrg')
-    .controller('EventsController', function ($log, $firebaseObject, EventFactory) {
+    .controller('EventsController', function ($log, $firebaseObject, EventFactory, $scope) {
       var self = this;
-      self.upcomingEvents = [];
+      self.upcomingEvents = ['g', 'f'];
 
       getUpcomingEvents();
 
@@ -13,42 +13,41 @@
 
         $log.log("getting events");
 
-        var ref = new Firebase("https://ng-nj.firebaseio.com/");
-        self.pulledEvents = $firebaseObject(ref.child('events'));
+        // var ref = new Firebase("https://ng-nj.firebaseio.com/");
+        self.pulledEvents = firebase.database().ref('events');
 
-        self.pulledEvents.$loaded().then(function (data) {
-          angular.forEach(self.pulledEvents, function (value, key) {
+        self.pulledEvents.on('value', function (data) {
+            data.forEach(function(dataEvent) {
+
+              console.log("got the timestamp: " + JSON.stringify(firebase.database.ServerValue.TIMESTAMP));
+          // angular.forEach(self.pulledEvents, function (value, key) {
 
             var event = new EventFactory();
-            $log.log("locationName: " + value.locationName);
-            event.title = key;
-            event.date = value.date;
-            event.startTime = value.startTime;
-            event.endTime = value.endTime;
-            event.locationName = value.locationName;
-            event.location = value.location;
-            event.locationDetails = value.cost;
-            event.cost = value.cost;
-            event.eventLink = value.eventLink;
-            event.hoster = value.hoster;
+            $log.log("locationName: " + dataEvent.val().locationName);
+            event.title = dataEvent.key;
+            event.date = dataEvent.val().date;
+            event.startTime = dataEvent.val().startTime;
+            event.endTime = dataEvent.val().endTime;
+            event.locationName = dataEvent.val().locationName;
+            event.location = dataEvent.val().location;
+            event.locationDetails = dataEvent.val().locationDetails;
+            event.cost = dataEvent.val().cost;
+            event.eventLink = dataEvent.val().eventLink;
+            event.hoster = dataEvent.val().hoster;
 
 
             self.upcomingEvents.push(event);
 
 
-          })
+              // console.log('another event: ' + self.upcomingEvents);
+              // var hackathons = dataEvent.val().hackathons;
+              // $log.log("hackathon is : " + hackathons);
 
+              // $scope.$apply();
+
+            })
 
         });
-
-        $log.log("data is : " + self.pulledEvents);
-
-        var hackathons = self.pulledEvents['hackathons'];
-        $log.log("hackathon is : " + hackathons);
-        $log.log("data is : " + self.pulledEvents.$value);
-
-        var hackathons = self.pulledEvents.events;
-        $log.log("hack: " + hackathons);
 
 
       }

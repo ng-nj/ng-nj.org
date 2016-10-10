@@ -1,23 +1,21 @@
-/*
-
 (function() {
 
   angular
     .module('ngNjOrg')
   .factory('Authentication',
-  function($rootScope, $firebaseAuth, $firebaseObject, $location, FIREBASE_URL, $log, $state) {
+  function($rootScope, $firebaseAuth, $firebaseObject, $location, FIREBASE_URL, $log, $state, AuthenticationService) {
 
 
-    var ref = new Firebase(FIREBASE_URL)
-    var auth = $firebaseAuth(ref);
+    // var ref = new Firebase(FIREBASE_URL)
+    var auth = firebase.auth();
 
-    auth.$onAuth(function(authUser) {
-      // user has been authenticated.
-      if(authUser) {
-        var userRef = new Firebase(FIREBASE_URL + "users/" + authUser.uid);
-        var userObj = $firebaseObject(userRef);
-      }
-    })
+    // auth.$onAuth(function(authUser) {
+    //   // user has been authenticated.
+    //   if(authUser) {
+    //     var userRef = new Firebase(FIREBASE_URL + "users/" + authUser.uid);
+    //     var userObj = $firebaseObject(userRef);
+    //   }
+    // })
 
 
 
@@ -84,23 +82,23 @@
       'Guinea Bear', 'Frogodile', 'Squirrelnocerous']
 
 
-    auth.$onAuth(function(authUser) {
-      if (authUser) {
-        var userRef = new Firebase(FIREBASE_URL + 'users/' +
-          authUser.uid)
-        var userObj = $firebaseObject(userRef)
-
-        $rootScope.currentUser = userObj
-        // $rootScope.currentUser.firstname = authUser.firstname
-      } else {
-        $rootScope.currentUser = false;
-      }
-    })
+    // auth.$onAuth(function(authUser) {
+    //   if (authUser) {
+    //     var userRef = new Firebase(FIREBASE_URL + 'users/' +
+    //       authUser.uid)
+    //     var userObj = $firebaseObject(userRef)
+    //
+    //     $rootScope.currentUser = userObj
+    //     // $rootScope.currentUser.firstname = authUser.firstname
+    //   } else {
+    //     $rootScope.currentUser = false;
+    //   }
+    // })
 
     return {
       login: function(user) {
 
-        auth.$authWithPassword({
+        return AuthenticationService.login({
           email: user.email,
           password: user.password
         }).then(function(registeredUser){
@@ -119,7 +117,7 @@
       logout: function() {
         $rootScope.currentUser = false;
         $location.path('/login');
-        return auth.$unauth();
+        return auth.signOut();
 
       },
 
@@ -127,24 +125,29 @@
         return auth.$requireAuth()
       },
 
-      register: function(user) {
+      register: function(user, pw) {
         $log.log("user's info: " + user.firstName);
 
 
-        auth.$createUser({
-          email: user.email,
-          password: user.password
-        }).then(function(registeredUser) {
+        auth.createUserWithEmailAndPassword(
+          user.email,
+          pw
+        ).then(function(registeredUser) {
 
           console.log("got the registered user! " + registeredUser);
           console.log("got id! " + registeredUser.uid);
-          console.log("got the timestamp: " + Firebase.ServerValue.TIMESTAMP.toString());
+          console.log("got the timestamp: " + JSON.stringify(firebase.database.ServerValue.TIMESTAMP));
 
 
           $rootScope.message = "Welcome " + user.firstName + ". Thanks for registering!";
 
 
-          var regRef = new Firebase(FIREBASE_URL + 'users')
+          var ref = firebase.database().ref('/users/' + registeredUser.uid);
+          ref.set(user).then(function(user) {
+            console.log('DERP!');
+          });
+
+          // var regRef = new Firebase(FIREBASE_URL + 'users')
             // .child(registeredUser.uid).set({
             //   // date: Firebase.ServerValue.TIMESTAMP.toDateString(),
             //   date: new Date().toString(),
@@ -177,6 +180,8 @@
             // })
 
 
+
+
         });
         //   .catch(function(error){
         //   $rootScope.message = "Uh oh! And error occurred: " + error.message;
@@ -189,5 +194,5 @@
   })
 
 
-})()
-*/
+})();
+

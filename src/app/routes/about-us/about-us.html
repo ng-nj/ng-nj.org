@@ -17,25 +17,46 @@
   </div>
   <div>
 
-
     <div class="profile-card">
-      <div>{{vm.currentFirstName}} &nbsp; {{vm.lastName}}</div>
-      <div>First Name: <span ng-bind="vm.currentUserSelected.firstName"></span></div>
-      <div>Jim is the organizer of ng-nj and developer of this website. He enjoys deeveloping Angular web applications
-        and prefers version 1.4 with the Gulp-Angular generator.
-      </div>
-      <br>
-
-      <div>Current Location: Matawan, NJ</div>
-      <div>Hometown: Egg Harbor Township, NJ</div>
-      <div>Fav Angular Version: 1.4 with Javascrip ES5</div>
-      <div>Fav Yeoman Generator: Gulp-Angular</div>
-      <div>Fav Coding Quote: "You just need the describe's full of it's with some beforeEach's"</div>
-
-      <div>Fav Food: {{vm.favoriteFood}}</div>
-      <div>Spirit Animal: {{vm.spiritAnimal}}</div>
+      <div>{{vm.profileDisplay.firstName}}{{" "}}{{vm.profileDisplay.lastName}}</div>
 
       <br>
+
+      <div>Current Location: {{vm.profileDisplay.currentLocation}}</div>
+
+      <br>
+      <div>Account Type: {{vm.profileDisplay.accountType}}</div>
+
+      <br>
+      <div>Favorite Programming Language: {{vm.profileDisplay.favoriteLanguage}}</div>
+
+      <br>
+
+      <div> About me:  <div><div ng-bind="vm.profileDisplay.blurb"></div>
+
+        <br>
+
+        <h1>if {{vm.profileDisplay.authenticatedUid}}</h1>
+        <h1>df {{vm.profileDisplay.currentDisplayedUid}}</h1>
+
+        <br>
+        <div ng-show='vm.profileDisplay.authenticatedUid === vm.profileDisplay.currentDisplayedUid'>
+
+          <button>This is your profile. <a ng-click="vm.profileEditBtnClicked()">Click here</a> to edit it.</button>
+        </div>
+        <br>
+
+        <br>
+        <div ng-show='vm.profileDisplay.authenticatedUid !== vm.profileDisplay.currentDisplayedUid'>
+
+          <p><button ng-click="vm.followUserClicked(vm.profileDisplay)">Follow this user</button></p>
+
+        </div>
+
+      </div></div>
+
+
+      <hr>
 
       <div><a href="http://www.github.com/JimTheMan">github.com/JimTheMan</a></div>
       <div><a href="http://www.twitter.com/webWhizJim">twitter.com/webWhizJim"</a></div>
@@ -43,7 +64,6 @@
       <div></div>
 
     </div>
-
 
     <div class="all-members-section">
       <h2>All Members</h2>
