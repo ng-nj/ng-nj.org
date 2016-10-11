@@ -5,7 +5,7 @@
     .module('ngNjOrg')
     .controller('EventsController', function ($log, $firebaseObject, EventFactory, $scope) {
       var self = this;
-      self.upcomingEvents = ['g', 'f'];
+      self.upcomingEvents = [];
 
       getUpcomingEvents();
 
@@ -19,7 +19,7 @@
         self.pulledEvents.on('value', function (data) {
             data.forEach(function(dataEvent) {
 
-              console.log("got the timestamp: " + JSON.stringify(firebase.database.ServerValue.TIMESTAMP));
+              console.log("got the timestamp: " + dataEvent.key);
           // angular.forEach(self.pulledEvents, function (value, key) {
 
             var event = new EventFactory();
@@ -43,7 +43,7 @@
               // var hackathons = dataEvent.val().hackathons;
               // $log.log("hackathon is : " + hackathons);
 
-              // $scope.$apply();
+              $scope.$apply();
 
             })
 

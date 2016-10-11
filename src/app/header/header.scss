@@ -23,6 +23,7 @@ $header-links-default: #f1f1f1;
   padding-right: 10px;
 }
 
+
 .header-link {
   color:$header-links-default;
   //background-color: transparent
@@ -35,6 +36,18 @@ $header-links-default: #f1f1f1;
   padding-left: 17px;
   padding-right: 17px;
   font-weight: 300;
+}
+
+@media screen and (max-width: 480px) {
+
+  .header-text {
+    font-size: 17px;
+  }
+
+  .header-link {
+    padding: 2px;
+  }
+
 }
 
 .header-link:hover {
@@ -90,4 +103,9 @@ $header-links-default: #f1f1f1;
 .other {
   position: relative;
   z-index: 2;
+}
+
+.small-header {
+  font-size: 6px;
+  padding: 1px;
 }

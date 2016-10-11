@@ -4,11 +4,18 @@
 <div class="login-bar">
   <form name="myform"
         ng-submit="self.login()" novalidate ng-show="!self.userLoggedIn">
-    <a ui-sref="register" class="register-text">Register</a> <span class="white-text">or Sign in: </span>
+    <div layout="row" layout-sm="column">
+    <div>
+
+      <a ui-sref="register" class="register-text">Register</a> <span class="white-text">or Sign in: </span>
     <input type="text" class="a" ng-model="self.loginUser.email" name="username-tf">
+    </div>
+    <div>
     <input type="text" ng-model="self.loginUser.password" name="password-tf">
     <button type="submit">SIGN IN</button>
+      </div>
     <div ng-if="self.feedbackMessage != ''" class="feedback-text"><span ng-bind="self.feedbackMessage"></span></div>
+  </div>
   </form>
 
   <div ng-show="self.userLoggedIn" class="welcome-text">
