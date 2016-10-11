@@ -35,7 +35,7 @@ $header-links-default: #f1f1f1;
   font-size: 18px;
   padding-left: 17px;
   padding-right: 17px;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 @media screen and (max-width: 480px) {
@@ -105,7 +105,7 @@ $header-links-default: #f1f1f1;
   z-index: 2;
 }
 
-.small-header {
-  font-size: 6px;
-  padding: 1px;
+.active-header-link {
+	font-weight: 600;
+
 }
