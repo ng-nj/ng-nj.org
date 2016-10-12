@@ -3,11 +3,23 @@
 
   angular
     .module('ngNjOrg')
-    .controller('EventsController', function ($log, $firebaseObject, EventFactory, $scope) {
+    .controller('EventsController', function ($log, $firebaseObject, EventFactory, $scope, $rootScope) {
       var self = this;
       self.upcomingEvents = [];
 
       getUpcomingEvents();
+
+       function safeApply () {
+        var phase = $rootScope.$$phase;
+        if(phase == '$apply' || phase == '$digest') {
+          // if(fn && (typeof(fn) === 'function')) {
+          //   fn();
+          // }
+        } else {
+          $scope.$apply();
+        }
+      };
+
 
       function getUpcomingEvents() {
 
@@ -43,14 +55,15 @@
               // var hackathons = dataEvent.val().hackathons;
               // $log.log("hackathon is : " + hackathons);
 
-              $scope.$apply();
-
+              safeApply();
             })
 
         });
 
 
       }
+
+
 
 
     })

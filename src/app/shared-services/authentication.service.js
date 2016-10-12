@@ -52,7 +52,7 @@
             })
 
           return prom.promise;
-          
+
           // console.log('returning user! ' + registeredUser);
           // return registeredUser;
 
@@ -72,11 +72,12 @@
 
       self.logout = function() {
 
-        self.auth.signout().then(function() {
+        return self.auth.signOut().then(function() {
         self.loggedInObject.isLoggedIn = false;
           self.loggedInObject.currentUserObject = "";
-          $location.path('/home');
+          // $location.path('/home');
 
+          return;
         })
         // return self.auth.$unauth();
 

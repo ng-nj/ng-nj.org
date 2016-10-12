@@ -32,7 +32,7 @@
 
             console.log('%% user logging...');
 
-        self.feedbackMessage = AuthenticationService.login(self.loginUser)
+         return AuthenticationService.login(self.loginUser)
           .then(function (data) {
 
             console.log('%% user logged in: ' + data);
@@ -41,18 +41,37 @@
             console.log('user logged in: ' + data.favoriteLanguage);
 
 
+            // self.feedbackMessage = '';
+
             self.userLoggedIn = true;
             self.authenticatedUser = data;
+            self.feedbackMessage = '';
 
             $scope.$apply();
+
+            self.loginUser.email = '';
+            self.loginUser.password = '';
+
 
           }, function (error) {
             $log.log("promise rejected!" + error);
             self.feedbackMessage = error;
+            $scope.$apply();
           });
 
         $log.log("feedbackMessage is :" + self.feedbackMessage);
 
+      }
+
+      self.logoutClicked = function() {
+        console.log('trying to logout');
+
+        AuthenticationService.logout().then(function () {
+
+          console.log("We'd and been logged out, son!");
+          self.userLoggedIn = false;
+          $scope.$apply();
+        })
       }
 
     }

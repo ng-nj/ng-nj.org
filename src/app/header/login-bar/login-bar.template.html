@@ -20,6 +20,7 @@
 
   <div ng-show="self.userLoggedIn" class="welcome-text">
     <p>Welcome, <span ng-bind="self.authenticatedUser.firstName"></span></p>
+    <a class="register-text" ng-click="self.logoutClicked()">Logout</a>
   </div>
 
 </div>

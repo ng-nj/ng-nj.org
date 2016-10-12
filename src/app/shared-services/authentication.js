@@ -142,9 +142,23 @@
           $rootScope.message = "Welcome " + user.firstName + ". Thanks for registering!";
 
 
+          console.log('in register, user\'s image is: ' + user.profileImg);
+
+
           var ref = firebase.database().ref('/users/' + registeredUser.uid);
-          ref.set(user).then(function(user) {
+          ref.set(user).then(function(userObj) {
             console.log('DERP!');
+
+            var storageRef = firebase.storage().ref('/profile-img/' + registeredUser.uid + '/profileImg')
+
+            var metadata = {
+              name: 'profileImg.png',
+            };
+
+            storageRef.put(user.profileImg, metadata).then(function(snapshot) {
+              console.log('Uploaded the profile img!');
+            });
+
           });
 
           // var regRef = new Firebase(FIREBASE_URL + 'users')

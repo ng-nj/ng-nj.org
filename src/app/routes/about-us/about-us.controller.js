@@ -8,6 +8,11 @@
 
 
       var auth = firebase.auth();
+      // self.profileImgSrc = "gs://project-537738856427405277.appspot.com/profile-img/eAxrHe1da3aQbehvhKSxbC1Texi2/dfep";
+      //project-537738856427405277.appspot.com/profile-img/eAxrHe1da3aQbehvhKSxbC1Texi2/dfep
+      console.log('trying to set the img source: ' + self.profileImgSrc);
+
+      // self.profileImgSrc = '"https://console.firebase.google.com/project/project-537738856427405277/storage/files/profile-img/" + vm.profileDisplay.currentDisplayedUid '
 
       auth.onAuthStateChanged(function(user) {
         if (user) {
@@ -19,6 +24,33 @@
           // User logged out
         }
       });
+
+      $timeout(function () {
+        console.log('@#trying to get image!');
+
+        var refString = '/profile-img/' + $stateParams['userId'] + '/profileImg';
+
+        console.log('@#ref string is' + refString);
+
+
+        var storageRef = firebase.storage().ref(refString);
+
+
+        storageRef.getDownloadURL().then(function(url) {
+          console.log('@#trying got utl! ' + url);
+          self.profileImgSrc = url;
+
+          $scope.$apply();
+        }).catch(function(error) {
+          // Handle any errors
+          console.log('@#errors getting img url: ' + error);
+        });
+        // storageRef.once(function(thing) {
+        //   console.log('got a thing trying: ' + thing);
+        // })
+
+
+      }, 0);
 
 
       self.profileDisplay = {};
@@ -112,7 +144,7 @@
 
 
 
-        
+
       }
 
 

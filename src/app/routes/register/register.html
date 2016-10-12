@@ -84,7 +84,19 @@
         <br>
 
         Image:
-        <input type="file" name="filename" accept="image/gif, image/jpeg, image/png">
+        <input id="profileImgInput" type="file" name="ctrl.filename" ng-model="rawProfileImg"
+               accept="image/gif, image/jpeg, image/png" onchange='angular.element(this).scope().file_changed(this)'>
+
+        <!--<input id="f" type="file" name="ctrl.a" ng-model="ctrl.b"-->
+               <!--accept="image/gif, image/jpeg, image/png" ng-change='ctrl.g'>-->
+
+
+        <br>
+
+        <img id="register-page-profile-image-preview"/>
+
+        <br>
+
 
         <button type="submit" class="btn register-btn" ng-disabled="myform.$invalid">Register!</button>
 
