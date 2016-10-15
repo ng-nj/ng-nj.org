@@ -1,3 +1,6 @@
+
+[![Build Status](https://travis-ci.org/ng-nj/ng-nj.org.svg?branch=master)](https://travis-ci.org/ng-nj/ng-nj.org)
+
 # ng-nj.org
 
 This is the source code for the webiste of ng-nj is the unofficial AngularJS group for New Jersey, USA. 
