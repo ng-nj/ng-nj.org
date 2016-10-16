@@ -18,18 +18,28 @@
   <div>
 
     <div class="profile-card">
+      <div>User: {{vm.profileDisplay.username}}</div>
+
+      <br>
       <div>{{vm.profileDisplay.firstName}}{{" "}}{{vm.profileDisplay.lastName}}</div>
 
       <br>
 
-      <div>Current Location: {{vm.profileDisplay.currentLocation}}</div>
+      <div>
+        Current Location:
+      <span ng-show="!vm.profileEditMode"> {{vm.profileDisplay.currentLocation}}</span>
+
+      <span ng-show="vm.profileEditMode">
+        <input type=text ng-model='vm.editProfile.currentLocation'/>
+      </span>
+      </div>
 
       <br>
       <div>Account Type: {{vm.profileDisplay.accountType}}</div>
 
       <br>
 
-      <img ng-src='{{vm.profileImgSrc}}'/>
+      <img ng-src='{{vm.profileImgSrc}}'class="profile-img"/>
 
       <br>
       <div>Favorite Programming Language: {{vm.profileDisplay.favoriteLanguage}}</div>
@@ -41,19 +51,28 @@
         <br>
 
         <h1>if {{vm.profileDisplay.authenticatedUid}}</h1>
-        <h1>df {{vm.profileDisplay.currentDisplayedUid}}</h1>
+        <h1>df {{vm.profileDisplay.uid}}</h1>
 
         <br>
-        <div ng-show='vm.profileDisplay.authenticatedUid === vm.profileDisplay.currentDisplayedUid'>
+        <div ng-show='vm.profileDisplay.authenticatedUid === vm.profileDisplay.uid'>
 
-          <button>This is your profile. <a ng-click="vm.profileEditBtnClicked()">Click here</a> to edit it.</button>
+          <button ng-click="vm.profileEditBtnClicked()">This is your profile. Click here to edit it.</button>
         </div>
         <br>
 
         <br>
-        <div ng-show='vm.profileDisplay.authenticatedUid !== vm.profileDisplay.currentDisplayedUid'>
+        <div ng-show='vm.profileDisplay.authenticatedUid !== vm.profileDisplay.uid'>
 
-          <p><button ng-click="vm.followUserClicked(vm.profileDisplay)">Follow this user</button></p>
+          <p ng-show="vm.profileDisplay.isFollowedByCurrentLoggedInUser != true"><button ng-click="vm.followUserClicked(vm.profileDisplay)">Follow this user</button>
+
+         Value of isFollowedBy: {{vm.profileDisplay.isFollowedByCurrentLoggedInUser}}
+          </p>
+
+          <p ng-show="vm.profileDisplay.isFollowedByCurrentLoggedInUser == true">
+          You are following this user.
+          <button ng-click="vm.unfollowUserClicked(vm.profileDisplay)">Unfollow</button></p>
+
+          Value of isFollowedBy: {{vm.profileDisplay.isFollowedByCurrentLoggedInUser}}
 
         </div>
 
@@ -62,9 +81,11 @@
 
       <hr>
 
-      <div><a href="http://www.github.com/JimTheMan">github.com/JimTheMan</a></div>
-      <div><a href="http://www.twitter.com/webWhizJim">twitter.com/webWhizJim"</a></div>
-      <div><a href="http://www.linkedin.com/in/JimTheMan">linkedin.com/in/JimTheMan</a></div>
+      <div><a href="{{vm.profileDisplay.githubLink}}">{{vm.profileDisplay.githubLink}}</a></div>
+      <div><a href="{{vm.profileDisplay.twitterLink}}">{{vm.profileDisplay.twitterLink}}</a></div>
+      <div><a href="{{vm.profileDisplay.linkedInLink}}">{{vm.profileDisplay.linkedInLink}}</a></div>
+      <div><a href="{{vm.profileDisplay.facebookLink}}">{{vm.profileDisplay.facebookLink}}</a></div>
+      <div><a href="{{vm.profileDisplay.personalLink}}">{{vm.profileDisplay.personalLink}}</a></div>
       <div></div>
 
     </div>
@@ -74,7 +95,7 @@
 
       <div ng-repeat="(key, member) in vm.membersList">
 
-        –&nbsp; <a ui-sref="about-us({ userId: key})"><span ng-bind="member.firstName"></span>
+        &nbsp; <a ui-sref="about-us({ userId: key})"><span ng-bind="member.firstName"></span>
         <span ng-bind="member.lastName"></span></a>
 
       </div>

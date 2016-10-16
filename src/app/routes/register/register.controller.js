@@ -38,6 +38,10 @@ $scope.rawProfileImg = '';
 
         // self.user
 
+        self.user.followers = {};
+        self.user.following = {};
+
+
         Authentication.register(self.user, self.pw)
       };
 

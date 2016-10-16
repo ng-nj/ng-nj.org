@@ -24,7 +24,8 @@
           user.password
         ).then(function(registeredUser){
 
-          $log.log("logged in!");
+          $log.log("logged in!" + registeredUser);
+          $log.log("logged in!" + JSON.stringify(registeredUser));
           // $location.path('/home');
           self.loggedInObject.isLoggedIn = true;
           self.loggedInObject.currentUserObject = registeredUser;

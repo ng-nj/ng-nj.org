@@ -1,16 +1,16 @@
 .login-bar {
-  padding: 3px;
-  padding-top:20px;
-  top:3px;
-  border-radius: 7px;
+  //padding: 3px;
+  //padding-top:20px;
+  //top:3px;
+  //border-radius: 7px;
 
 }
 
 .login-bar input {
-  font-size: 13px;
-  margin-top: 25px;
-  padding:3px;
-  border-radius:6px;
+  //font-size: 13px;
+  //margin-top: 25px;
+  //padding:3px;
+  //border-radius:6px;
 }
 
 .register-text {
@@ -39,4 +39,25 @@
 
 .a {
 
+}
+
+.blue-bg {
+  background-color: blue;
+}
+
+.login-panel {
+
+  position: absolute;
+  //right: 10px;
+  float: left;
+  margin-top: 75px;
+  left: 3px;
+  color: white;
+
+  background-color: rgba(12, 78, 178, 1);
+  border: solid;
+  border-width: 2px;
+  border-color: white;
+  border-radius: 10px;
+  z-index: 1;
 }

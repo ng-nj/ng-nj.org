@@ -16,26 +16,50 @@
         <p>Please enter your information.
 
       </div>
-      <fieldset class="center-register">
-        <input type="text" name="firstName" placeholder="First Name" class="md-whiteframe-z1"
-               ng-model="ctrl.user.firstName" ng-required="true" top="50px">
+      <md-content class="center-register">
+
+
+        <md-input-container>
+          <label>Username</label>
+          <span class=input-label></span><input type="text" name="username"
+                                                ng-model="ctrl.user.username" ng-required="true">
+        </md-input-container>
+        <p class="error validation-error register-input"
+           <!--ng-show="myform.email.$invalid && myform.email.$touched">Please enter a valid email address.-->
+           </p>
+
+        <br>
+
+        <md-input-container>
+          <label>Email</label>
+          <span class=input-label></span><input type="email" name="email"
+                                                ng-model="ctrl.user.email" ng-required="true">
+        </md-input-container>
+        <p class="error validation-error register-input"
+           ng-show="myform.email.$invalid && myform.email.$touched">Please enter a valid email address.</p>
+
+        <br>
+
+        <md-input-container>
+          <label>First Name</label>
+          <input type="text" name="firstName" class="md-whiteframe-z1"
+                 ng-model="ctrl.user.firstName" ng-required="true" top="50px">
+        </md-input-container>
 
         <p class="form-control error validationerror"
            ng-show="myform.firstname.$invalid && myform.firstname.$touched">Please enter your first name.</p>
 
         <br>
-        <input type="text" name="lastName" placeholder="Last Name"
-               ng-model="ctrl.user.lastName" ng-required="true" top="150px">
+
+        <md-input-container>
+          <label>Last Name</label>
+          <input type="text" name="lastName"
+                 ng-model="ctrl.user.lastName" ng-required="true" top="150px">
+        </md-input-container>
+
 
         <p class="error validationerror register-input" ng-show="myform.lastname.$invalid &&
         myform.lastname.$touched">Please enter your last name.</p>
-
-        <br>
-        <span class=input-label></span><input type="email" name="email" placeholder="Email"
-                                              ng-model="ctrl.user.email" ng-required="true">
-
-        <p class="error validation-error register-input"
-           ng-show="myform.email.$invalid && myform.email.$touched">Please enter a valid email address.</p>
 
         <br>
 
@@ -46,8 +70,11 @@
 
         <br>
 
-        <input class="register-input" type="password" name="password" placeholder="Password"
-               ng-model="ctrl.pw" ng-required="true" ng-minlength="6">
+        <md-input-container>
+          <label>Password</label>
+          <input class="register-input" type="password" name="password"
+                 ng-model="ctrl.pw" ng-required="true" ng-minlength="6">
+        </md-input-container>
 
         <p class="error validation-error"
            ng-show="myform.password.$invalid && myform.password.$touched">Please enter a password with at least 6
@@ -59,25 +86,31 @@
         <md-radio-group ng-model="ctrl.user.accountType">
 
           <md-radio-button value="Developer" class="md-primary">Developer</md-radio-button>
-          <md-radio-button value="Recruiter">Recruiter</md-radio-button>
-          <md-radio-button value="Student">Student</md-radio-button>
+          <md-radio-button value="Recruiter" class="md-primary">Recruiter</md-radio-button>
+          <md-radio-button value="Student" class="md-primary">Student</md-radio-button>
 
         </md-radio-group><br>
 
         <br>
 
-        Current Location:
+        <md-input-container>
+          <label>Current Location:</label>
+
         <input type="text" name="currentLocation" placeholder=""
                ng-model="ctrl.user.currentLocation" ng-required="true" top="150px">
+</md-input-container>
+          <md-input-container>
+            <label>Favorite Programming Language:</label>
 
-        Favorite Programming Language:
         <input type="text" name="favoriteLanguage" placeholder=""
                ng-model="ctrl.user.favoriteLanguage" ng-required="true" top="150px">
+</md-input-container>
+            <md-input-container>
+              <label>About Me:</label>
 
-        About Me:
         <textarea class="blurb" cols="25" rows="5" name="about" placeholder="blurb"
                ng-model="ctrl.user.blurb" ng-required="false" ng-minlength="0"></textarea>
-
+</md-input-container>
 
         <br>
         <!--<textarea class="longInput" cols="30" rows="10"></textarea>-->
@@ -97,8 +130,44 @@
 
         <br>
 
+        <hr>
 
-        <button type="submit" class="btn register-btn" ng-disabled="myform.$invalid">Register!</button>
+        <h3>Social Profiles</h3>
+
+        <md-input-container>
+          <label>Github</label>
+          <span class=input-label></span><input type="text" name="github"
+                                                ng-model="ctrl.user.githubLink" ng-required="false">
+        </md-input-container>
+
+        <md-input-container>
+          <label>Twitter</label>
+          <span class=input-label></span><input type="text" name="twitter"
+                                                ng-model="ctrl.user.twitterLink" ng-required="false">
+        </md-input-container>
+
+        <md-input-container>
+          <label>Linked in</label>
+          <span class=input-label></span><input type="text" name="linkedInLink"
+                                                ng-model="ctrl.user.linkedInLink" ng-required="false">
+        </md-input-container>
+
+        <md-input-container>
+          <label>Facebook</label>
+          <span class=input-label></span><input type="text" name="facebook-link"
+                                                ng-model="ctrl.user.facebookLink" ng-required="false">
+        </md-input-container>
+
+        <md-input-container>
+          <label>Personal Website</label>
+          <span class=input-label></span><input type="text" name="personal-link"
+                                                ng-model="ctrl.user.personalLink" ng-required="false">
+        </md-input-container>
+
+
+        <!--<button type="submit" class="btn register-btn" ng-disabled="myform.$invalid">Register!</button>-->
+        <md-button type="submit" class="md-raised" ng-disabled="myform.$invalid">Register!</md-button>
+
 
         <p class="register-message" ng-show="message">{{ message }}</p>
 
@@ -107,7 +176,7 @@
           <a ng-href="#/forgotPassword">Forgot your password?</a>
         </p>
 
-      </fieldset>
+      </md-content>
 
 
     </form>
