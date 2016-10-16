@@ -21,15 +21,18 @@
       <div>User: {{vm.profileDisplay.username}}</div>
 
       <br>
-      <div>{{vm.profileDisplay.firstName}}{{" "}}{{vm.profileDisplay.lastName}}</div>
+      Name:
+      <div ng-show="!vm.profileEditMode">{{vm.profileDisplay.firstName}}{{" "}}{{vm.profileDisplay.lastName}}</div>
+      <div ng-show="vm.profileEditMode">
+        <input type=text ng-model='vm.editProfile.firstName'/><input type=text ng-model='vm.editProfile.lastName'/>
+      </div>
 
       <br>
 
       <div>
         Current Location:
-      <span ng-show="!vm.profileEditMode"> {{vm.profileDisplay.currentLocation}}</span>
-
-      <span ng-show="vm.profileEditMode">
+        <span ng-show="!vm.profileEditMode"> {{vm.profileDisplay.currentLocation}}</span>
+        <span ng-show="vm.profileEditMode">
         <input type=text ng-model='vm.editProfile.currentLocation'/>
       </span>
       </div>
@@ -39,54 +42,77 @@
 
       <br>
 
-      <img ng-src='{{vm.profileImgSrc}}'class="profile-img"/>
+      <img ng-src='{{vm.profileImgSrc}}' class="profile-img"/>
 
       <br>
-      <div>Favorite Programming Language: {{vm.profileDisplay.favoriteLanguage}}</div>
-
+      <div ng-show="!vm.profileEditMode">Favorite Programming Language: {{vm.profileDisplay.favoriteLanguage}}</div>
+      <div ng-show="vm.profileEditMode">
+        <input type=text ng-model='vm.editProfile.favoriteLanguage'/>
+      </div>
       <br>
 
-      <div> About me:  <div><div ng-bind="vm.profileDisplay.blurb"></div>
+      <div> About me:
+        <div>
+          <div ng-show="!vm.profileEditMode" ng-bind="vm.profileDisplay.blurb"></div>
+          <div ng-show="vm.profileEditMode">
+            <input type=text ng-model='vm.editProfile.blurb'/>
+          </div>
+          <br>
 
-        <br>
+          <h1>if {{vm.profileDisplay.authenticatedUid}}</h1>
+          <h1>df {{vm.profileDisplay.uid}}</h1>
 
-        <h1>if {{vm.profileDisplay.authenticatedUid}}</h1>
-        <h1>df {{vm.profileDisplay.uid}}</h1>
+          <br>
+          <div ng-show='vm.profileDisplay.authenticatedUid === vm.profileDisplay.uid'>
+            <button ng-click="vm.profileEditBtnClicked()">This is your profile. Click here to edit it.</button>
+          </div>
+          <br>
 
-        <br>
-        <div ng-show='vm.profileDisplay.authenticatedUid === vm.profileDisplay.uid'>
+          <br>
+          <div ng-show='vm.profileDisplay.authenticatedUid !== vm.profileDisplay.uid'>
 
-          <button ng-click="vm.profileEditBtnClicked()">This is your profile. Click here to edit it.</button>
+            <p ng-show="vm.profileDisplay.isFollowedByCurrentLoggedInUser != true">
+              <button ng-click="vm.followUserClicked(vm.profileDisplay)">Follow this user</button>
+
+              Value of isFollowedBy: {{vm.profileDisplay.isFollowedByCurrentLoggedInUser}}
+            </p>
+
+            <p ng-show="vm.profileDisplay.isFollowedByCurrentLoggedInUser == true">
+              You are following this user.
+              <button ng-click="vm.unfollowUserClicked(vm.profileDisplay)">Unfollow</button>
+            </p>
+
+            Value of isFollowedBy: {{vm.profileDisplay.isFollowedByCurrentLoggedInUser}}
+
+          </div>
+
         </div>
-        <br>
-
-        <br>
-        <div ng-show='vm.profileDisplay.authenticatedUid !== vm.profileDisplay.uid'>
-
-          <p ng-show="vm.profileDisplay.isFollowedByCurrentLoggedInUser != true"><button ng-click="vm.followUserClicked(vm.profileDisplay)">Follow this user</button>
-
-         Value of isFollowedBy: {{vm.profileDisplay.isFollowedByCurrentLoggedInUser}}
-          </p>
-
-          <p ng-show="vm.profileDisplay.isFollowedByCurrentLoggedInUser == true">
-          You are following this user.
-          <button ng-click="vm.unfollowUserClicked(vm.profileDisplay)">Unfollow</button></p>
-
-          Value of isFollowedBy: {{vm.profileDisplay.isFollowedByCurrentLoggedInUser}}
-
-        </div>
-
-      </div></div>
+      </div>
 
 
       <hr>
 
-      <div><a href="{{vm.profileDisplay.githubLink}}">{{vm.profileDisplay.githubLink}}</a></div>
-      <div><a href="{{vm.profileDisplay.twitterLink}}">{{vm.profileDisplay.twitterLink}}</a></div>
-      <div><a href="{{vm.profileDisplay.linkedInLink}}">{{vm.profileDisplay.linkedInLink}}</a></div>
-      <div><a href="{{vm.profileDisplay.facebookLink}}">{{vm.profileDisplay.facebookLink}}</a></div>
-      <div><a href="{{vm.profileDisplay.personalLink}}">{{vm.profileDisplay.personalLink}}</a></div>
-      <div></div>
+      <div ng-show="!vm.profileEditMode"><a href="{{vm.profileDisplay.githubLink}}">{{vm.profileDisplay.githubLink}}</a></div>
+      <div ng-show="!vm.profileEditMode" ><a href="{{vm.profileDisplay.twitterLink}}">{{vm.profileDisplay.twitterLink}}</a></div>
+      <div ng-show="!vm.profileEditMode" ><a href="{{vm.profileDisplay.linkedInLink}}">{{vm.profileDisplay.linkedInLink}}</a></div>
+      <div ng-show="!vm.profileEditMode" ><a href="{{vm.profileDisplay.facebookLink}}">{{vm.profileDisplay.facebookLink}}</a></div>
+      <div ng-show="!vm.profileEditMode" ><a href="{{vm.profileDisplay.personalLink}}">{{vm.profileDisplay.personalLink}}</a></div>
+
+      <div ng-show="vm.profileEditMode">
+        <input type=text ng-model='vm.editProfile.githubLink'/>
+      </div>
+      <div ng-show="vm.profileEditMode">
+        <input type=text ng-model='vm.editProfile.twitterLink'/>
+      </div>
+      <div ng-show="vm.profileEditMode">
+        <input type=text ng-model='vm.editProfile.linkedInLink'/>
+      </div>
+      <div ng-show="vm.profileEditMode">
+        <input type=text ng-model='vm.editProfile.facebookLink'/>
+      </div>
+      <div ng-show="vm.profileEditMode">
+        <input type=text ng-model='vm.editProfile.personalLink'/>
+      </div>
 
     </div>
 
