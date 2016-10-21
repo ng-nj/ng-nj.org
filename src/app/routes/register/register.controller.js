@@ -6,6 +6,9 @@
     .controller('RegisterController', function ($log, Authentication, $scope) {
       var self = this;
 
+
+      // $scope.myform['confirm-password'].$setValidity(5 === 5, true)
+
 $scope.rawProfileImg = '';
       self.fauxCount = 0;
       self.pw;

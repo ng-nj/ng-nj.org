@@ -23,10 +23,10 @@
           <label>Username</label>
           <span class=input-label></span><input type="text" name="username"
                                                 ng-model="ctrl.user.username" ng-required="true">
+
         </md-input-container>
-        <p class="error validation-error register-input"
-           <!--ng-show="myform.email.$invalid && myform.email.$touched">Please enter a valid email address.-->
-           </p>
+          <p class="error validation-error register-input"
+            ng-show="myform.username.$invalid && myform.username.$touched">Username is invalid.</p>
 
         <br>
 
@@ -37,13 +37,12 @@
         </md-input-container>
         <p class="error validation-error register-input"
            ng-show="myform.email.$invalid && myform.email.$touched">Please enter a valid email address.</p>
-
         <br>
 
         <md-input-container>
           <label>First Name</label>
           <input type="text" name="firstName" class="md-whiteframe-z1"
-                 ng-model="ctrl.user.firstName" ng-required="true" top="50px">
+                 ng-model="ctrl.user.firstName" top="50px">
         </md-input-container>
 
         <p class="form-control error validationerror"
@@ -54,7 +53,7 @@
         <md-input-container>
           <label>Last Name</label>
           <input type="text" name="lastName"
-                 ng-model="ctrl.user.lastName" ng-required="true" top="150px">
+                 ng-model="ctrl.user.lastName" top="150px">
         </md-input-container>
 
 
@@ -81,6 +80,19 @@
           characters.</p>
 
         <br>
+
+        <md-input-container>
+          <label>Confirm Password</label>
+          <input class="confirm-password" type="password" name="confirm-password"
+                 ng-model="ctrl.confirmPw">
+        </md-input-container>
+
+        <p class="error validation-error"
+           ng-show="myform.password.$invalid && myform.password.$touched">Passwords do not match.
+          characters.</p>
+
+        <br>
+
 
         Account Type:
         <md-radio-group ng-model="ctrl.user.accountType">
