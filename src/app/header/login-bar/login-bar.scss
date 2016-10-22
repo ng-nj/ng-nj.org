@@ -1,63 +1,90 @@
 .login-bar {
-  //padding: 3px;
-  //padding-top:20px;
-  //top:3px;
-  //border-radius: 7px;
-
-}
-
-.login-bar input {
-  //font-size: 13px;
-  //margin-top: 25px;
-  //padding:3px;
-  //border-radius:6px;
+    padding: 3px;
+    padding-top:18px;
+    top:3px;
+    width: 1000px;
+    position: absolute;
+    right: 10px;
+    width: 900px;
 }
 
 .register-text {
-  cursor: pointer;
-  text-decoration: underline;
-  color: white;
+    cursor: pointer;
+    text-decoration: underline;
+    color: white;
 }
 
 .white-text {
-  color: white;
+    color: white;
+    padding-right: 10px;
 }
 
 .feedback-text {
-  color:white;
-  text-align:center;
-  padding-top:5px;
-
-
+    color:white;    
+    position: absolute;
+    right: 50px;
 }
 
 .welcome-text {
-  color:white;
-  text-align:center;
-  padding-top:5px;
-}
-
-.a {
-
+    color:white;
+    text-align:center;
+    padding-top:5px;
 }
 
 .blue-bg {
-  background-color: blue;
+    background-color: blue;
 }
 
 .login-panel {
+    height: 43px;
+    color: white;
+    background-color: rgba(12, 78, 178, 1);
+    z-index: 1;
+    width: 900px;
+}
 
-  position: absolute;
-  //right: 10px;
-  float: left;
-  margin-top: 75px;
-  left: 3px;
-  color: white;
+.login-panel md-input-container{
+    display: -webkit-box !important;
+}
 
-  background-color: rgba(12, 78, 178, 1);
-  border: solid;
-  border-width: 2px;
-  border-color: white;
-  border-radius: 10px;
-  z-index: 1;
+.login_md label{
+    color: #d6d1d1 !important;
+    font-size: 14px;
+    padding-right: 5px;
+}
+
+.login-panel input{
+    border: 1px solid #d6d1d1 !important;
+    height: 20px;
+    margin-top: -3px;
+    border-radius: 2px;
+}
+
+.login-panel button{
+    height: 28px;
+    margin-top: -3px;
+    margin-left: 15px;
+    min-height: 22px;
+    width: 80px !important; 
+    min-width: 80px;
+    width: 80px;
+    color: white !important;
+    background-color: rgba(0, 0, 0, 0.44) !important;
+    position: relative;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    border: none;
+}
+
+.login-panel button span{
+    position: absolute;
+    top: -2px;
+    left: 15px;
+}
+
+.login-panel>form>div {
+    height: 20px !important;
+}
+
+.login-panel md-input-container .md-input{
+    color: white !important;
 }

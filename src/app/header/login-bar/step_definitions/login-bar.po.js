@@ -13,9 +13,6 @@ var LoginBar = function() {
   // this.passwordField = element(by.name('password-tf'));
   // this.welcomeMessage = element(by.name('welcome-text'));
   this.usernameField = element(by.css('.a'));
-
-
-
 };
 
 

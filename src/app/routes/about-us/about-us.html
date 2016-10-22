@@ -24,7 +24,8 @@
       Name:
       <div ng-show="!vm.profileEditMode">{{vm.profileDisplay.firstName}}{{" "}}{{vm.profileDisplay.lastName}}</div>
       <div ng-show="vm.profileEditMode">
-        <input type=text ng-model='vm.editProfile.firstName'/><input type=text ng-model='vm.editProfile.lastName'/>
+        <input type='text' ng-model='vm.editProfile.firstName' ng-init='vm.editProfile.firstName=vm.profileDisplay.firstName'/>
+        <input type=text ng-model='vm.editProfile.lastName' ng-init='vm.editProfile.lastName=vm.profileDisplay.lastName'/>
       </div>
 
       <br>
@@ -33,21 +34,32 @@
         Current Location:
         <span ng-show="!vm.profileEditMode"> {{vm.profileDisplay.currentLocation}}</span>
         <span ng-show="vm.profileEditMode">
-        <input type=text ng-model='vm.editProfile.currentLocation'/>
+        <input type=text ng-model='vm.editProfile.currentLocation' ng-init='vm.editProfile.currentLocation=vm.profileDisplay.currentLocation'/>
       </span>
       </div>
 
       <br>
-      <div>Account Type: {{vm.profileDisplay.accountType}}</div>
+      Account Type:
+      <span ng-show="!vm.profileEditMode">{{vm.profileDisplay.accountType}}</span>
+      <md-radio-group ng-show="vm.profileEditMode" ng-model="ctrl.user.accountType" ng-init='ctrl.user.accountType=vm.profileDisplay.accountType'>
+
+        <md-radio-button value="Developer" class="md-primary">Developer</md-radio-button>
+        <md-radio-button value="Recruiter" class="md-primary">Recruiter</md-radio-button>
+        <md-radio-button value="Student" class="md-primary">Student</md-radio-button>
+
+      </md-radio-group>
+      <br>
 
       <br>
 
+      <!--TODO - allow users to edit their profile image.-->
       <img ng-src='{{vm.profileImgSrc}}' class="profile-img"/>
+
 
       <br>
       <div ng-show="!vm.profileEditMode">Favorite Programming Language: {{vm.profileDisplay.favoriteLanguage}}</div>
       <div ng-show="vm.profileEditMode">
-        <input type=text ng-model='vm.editProfile.favoriteLanguage'/>
+        <input type=text ng-model='vm.editProfile.favoriteLanguage' ng-init='vm.editProfile.favoriteLanguage=vm.profileDisplay.favoriteLanguage'/>
       </div>
       <br>
 
@@ -55,7 +67,7 @@
         <div>
           <div ng-show="!vm.profileEditMode" ng-bind="vm.profileDisplay.blurb"></div>
           <div ng-show="vm.profileEditMode">
-            <input type=text ng-model='vm.editProfile.blurb'/>
+            <input type=text ng-model='vm.editProfile.blurb' ng-init='vm.editProfile.blurb=vm.profileDisplay.blurb'/>
           </div>
           <br>
 
@@ -63,8 +75,14 @@
           <h1>df {{vm.profileDisplay.uid}}</h1>
 
           <br>
-          <div ng-show='vm.profileDisplay.authenticatedUid === vm.profileDisplay.uid'>
+          <div ng-show='vm.profileDisplay.authenticatedUid === vm.profileDisplay.uid && !vm.profileEditMode'>
             <button ng-click="vm.profileEditBtnClicked()">This is your profile. Click here to edit it.</button>
+          </div>
+
+          <div ng-show="vm.profileEditMode">
+            <md-button ng-click="vm.editProfileSubmitBtnClicked()">Save Profile Changes</md-button>
+            <md-button ng-click="vm.editProfileCancelBtnClicked()">Cancel</md-button>
+
           </div>
           <br>
 
@@ -99,19 +117,19 @@
       <div ng-show="!vm.profileEditMode" ><a href="{{vm.profileDisplay.personalLink}}">{{vm.profileDisplay.personalLink}}</a></div>
 
       <div ng-show="vm.profileEditMode">
-        <input type=text ng-model='vm.editProfile.githubLink'/>
+        <input type=text ng-model='vm.editProfile.githubLink' ng-init='vm.editProfile.githubLink=vm.profileDisplay.githubLink'/>
       </div>
       <div ng-show="vm.profileEditMode">
-        <input type=text ng-model='vm.editProfile.twitterLink'/>
+        <input type=text ng-model='vm.editProfile.twitterLink' ng-init='vm.editProfile.twitterLink=vm.profileDisplay.twitterLink'/>
       </div>
       <div ng-show="vm.profileEditMode">
-        <input type=text ng-model='vm.editProfile.linkedInLink'/>
+        <input type=text ng-model='vm.editProfile.linkedInLink' ng-init='vm.editProfile.linkedInLink=vm.profileDisplay.linkedInLink'/>
       </div>
       <div ng-show="vm.profileEditMode">
-        <input type=text ng-model='vm.editProfile.facebookLink'/>
+        <input type=text ng-model='vm.editProfile.facebookLink' ng-init='vm.editProfile.facebookLink=vm.profileDisplay.facebookLink'/>
       </div>
       <div ng-show="vm.profileEditMode">
-        <input type=text ng-model='vm.editProfile.personalLink'/>
+        <input type=text ng-model='vm.editProfile.personalLink' ng-init='vm.editProfile.personalLink=vm.profileDisplay.personalLink'/>
       </div>
 
     </div>

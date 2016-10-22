@@ -1,80 +1,57 @@
 ;(function () {
-  'use strict';
+    'use strict';
 
-  angular
+    angular
     .module('ngNjOrg')
     .directive('loginBar', loginBar);
 
-  /** @ngInject */
-  function loginBar() {
-    var directive = {
-      restrict: '',
-      templateUrl: 'app/header/login-bar/login-bar.template.html',
-      scope: {},
-      controller: LoginBarController,
-      controllerAs: 'self',
-      bindToController: true
-    };
-
-    return directive;
-
     /** @ngInject */
-    function LoginBarController(AuthenticationService, $log, $scope) {
-    // function LoginBarController($log) {
-      var self = this;
-      self.loginUser = '';
-      self.feedbackMessage = '';
-      self.authenticatedUser = "";
-      self.userLoggedIn = false;
+    function loginBar() {
+        var directive = {
+            restrict: '',
+            templateUrl: 'app/header/login-bar/login-bar.template.html',
+            scope: {},
+            controller: LoginBarController,
+            controllerAs: 'self',
+            bindToController: true
+        };
 
-      self.login = function () {
+        return directive;
 
-
-            console.log('%% user logging...');
-
-         return AuthenticationService.login(self.loginUser)
-          .then(function (data) {
-
-            console.log('%% user logged in: ' + data);
-            console.log('user logged in: ' + data.firstName);
-            console.log('user logged in: ' + data.lastName);
-            console.log('user logged in: ' + data.favoriteLanguage);
-
-
-            // self.feedbackMessage = '';
-
-            self.userLoggedIn = true;
-            self.authenticatedUser = data;
+        /** @ngInject */
+        function LoginBarController(AuthenticationService, $log, $scope) {
+            var self = this;
+            self.loginUser = '';
             self.feedbackMessage = '';
+            self.authenticatedUser = "";
+            self.userLoggedIn = false;
 
-            $scope.$apply();
+            self.login = function () {
+                return AuthenticationService.login(self.loginUser).then(function (data) {
+                    self.userLoggedIn = true;
+                    self.authenticatedUser = data;
+                    self.feedbackMessage = '';           
+                    self.loginUser.email = '';
+                    self.loginUser.password = '';
+                    $scope.$apply();
+                }, function (error) {
+                    self.feedbackMessage = error;
+                    $scope.$apply();
+                });
+            }
 
-            self.loginUser.email = '';
-            self.loginUser.password = '';
+            self.logoutClicked = function() {
+                AuthenticationService.logout().then(function () {
+                    self.userLoggedIn = false;
+                    $scope.$apply();
+                })
+            }
 
-
-          }, function (error) {
-            $log.log("promise rejected!" + error);
-            self.feedbackMessage = error;
-            $scope.$apply();
-          });
-
-        $log.log("feedbackMessage is :" + self.feedbackMessage);
-
-      }
-
-      self.logoutClicked = function() {
-        console.log('trying to logout');
-
-        AuthenticationService.logout().then(function () {
-
-          console.log("We'd and been logged out, son!");
-          self.userLoggedIn = false;
-          $scope.$apply();
-        })
-      }
-
+            self.back_to_login = function() {
+                self.feedbackMessage = "";
+                self.loginUser.email = "";
+                self.loginUser.password = "";
+            }
+        }
     }
-  }
-
 })();

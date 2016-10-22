@@ -6,8 +6,13 @@
     .controller('AboutUsController', function ($log, AboutMembersRetriever, $firebaseObject, $stateParams, $scope, $timeout) {
       var self = this;
 
-      self.profileEditMode = false;
       self.auth = firebase.auth();
+
+      if (firebase.auth().currentUser != null) {
+
+      self.profileEditMode = firebase.auth().currentUser.uid == $stateParams['userId'];
+      }
+
       // self.profileImgSrc = "gs://project-537738856427405277.appspot.com/profile-img/eAxrHe1da3aQbehvhKSxbC1Texi2/dfep";
       //project-537738856427405277.appspot.com/profile-img/eAxrHe1da3aQbehvhKSxbC1Texi2/dfep
       console.log('trying to set the img source: ' + self.profileImgSrc);
@@ -147,7 +152,6 @@
 
 
 
-
       self.profileEditBtnClicked = function () {
         // TODO - Change DB values to text inputs and then persit to DB on submit.
 
@@ -158,6 +162,26 @@
 
 
       self.editProfileSubmitBtnClicked = function() {
+
+
+        self.profileEditMode = false;
+
+        // Update the user's object in the database to the values that he entered.
+        var updateProfileRef = firebase.database().ref('/users/' + firebase.auth().currentUser.uid);
+
+
+
+        var updateObj = {firstName: self.editProfile.firstName};
+
+
+        updateProfileRef.update(updateObj).then(function() {
+          console.log('got a snapshot');
+          console.log('got a snapshot key');
+        }, function() {
+          console.log('editing profile save failed!')
+        });
+
+
         console.log('editing profile submit: ' + self.profileEditMode);
 
       };

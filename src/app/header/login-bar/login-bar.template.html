@@ -1,45 +1,29 @@
-<!--<div class="branding"><a ng-href="#/login">Psychic Reader</a></div>-->
-
-
 <div class="login-bar">
-
-  <md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding class="login-panel">
-
-  <form name="myform"
-        ng-submit="self.login()" novalidate ng-show="!self.userLoggedIn">
-    <div layout="row">
-
-      <div layout="column">
-      <a ui-sref="register" class="register-text">Register &nbsp;</a>
-        <span class="white-text"> or Sign in: </span>
-      </div>
-<br>
-      <br>
-
-      <br>
-      <md-input-container>
-        <label>Username (or Email)</label>
-        <input type="text" ng-model="self.loginUser.email" name="username-tf">
-        <!--<input ng-model="user.title">-->
-      </md-input-container>
-
-      <md-input-container>
-
-        <label>Password</label>
-    <input type="password" ng-model="self.loginUser.password" name="password-tf">
-        </md-input-container>
-      <md-button type="submit" class="md-raised">SIGN IN</md-button>
-
-      <!--<button type="submit">SIGN IN</button>-->
-      </div>
-    <div ng-if="self.feedbackMessage != ''" class="feedback-text"><span ng-bind="self.feedbackMessage"></span></div>
-  </form>
-
-  <div ng-show="self.userLoggedIn" class="welcome-text">
-    <p>Welcome, <span ng-bind="self.authenticatedUser.firstName"></span></p>
-    <a class="register-text" ng-click="self.logoutClicked()">Logout</a>
-  </div>
-
+    <md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding class="login-panel">
+        <form name="myform"  ng-submit="self.login()" novalidate ng-show="!self.userLoggedIn">
+            <div layout="row" ng-if="self.feedbackMessage == ''">
+                <div layout="column">        
+                    <span class="white-text"> <a ui-sref="register" class="register-text">Register</a>  or Sign in: </span>
+                </div>
+                <md-input-container class="login_md">
+                    <label>Username(or Email):</label>
+                    <input type="text" ng-model="self.loginUser.email" name="username-tf">
+                </md-input-container>
+                <md-input-container class="login_md">
+                    <label>Password:</label>
+                    <input type="password" ng-model="self.loginUser.password" name="password-tf">
+                </md-input-container>
+                <md-button type="submit" class="md-raised">SIGN IN</md-button>
+            </div>
+            <div ng-if="self.feedbackMessage != ''" class="feedback-text">
+                <span ng-bind="self.feedbackMessage"></span>
+                <button ng-click="self.back_to_login()"> Back </button>
+            </div>
+        </form>
+        <div ng-show="self.userLoggedIn" class="welcome-text">
+            <p>Welcome, <span ng-bind="self.authenticatedUser.firstName"></span></p>
+            <div class="register-text" ng-click="self.logoutClicked()">Logout</div>
+        </div>
     </md-content>
 </div>
 
