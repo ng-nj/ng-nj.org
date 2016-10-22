@@ -1,11 +1,9 @@
 .login-bar {
     padding: 3px;
     padding-top:18px;
-    top:3px;
-    width: 1000px;
     position: absolute;
-    right: 10px;
-    width: 900px;
+    left: 10px;    
+    width: 90%;
 }
 
 .register-text {
@@ -22,7 +20,7 @@
 .feedback-text {
     color:white;    
     position: absolute;
-    right: 50px;
+    left: 10px;
 }
 
 .welcome-text {
@@ -40,7 +38,7 @@
     color: white;
     background-color: rgba(12, 78, 178, 1);
     z-index: 1;
-    width: 900px;
+    overflow-y: hidden;
 }
 
 .login-panel md-input-container{
@@ -87,4 +85,34 @@
 
 .login-panel md-input-container .md-input{
     color: white !important;
+}
+
+@media only screen and (max-width: 900px) {
+    .login-panel {
+        height: 80px;
+    }
+
+    .login_md {
+        position: absolute;
+        top: 40px;
+    }
+
+    .login_md.pwd{
+        left: 340px;
+    }
+
+    .login_md.email{
+        left: -5px;    
+    }
+}   
+
+@media only screen and (max-width: 680px) {
+    .login_md.pwd{
+        left: -5px;
+        top: 80px;
+    }
+
+    .login-panel {
+        height: 120px;
+    }
 }
