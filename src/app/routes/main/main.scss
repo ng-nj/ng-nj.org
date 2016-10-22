@@ -1,7 +1,7 @@
 .video-container {
   background-color: rgba(12, 78, 178, 1);
   color:#E6E6E6;
-  padding-top:140px;
+  margin-top:140px;
   overflow-y:auto;
 }
 
@@ -56,13 +56,13 @@
 
 @media only screen and (max-width: 900px) {
   .video-container {
-    padding-top: 200px;
+    margin-top: 200px;
   }
 }
 
 
 @media only screen and (max-width: 680px) {
   .video-container {
-    padding-top: 220px;
+    margin-top: 220px;
   }
 }
