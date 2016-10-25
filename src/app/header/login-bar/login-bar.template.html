@@ -2,7 +2,7 @@
     <md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding class="login-panel">
         <form name="myform"  ng-submit="self.login()" novalidate ng-show="!self.userLoggedIn">
             <div layout="row" ng-if="self.feedbackMessage == ''" style="position: relative;">
-                <div layout="column">        
+                <div layout="column">
                     <span class="white-text"> <a ui-sref="register" class="register-text">Register</a>  or Sign in: </span>
                 </div>
                 <md-input-container class="login_md email">
@@ -14,12 +14,15 @@
                     <input type="password" ng-model="self.loginUser.password" name="password-tf">
                 </md-input-container>
                 <md-button type="submit" class="md-raised">SIGN IN</md-button>
+
+
             </div>
             <div ng-if="self.feedbackMessage != ''" class="feedback-text">
                 <span ng-bind="self.feedbackMessage"></span>
                 <button ng-click="self.back_to_login()"> Back </button>
             </div>
         </form>
+              <md-button class="derp" type="something" ng-click="self.googleSignInClicked()">Google Sign In</md-button>
         <div ng-show="self.userLoggedIn" class="welcome-text">
             <p>Welcome, <span ng-bind="self.authenticatedUser.firstName"></span></p>
             <div class="register-text" ng-click="self.logoutClicked()">Logout</div>
