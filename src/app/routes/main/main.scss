@@ -24,6 +24,7 @@
   padding: 13px;
   justify-content: center;
   text-align: center;
+  align-items: center;
 }
 
 .card-text {
@@ -44,7 +45,7 @@
   width: 100% !important;
 }
 
-.fogot_password .card{  
+.fogot_password .card{
   max-width: 800px !important;
   width: 800px;
   height: 200px;
@@ -52,7 +53,7 @@
 }
 
 @media only screen and (max-width: 900px) {
-  .video-container {    
+  .video-container {
     margin-top: 170px;
   }
 }

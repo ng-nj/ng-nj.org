@@ -129,8 +129,12 @@
         <br>
 
         Image:
+
+        <md-input-container>
         <input id="profileImgInput" type="file" name="ctrl.filename" ng-model="rawProfileImg"
                accept="image/gif, image/jpeg, image/png" onchange='angular.element(this).scope().file_changed(this)'>
+
+        </md-input-container>
 
         <!--<input id="f" type="file" name="ctrl.a" ng-model="ctrl.b"-->
                <!--accept="image/gif, image/jpeg, image/png" ng-change='ctrl.g'>-->

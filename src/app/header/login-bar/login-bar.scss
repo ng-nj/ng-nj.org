@@ -2,8 +2,8 @@
     padding: 3px;
     padding-top:18px;
     position: absolute;
-    left: 10px;    
-    width: 90%;
+    left: 10px;
+    width: 99%;
 }
 
 .register-text {
@@ -18,7 +18,7 @@
 }
 
 .feedback-text {
-    color:white;    
+    color:white;
     position: absolute;
     left: 10px;
 }
@@ -34,7 +34,7 @@
 }
 
 .login-panel {
-    height: 43px;
+    height: 100px;
     color: white;
     background-color: rgba(12, 78, 178, 1);
     z-index: 1;
@@ -63,7 +63,7 @@
     margin-top: -3px;
     margin-left: 15px;
     min-height: 22px;
-    width: 80px !important; 
+    width: 80px !important;
     min-width: 80px;
     width: 80px;
     color: white !important;
@@ -89,7 +89,7 @@
 
 @media only screen and (max-width: 900px) {
     .login-panel {
-        height: 80px;
+        //height: 80px;
     }
 
     .login_md {
@@ -102,9 +102,9 @@
     }
 
     .login_md.email{
-        left: -5px;    
+        left: -5px;
     }
-}   
+}
 
 @media only screen and (max-width: 680px) {
     .login_md.pwd{
@@ -113,11 +113,22 @@
     }
 
     .login-panel {
-        height: 120px;
+        height: 170px;
     }
 
     .feedback-text button{
         top: 20px;
-        left: -15px;        
+        left: -15px;
     }
+}
+
+.md-icon-button md-icon {
+  height:90%; // or 80%-90%
+  width:90%; // or 80%-90%
+}
+.md-button.md-icon-button.md-mini {
+  margin: 0 0.3rem;
+  height: 2.8rem;
+  line-height: 2.8rem;
+  width: 2.8rem;
 }

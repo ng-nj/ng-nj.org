@@ -1,31 +1,56 @@
 <div class="login-bar">
     <md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding class="login-panel">
-        <form name="myform"  ng-submit="self.login()" novalidate ng-show="!self.userLoggedIn">
+        <form name="myform"  ng-submit="self.login()" novalidate ng-show="!self.userLoggedIn" flex>
             <div layout="row" ng-if="self.feedbackMessage == ''" style="position: relative;">
-                <div layout="column">
-                    <span class="white-text"> <a ui-sref="register" class="register-text">Register</a>  or Sign in: </span>
+
+              <div layout="column">
+                    <div layout="row" class="white-text"> <a ui-sref="register" class="register-text">Register</a>  or Sign in: </div>
                 </div>
-                <md-input-container class="login_md email">
+
+              <div layout="row">
+
+              <md-input-container class="login_md email">
                     <label>Username(or Email):</label>
                     <input type="text" ng-model="self.loginUser.email" name="username-tf">
                 </md-input-container>
-                <md-input-container class="login_md pwd">
+
+              <md-input-container class="login_md pwd">
                     <label>Password:</label>
                     <input type="password" ng-model="self.loginUser.password" name="password-tf">
                 </md-input-container>
+              </div>
+
+
+              <div layout="row">
                 <md-button type="submit" class="md-raised">SIGN IN</md-button>
+              </div>
+
+              <md-button class="derp" type="something" ng-click="self.googleSignInClicked()"> <i class="fa fa-github-square"></i> f</md-button>
+              <md-button class="derp" type="something" ng-click="self.googleSignInClicked()"> <i class="fa fa-twitter-square"></i> f</md-button>
+              <md-button class="derp" type="something" ng-click="self.googleSignInClicked()"> <i class="fa fa-google"></i> f</md-button>
+              <md-button class="derp" type="something" ng-click="self.googleSignInClicked()"> <i class="fa fa-facebook-square"></i> f</md-button>
+              <md-button class="derp" type="something" ng-click="self.googleSignInClicked()"> <i class="fa fa-linkedin-square"></i> f</md-button>
+
+
+              <a ui-sref="register" class="register-text">forgot passoword?</a>
+              <a ui-sref="register" class="register-text">forgot username/email?</a>
 
 
             </div>
+        </form>
+          <div layout="row">
+
             <div ng-if="self.feedbackMessage != ''" class="feedback-text">
                 <span ng-bind="self.feedbackMessage"></span>
                 <button ng-click="self.back_to_login()"> Back </button>
             </div>
-        </form>
-              <md-button class="derp" type="something" ng-click="self.googleSignInClicked()">Google Sign In</md-button>
+          </div>
+
         <div ng-show="self.userLoggedIn" class="welcome-text">
             <p>Welcome, <span ng-bind="self.authenticatedUser.firstName"></span></p>
             <div class="register-text" ng-click="self.logoutClicked()">Logout</div>
+
+
         </div>
     </md-content>
 </div>
