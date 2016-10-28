@@ -23,6 +23,14 @@
   max-width: 600px;
 }
 
+.all-members-section a:active {
+  color: white;
+}
+
+.white-text a.active{
+  color: white;
+}
+
 .all-members-section {
   padding-top:50px;
   background-color: rgba(12, 78, 178, 1);
@@ -30,6 +38,7 @@
   padding-bottom:40px;
   padding-left:25px;
   padding-right:25px;
+  height: auto;
 }
 
 .make-an-account-text {
@@ -39,12 +48,8 @@
   padding-bottom: 20px;
 }
 
-.video-container {
-  background-color: rgba(12, 78, 178, 1);
-  color:#E6E6E6;
-}
 
-.card {
+.about-us-card {
   background-color: #f1f1f1;
   border-radius: 5px;
   padding:5px;

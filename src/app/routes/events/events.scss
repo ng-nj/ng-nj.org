@@ -6,12 +6,16 @@
   padding-bottom: 20px;
   padding-left: 20px;
   padding-right: 20px;
-  padding-top:30px;
-  margin-top: 20px;
+  padding-top:5px;
+  margin-top: 30px;
   margin-right: 5%;
   margin-left: 5%;
+  margin-bottom: 15px;
 }
 
+.value-highlight {
+  color: #337ab7;
+}
 
 .frame-padding {
   margin-top:15px;
@@ -30,4 +34,22 @@
 .header-text-events {
   padding-left: 40px;
   text-align:center;
+}
+
+.date-text {
+  margin-bottom: 15px;
+  margin-top: 10px;
+  color: black;
+}
+
+.details-block {
+  color: black;
+}
+
+.card-title {
+  margin-left: 10px;
+}
+
+.visit-now-btn {
+  margin-top: 20px;
 }

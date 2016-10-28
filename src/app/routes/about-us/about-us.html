@@ -14,7 +14,13 @@
     </div>
 
     <div class="about-us-header">
-      <h1>Members</h1>
+      <h1>
+        <div ng-show="!vm.profileEditMode">{{vm.profileDisplay.firstName | filter:propernamerizer}}{{" " | filter:propernamerizer}}{{vm.profileDisplay.lastName}}</div>
+        <div ng-show="vm.profileEditMode">
+          <input type='text' ng-model='vm.editProfile.firstName' ng-init='vm.editProfile.firstName=vm.profileDisplay.firstName'/>
+          <input type=text ng-model='vm.editProfile.lastName' ng-init='vm.editProfile.lastName=vm.profileDisplay.lastName'/>
+        </div>
+      </h1>
     </div>
     <div>
 
@@ -22,14 +28,14 @@
         <div>User: {{vm.profileDisplay.username}}</div>
 
         <br>
-        Name:
-        <div ng-show="!vm.profileEditMode">{{vm.profileDisplay.firstName}}{{" "}}{{vm.profileDisplay.lastName}}</div>
-        <div ng-show="vm.profileEditMode">
-          <input type='text' ng-model='vm.editProfile.firstName' ng-init='vm.editProfile.firstName=vm.profileDisplay.firstName'/>
-          <input type=text ng-model='vm.editProfile.lastName' ng-init='vm.editProfile.lastName=vm.profileDisplay.lastName'/>
-        </div>
+        <!--Name:-->
+        <!--<div ng-show="!vm.profileEditMode">{{vm.profileDisplay.firstName}}{{" "}}{{vm.profileDisplay.lastName}}</div>-->
+        <!--<div ng-show="vm.profileEditMode">-->
+          <!--<input type='text' ng-model='vm.editProfile.firstName' ng-init='vm.editProfile.firstName=vm.profileDisplay.firstName'/>-->
+          <!--<input type=text ng-model='vm.editProfile.lastName' ng-init='vm.editProfile.lastName=vm.profileDisplay.lastName'/>-->
+        <!--</div>-->
 
-        <br>
+        <!--<br>-->
 
         <div>
           Current Location:
@@ -72,8 +78,8 @@
             </div>
             <br>
 
-            <h1>if {{vm.profileDisplay.authenticatedUid}}</h1>
-            <h1>df {{vm.profileDisplay.uid}}</h1>
+            <!--<h1>if {{vm.profileDisplay.authenticatedUid}}</h1>-->
+            <!--<h1>df {{vm.profileDisplay.uid}}</h1>-->
 
             <br>
             <div ng-show='vm.profileDisplay.authenticatedUid === vm.profileDisplay.uid && !vm.profileEditMode'>
@@ -138,7 +144,7 @@
       <div class="all-members-section">
         <h2>All Members</h2>
 
-        <div ng-repeat="(key, member) in vm.membersList">
+        <div ng-repeat="(key, member) in vm.membersList" class="white-text">
 
           &nbsp; <a ui-sref="about-us({ userId: key})"><span ng-bind="member.firstName"></span>
           <span ng-bind="member.lastName"></span></a>

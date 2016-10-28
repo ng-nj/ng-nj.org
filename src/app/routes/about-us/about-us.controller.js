@@ -6,6 +6,7 @@
     .controller('AboutUsController', function ($log, AboutMembersRetriever, $firebaseObject, $stateParams, $scope, $timeout) {
       var self = this;
 
+
       self.auth = firebase.auth();
 
       if (firebase.auth().currentUser != null) {
@@ -101,6 +102,7 @@
             self.profileDisplay = member.val();
 
             self.profileDisplay.uid = member.key;
+            self.profileDisplay.isFollowedByCurrentLoggedInUser = false;
             // self.profileDisplay.firstName = member.val().firstName;
             // self.profileDisplay.lastName = member.val().lastName;
             // self.profileDisplay.currentLocation = member.val().currentLocation
@@ -197,6 +199,12 @@
 
       self.unfollowUserClicked = function (profileDisplay) {
 
+        var profileUserRef = firebase.database().ref('/users/' + profileDisplay.uid + '/followers/' + firebase.auth().currentUser.uid);
+        profileUserRef.remove(function (error) {
+          console.log('unfollowing finished ' + error);
+          self.isFollowedByCurrentLoggedInUser = false;
+        });
+
       };
 
       self.followUserClicked = function (profileDisplay) {
@@ -223,6 +231,12 @@
         var authenticatedUserRef = firebase.database().ref('/users/' + self.auth.currentUser.uid + '/following/');
         authenticatedUserRef.update(obj, function (error) {
           console.log('ok ' + error);
+
+          if (error == null) {
+            self.profileDisplay.isFollowedByCurrentLoggedInUser = true;
+
+            console.log('I\'m here : ' + self.profileDisplay.isFollowedByCurrentLoggedInUser);
+          }
         });
 
 

@@ -1,6 +1,6 @@
 <div layout="vertical" layout-fill>
 
-  <md-content layout-fill class="video-container">
+  <md-content class="video-container">
 
     <div class="md-whiteframe-z1 frame-padding events-page">
       <div class="header-text-events">
@@ -11,35 +11,43 @@
 
     <div ng-repeat="upcomingEvent in ctrl.upcomingEvents"
          class="event-section md-whiteframe-z1">
-      <h3><span ng-bind="upcomingEvent.title"></span></h3>
-      <br>
 
-      <div>
+
+      <h3 class="card-title"><span ng-bind="upcomingEvent.title"></span></h3>
+
+
+      <div class="date-text">
         Date: <span ng-bind="upcomingEvent.date"></span>
       </div>
-      <div>
-        Location:<span ng-bind="upcomingEvent.locationName"></span>
-      </div>
-      <div>
-        <span ng-bind="upcomingEvent.location"></span>
-      </div>
-      <div>
-        Cost: <span ng-bind="upcomingEvent.cost"></span>
-      </div>
-      <div>
-        Hosted by: <span ng-bind="upcomingEvent.hoster"></span>
-      </div>
-      <div>
-        startTime: <span ng-bind="upcomingEvent.startTime"></span>
-      </div>
-      <div>
-        endTime: <span ng-bind="upcomingEvent.endTime"></span>
-      </div>
-      <div>
-        Link: <a href="{{upcomingEvent.eventLink}}"><span ng-bind="upcomingEvent.eventLink"></span></a>
+
+      <div class="details-block">
+
+        <div>
+          Location: <span class="value-highlight" ng-bind="upcomingEvent.location"></span>
+        </div>
+        <div>
+          Cost: <span class="value-highlight" ng-bind="upcomingEvent.cost"></span>
+        </div>
+        <div>
+          Hosted by: <span class="value-highlight" ng-bind="upcomingEvent.hoster"></span>
+        </div>
+        <div>
+          startTime: <span ng-bind="upcomingEvent.startTime"></span>
+        </div>
+        <div>
+          endTime: <span ng-bind="upcomingEvent.endTime"></span>
+        </div>
       </div>
 
+
+      <!--<div>-->
+        <!--Link: <a href="{{upcomingEvent.eventLink}}"><span ng-bind="upcomingEvent.eventLink"></span></a>-->
+      <!--</div>-->
+
+      <a href="{{upcomingEvent.eventLink}}"><md-button class="visit-now-btn md-primary md-raised" md-no-ink>Visit Now</md-button></a>
+
+
     </div>
-  
+
   </md-content>
 </div>

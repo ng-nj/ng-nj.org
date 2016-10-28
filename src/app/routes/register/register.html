@@ -19,9 +19,9 @@
       <md-content class="center-register">
 
 
-        <md-input-container>
+        <md-input-container class="register-input">
           <label>Username</label>
-          <span class=input-label></span><input type="text" name="username"
+          <span class=input-label></span><input type="text" name="username" class="md-whiteframe-z1"
                                                 ng-model="ctrl.user.username" ng-required="true">
 
         </md-input-container>
@@ -30,16 +30,16 @@
 
         <br>
 
-        <md-input-container>
+        <md-input-container class="register-input">
           <label>Email</label>
-          <span class=input-label></span><input type="email" name="email"
+          <span class=input-label></span><input type="email" name="email" class="md-whiteframe-z1"
                                                 ng-model="ctrl.user.email" ng-required="true">
         </md-input-container>
         <p class="error validation-error register-input"
            ng-show="myform.email.$invalid && myform.email.$touched">Please enter a valid email address.</p>
         <br>
 
-        <md-input-container>
+        <md-input-container class="register-input">
           <label>First Name</label>
           <input type="text" name="firstName" class="md-whiteframe-z1"
                  ng-model="ctrl.user.firstName" top="50px">
@@ -50,9 +50,9 @@
 
         <br>
 
-        <md-input-container>
+        <md-input-container class="register-input">
           <label>Last Name</label>
-          <input type="text" name="lastName"
+          <input type="text" name="lastName" class="md-whiteframe-z1"
                  ng-model="ctrl.user.lastName" top="150px">
         </md-input-container>
 
@@ -69,9 +69,9 @@
 
         <br>
 
-        <md-input-container>
+        <md-input-container class="register-input">
           <label>Password</label>
-          <input class="register-input" type="password" name="password"
+          <input class="register-input md-whiteframe-z1" type="password" name="password"
                  ng-model="ctrl.pw" ng-required="true" ng-minlength="6">
         </md-input-container>
 
@@ -81,9 +81,9 @@
 
         <br>
 
-        <md-input-container>
+        <md-input-container class="register-input">
           <label>Confirm Password</label>
-          <input class="confirm-password" type="password" name="confirm-password"
+          <input class="confirm-password md-whiteframe-z1" type="password" name="confirm-password"
                  ng-model="ctrl.confirmPw">
         </md-input-container>
 
@@ -105,22 +105,22 @@
 
         <br>
 
-        <md-input-container>
+        <md-input-container class="register-input">
           <label>Current Location:</label>
 
         <input type="text" name="currentLocation" placeholder=""
                ng-model="ctrl.user.currentLocation" ng-required="true" top="150px">
 </md-input-container>
-          <md-input-container>
+          <md-input-container class="register-input">
             <label>Favorite Programming Language:</label>
 
-        <input type="text" name="favoriteLanguage" placeholder=""
+        <input type="text" name="favoriteLanguage" placeholder="" class="md-whiteframe-z1"
                ng-model="ctrl.user.favoriteLanguage" ng-required="true" top="150px">
 </md-input-container>
-            <md-input-container>
+            <md-input-container class="register-input">
               <label>About Me:</label>
 
-        <textarea class="blurb" cols="25" rows="5" name="about" placeholder="blurb"
+        <textarea class="blurb" cols="25" rows="5" name="about" placeholder="blurb" class="md-whiteframe-z1"
                ng-model="ctrl.user.blurb" ng-required="false" ng-minlength="0"></textarea>
 </md-input-container>
 
@@ -130,8 +130,8 @@
 
         Image:
 
-        <md-input-container>
-        <input id="profileImgInput" type="file" name="ctrl.filename" ng-model="rawProfileImg"
+        <md-input-container class="register-input">
+        <input id="profileImgInput" type="file" name="ctrl.filename" ng-model="rawProfileImg" class="md-whiteframe-z1"
                accept="image/gif, image/jpeg, image/png" onchange='angular.element(this).scope().file_changed(this)'>
 
         </md-input-container>
@@ -142,7 +142,10 @@
 
         <br>
 
+        <div class="register-input">
         <img id="register-page-profile-image-preview"/>
+
+        </div>
 
         <br>
 
@@ -150,33 +153,33 @@
 
         <h3>Social Profiles</h3>
 
-        <md-input-container>
+        <md-input-container class="register-input">
           <label>Github</label>
-          <span class=input-label></span><input type="text" name="github"
+          <span class=input-label></span><input type="text" name="github" class="md-whiteframe-z1"
                                                 ng-model="ctrl.user.githubLink" ng-required="false">
         </md-input-container>
 
-        <md-input-container>
+        <md-input-container class="register-input">
           <label>Twitter</label>
-          <span class=input-label></span><input type="text" name="twitter"
+          <span class=input-label></span><input type="text" name="twitter" class="md-whiteframe-z1"
                                                 ng-model="ctrl.user.twitterLink" ng-required="false">
         </md-input-container>
 
-        <md-input-container>
+        <md-input-container class="register-input">
           <label>Linked in</label>
-          <span class=input-label></span><input type="text" name="linkedInLink"
+          <span class=input-label></span><input type="text" name="linkedInLink" class="md-whiteframe-z1"
                                                 ng-model="ctrl.user.linkedInLink" ng-required="false">
         </md-input-container>
 
-        <md-input-container>
+        <md-input-container class="register-input">
           <label>Facebook</label>
-          <span class=input-label></span><input type="text" name="facebook-link"
+          <span class=input-label></span><input type="text" name="facebook-link" class="md-whiteframe-z1"
                                                 ng-model="ctrl.user.facebookLink" ng-required="false">
         </md-input-container>
 
-        <md-input-container>
+        <md-input-container class="register-input">
           <label>Personal Website</label>
-          <span class=input-label></span><input type="text" name="personal-link"
+          <span class=input-label></span><input type="text" name="personal-link" class="md-whiteframe-z1"
                                                 ng-model="ctrl.user.personalLink" ng-required="false">
         </md-input-container>
 
