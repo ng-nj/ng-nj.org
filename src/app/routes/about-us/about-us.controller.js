@@ -201,7 +201,13 @@
 
         var profileUserRef = firebase.database().ref('/users/' + profileDisplay.uid + '/followers/' + firebase.auth().currentUser.uid);
         profileUserRef.remove(function (error) {
-          console.log('unfollowing finished ' + error);
+          console.log('removed me from his followers list, error: ' + error);
+          self.isFollowedByCurrentLoggedInUser = false;
+        });
+
+        var profileUserRef2 = firebase.database().ref('/users/' + firebase.auth().currentUser.uid + '/following/' + profileDisplay.uid);
+        profileUserRef2.remove(function (error) {
+          console.log('removed him from my followed list, error: ' + error);
           self.isFollowedByCurrentLoggedInUser = false;
         });
 
@@ -235,6 +241,7 @@
           if (error == null) {
             self.profileDisplay.isFollowedByCurrentLoggedInUser = true;
 
+            $scope.$apply();
             console.log('I\'m here : ' + self.profileDisplay.isFollowedByCurrentLoggedInUser);
           }
         });
