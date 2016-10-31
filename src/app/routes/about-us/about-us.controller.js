@@ -6,6 +6,9 @@
     .controller('AboutUsController', function ($log, AboutMembersRetriever, $firebaseObject, $stateParams, $scope, $timeout) {
       var self = this;
 
+      self.cheese = 'derp';
+
+      console.log('hello');
 
       self.auth = firebase.auth();
 
