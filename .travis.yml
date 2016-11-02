@@ -38,9 +38,9 @@ after_script:
 after_success:
 - echo 'Success'
 
-git add --all
-git commit -m 'commit from travis'
-git subtree push --prefix dist/ origin gh-pages
+- git add --all
+- git commit -m 'commit from travis'
+- git subtree push --prefix dist/ origin gh-pages
 
 - echo Sent to gh-pages!
 
