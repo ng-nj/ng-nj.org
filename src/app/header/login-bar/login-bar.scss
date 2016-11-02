@@ -1,134 +1,177 @@
+
 .login-bar {
-    padding: 3px;
-    padding-top:18px;
-    position: absolute;
-    left: 10px;
-    width: 99%;
+  padding: 3px;
+  padding-top: 18px;
+  //position: absolute;
+  left: 10px;
+  width: 99%;
 }
 
 .register-text {
-    cursor: pointer;
-    text-decoration: underline;
-    color: white;
+  cursor: pointer;
+  text-decoration: underline;
+  color: white;
 }
 
 .white-text {
-    color: white;
-    padding-right: 10px;
+  color: white;
+  padding-right: 3px;
+  padding-left: 3px;
+  font-size: 11px;
 }
 
 .feedback-text {
-    color:white;
-    position: absolute;
-    left: 10px;
+  color: white;
+  position: absolute;
+  left: 10px;
 }
 
 .welcome-text {
-    color:white;
-    text-align:center;
-    padding-top:5px;
+  color: white;
+  text-align: center;
+  padding-top: 5px;
 }
 
 .blue-bg {
-    background-color: blue;
+  background-color: blue;
 }
 
 .login-panel {
-    height: 100px;
-    color: white;
-    background-color: rgba(12, 78, 178, 1);
-    z-index: 1;
-    overflow-y: hidden;
+  height: 100px;
+  color: white;
+  background-color: rgba(12, 78, 178, 1);
+  z-index: 1;
+  overflow-y: hidden;
 }
 
-.login-panel md-input-container{
-    display: -webkit-box !important;
+.login-panel md-input-container {
+  display: -webkit-box !important;
 }
 
-.login_md label{
-    color: #d6d1d1 !important;
-    font-size: 14px;
-    padding-right: 5px;
+.login_md label {
+  color: #d6d1d1 !important;
+  font-size: 14px;
+  padding-right: 5px;
 }
 
-.login-panel input{
-    border: 1px solid #d6d1d1 !important;
-    height: 20px;
-    margin-top: -3px;
-    border-radius: 2px;
+//.login-panel input{
+//    border: 1px solid #d6d1d1 !important;
+//    height: 20px;
+//    margin-top: -3px;
+//    border-radius: 2px;
+//}
+
+.login-panel button {
+  height: 28px;
+  margin-top: -3px;
+  margin-left: 15px;
+  min-height: 22px;
+  width: 80px !important;
+  min-width: 80px;
+  width: 80px;
+  color: white !important;
+  background-color: rgba(0, 0, 0, 0.44) !important;
+  position: relative;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  border: none;
 }
 
-.login-panel button{
-    height: 28px;
-    margin-top: -3px;
-    margin-left: 15px;
-    min-height: 22px;
-    width: 80px !important;
-    min-width: 80px;
-    width: 80px;
-    color: white !important;
-    background-color: rgba(0, 0, 0, 0.44) !important;
-    position: relative;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-    border: none;
+.login-panel button span {
+  position: absolute;
+  top: -2px;
+  left: 15px;
 }
 
-.login-panel button span{
-    position: absolute;
-    top: -2px;
-    left: 15px;
+.login-panel > form > div {
+  height: 20px !important;
 }
 
-.login-panel>form>div {
-    height: 20px !important;
-}
-
-.login-panel md-input-container .md-input{
-    color: white !important;
+.login-panel md-input-container .md-input {
+  color: white !important;
 }
 
 @media only screen and (max-width: 900px) {
-    .login-panel {
-        //height: 80px;
-    }
+  .login-panel {
+    //height: 80px;
+  }
 
-    .login_md {
-        position: absolute;
-        top: 40px;
-    }
+  .login_md {
+    position: absolute;
+    top: 40px;
+  }
 
-    .login_md.pwd{
-        left: 340px;
-    }
+  .login_md.pwd {
+    left: 340px;
+  }
 
-    .login_md.email{
-        left: -5px;
-    }
+  .login_md.email {
+    left: -5px;
+  }
 }
 
 @media only screen and (max-width: 680px) {
-    .login_md.pwd{
-        left: -5px;
-        top: 80px;
-    }
+  .login_md.pwd {
+    left: -5px;
+    top: 80px;
+  }
 
-    .login-panel {
-        height: 170px;
-    }
+  .login-panel {
+    height: 170px;
+  }
 
-    .feedback-text button{
-        top: 20px;
-        left: -15px;
-    }
+  .feedback-text button {
+    top: 20px;
+    left: -15px;
+  }
 }
 
 .md-icon-button md-icon {
-  height:90%; // or 80%-90%
-  width:90%; // or 80%-90%
+  height: 90%; // or 80%-90%
+  width: 90%; // or 80%-90%
 }
+
 .md-button.md-icon-button.md-mini {
   margin: 0 0.3rem;
   height: 2.8rem;
   line-height: 2.8rem;
   width: 2.8rem;
+}
+
+.login-form-input {
+  width: 105px;
+  height: 20px;
+  font-size: 11px;
+  padding: 3px 3px 3px 3px;
+  display: inline;
+
+}
+
+.login-submit-btn {
+
+  //width: 40px;
+  //height: 20px;
+  padding: 5px 5px 5px 5px;
+  font-size: 13px;
+
+  -ms-transform: scale(.1, .1);
+  -webkit-transform: scale(.1, .1);
+  transform: scale(.1, .1);
+}
+
+.sso-button {
+  border: 0px;
+  padding: 1px;
+  min-width: 30px;
+}
+
+.login-btn {
+  width : 50px;
+  height: 20px;
+  font-size: 10px;
+  padding: 2px 6px 3px 6px;
+}
+
+.username-password-row {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }

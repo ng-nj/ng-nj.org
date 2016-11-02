@@ -1,7 +1,9 @@
 {
   "name": "ngNjOrg",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "angular-ui-bootstrap": "^2.2.0"
+  },
   "scripts": {
     "test": "gulp test"
   },
