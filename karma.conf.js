@@ -20,8 +20,8 @@ function listFiles() {
     .concat([
       path.join(conf.paths.src, '/app/**/*.module.js'),
       path.join(conf.paths.src, '/app/**/login.controller.js'),
-      path.join(conf.paths.src, '/**/*.unit.spec.js'),
-      path.join(conf.paths.src, '/**/*.mock.js'),
+      // path.join(conf.paths.src, '/**/*.unit.spec.js'),
+      // path.join(conf.paths.src, '/**/*.mock.js'),
     ])
     .concat(pathSrcHtml);
 

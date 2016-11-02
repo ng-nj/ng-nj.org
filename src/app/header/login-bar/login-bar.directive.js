@@ -53,10 +53,40 @@
                 self.loginUser.password = "";
             }
 
-            self.googleSignInClicked = function () {
+            self.providerSignInClicked = function (loginType) {
               console.log('google sign in was clicked!');
 
-              var provider = new firebase.auth.GoogleAuthProvider();
+              var provider;
+
+              switch(loginType)
+              {
+                case 'github':
+
+                  provider = new firebase.auth.GithubAuthProvider();
+                  break;
+
+                case 'twitter':
+
+                  provider = new firebase.auth.TwitterAuthProvider();
+                  break;
+                case 'google':
+                  provider = new firebase.auth.GoogleAuthProvider();
+
+                  break;
+                case 'facebook':
+
+                  provider = new firebase.auth.FacebookAuthProvider();
+                  break;
+                case 'linkedin':
+
+                  provider = new firebase.auth.CustomAuthProvider();
+                  break;
+
+              }
+
+
+
+
               console.log('provider is ' + provider);
 
               firebase.auth().signInWithPopup(provider).then(function(result) {
