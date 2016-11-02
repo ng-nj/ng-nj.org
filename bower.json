@@ -20,7 +20,7 @@
     "gsap": "^1.18.2",
     "font-awesome": "^4.7.0",
     "angular-bootstrap": "^1.2.5",
-    "jquery": "^2.2.2",
+    "jquery": "^3.1.1",
     "firebase": "^3.4.1",
     "angularfire": "^2.0.2",
     "bootstrap-sass": "^3.3.7"
@@ -30,6 +30,7 @@
     "cucumber": "^1.2.1"
   },
   "resolutions": {
-    "angular": "~1.4.2"
+    "angular": "~1.4.2",
+    "jquery": "1.9.1 - 3"
   }
 }

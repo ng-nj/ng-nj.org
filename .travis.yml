@@ -20,7 +20,7 @@ install:
 script:
 - ls
 # - mkdir reports && mkdir reports/acceptance-protractor && mkdir reports/acceptance-unit && mkdir reports/protrator && mkdir reports/unit && mkdir reports/combined
-- gulp
+# - gulp
 # - gulp test
 # - gulp protractor
 # - gulp acceptance-protractor
