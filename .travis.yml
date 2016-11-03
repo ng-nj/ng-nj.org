@@ -26,12 +26,12 @@ script:
 # - gulp acceptance-protractor
 # - gulp acceptance-unit
 - gulp build
--
+
 after_script:
 #- git remote rm origin
 #- git remote add origin https://JimTheMan:${GH_TOKEN}@github.com/ng-nj/ng-nj.org.git
 #- chmod a+x ./scripts/deploy.sh
-echo ran script
+- echo ran script
 
 
 after_success:
