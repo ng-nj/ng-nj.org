@@ -1,4 +1,5 @@
 'use strict';
+// process.env.PHANTOMJS_BIN = './node_modules/.bin/phantomjs'
 
 var path = require('path');
 var conf = require('./gulp/conf');
@@ -20,7 +21,7 @@ function listFiles() {
     .concat([
       path.join(conf.paths.src, '/app/**/*.module.js'),
       path.join(conf.paths.src, '/app/**/login.controller.js'),
-      // path.join(conf.paths.src, '/**/*.unit.spec.js'),
+      path.join(conf.paths.src, '/**/*.unit.spec.js'),
       // path.join(conf.paths.src, '/**/*.mock.js'),
     ])
     .concat(pathSrcHtml);
@@ -36,6 +37,7 @@ function listFiles() {
     served: true,
     watched: false
   });
+  files.unshift('bower_components/jquery/dist/jquery.js')
   return files;
 }
 
