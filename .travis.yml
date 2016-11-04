@@ -41,6 +41,7 @@ after_success:
 # - git commit -m 'commit from travis'
 # - git subtree push --prefix dist/ origin gh-pages
 
+- ls
 - bash ./deploy.sh 
 - echo Sent to gh-pages!
 
