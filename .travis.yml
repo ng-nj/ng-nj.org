@@ -42,6 +42,7 @@ after_success:
 # - git subtree push --prefix dist/ origin gh-pages
 
 - ls
+- git config --global user.name "JimTheMan"
 - bash ./deploy.sh 
 - echo Sent to gh-pages!
 
