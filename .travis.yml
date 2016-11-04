@@ -1,13 +1,9 @@
 sudo: true
 language: node_js
 node_js:
-#- '0.12'
-#- '0.10'
-#- iojs
- - '5.11.1'
+- 5.11.1
 before_install:
 - if [ "${TRAVIS_NODE_VERSION}" == "0.8" ]; then npm install -g npm@2.11.1; fi
-
 install:
 - node --version
 - export DISPLAY=:99.0
@@ -16,37 +12,18 @@ install:
 - npm install
 - npm install bower
 - bower install
-
 script:
 - ls
-# - mkdir reports && mkdir reports/acceptance-protractor && mkdir reports/acceptance-unit && mkdir reports/protrator && mkdir reports/unit && mkdir reports/combined
-# - gulp
-# - gulp test
-# - gulp protractor
-# - gulp acceptance-protractor
-# - gulp acceptance-unit
 - gulp build
-
 after_script:
-#- git remote rm origin
-#- git remote add origin https://JimTheMan:${GH_TOKEN}@github.com/ng-nj/ng-nj.org.git
-#- chmod a+x ./scripts/deploy.sh
 - echo ran script
-
-
 after_success:
 - echo 'Success'
-
-# - git add --all
-# - git commit -m 'commit from travis'
-# - git subtree push --prefix dist/ origin gh-pages
-
 - ls
 - git config --global user.email "mrdotjim@gmail.com"
 - git config --global user.name "JimTheMan"
-- bash ./deploy.sh 
+- bash ./deploy.sh
 - echo Sent to gh-pages!
-
 matrix:
   fast_finish: true
 notifications:
@@ -57,5 +34,5 @@ notifications:
     on_failure: change
 env:
   global:
-    GH_REF: github.com/ng-nj/ng-nj.org.git
-    secure: hsD7rZdqEVp3CN/Ryu2vrRrr8t1Z7GKfnuhleCgsRdOzWzWMZdOZ28qZLZF2/8Rjc+iFHMuK4B5UHX8Rq25lDxX2/zc2LoJzNLhTPCiNhfNyzLvAoHnpt944sCV5JpP9x+bpUvjuF1cpD3AGG524clDmUd8UsAfcfipPf2/4x3E1+TXVmQ+f13P5/6AxVjhDO/0+sRJjvx6Aa50NPAD8KH0YSbf0NWydz6yNzAEQ8SGmXv5byEhm3mFNTPlgNoVwvbJM9OYsEhtNnQyls/uPsTjmKyhYx4G9PKFwn3BY2XyZHJXMpAZvex+qtjHoUlpKptahEPQUq4CYtm6rrB1/GodepAlArQrlRnLyZBLPKHRvFatQYCsj2aNyINV9+Az64a24zmZKwggFaSYj70TC5mMJeod65IMQpP+p0JfxS69qqlDh1U1Pkp4jIBjpEXG4Ufkd11qu5s1X89qqltnaN8sqim3Cyw8bmiIDnMUCucqP+6i9yo40nNZtqa/fHe9vI/R6q9vHmixfX5MZ1w41KRt1h4ukzlwl3zYaCzdNy1TMhiJ8umNw2UeYbLKS7hRzzCDBduPMgG6S4sfBWRqCtv9tRKRqyjSBhCJYyOtiE4ib/DE4zp5qnYmOtTjRuboPzJwut7n3XEmfrhws0MRsJ/WRlPQgqnVQhhghUbqSY18=
+  - GH_REF: github.com/ng-nj/ng-nj.org.git
+  - secure: SYSJERymKf2YiJPculxBGF2C7g2CA9aSZNTYorCHZUpGjsooJGZnw4CFrioK9ElhIQNAZV/dne9CMNw531w8/bB2VOMvXDS26m0lSJZTN86mKpz5+IT7uQ+96ObUpBslxZ8J2+SiYAwvjXKmfrFIYNuT/cwUHAgDEARRdVZbMLfGupIszD9H0whMUnZQEimC75IyY7GB+35ZJov3OgpTsN4LQfkhwNkzX7J3vt2hGrO92hgtvAO7eINLvtTycaqQNpDjxr6dv5XEzPm8M3YqDOEjv/BFDuG6hGnORe15SPiPo3/kOHKv/fN+SbjSsk/5zIxCxUmIWQTQMhtDWyoBaUesKQO8PCKwMIbjxZh3xnA4fJ/QkVJUe6xz8yzsdE184r/n97Rv9RkcZCY7iIGbp17hpavgfooJ0qFhfgPyU18XaxAYiK0SFie+XLXEAm6BMWRmjASNZ0YEShgzbjzsRfhohF2teGOxh4DMce4UnCIl28brXMUjo1j7ptLMls6C/zjU8h94r/q5rsISzkkTQjdJRlp4mLyeBbqW/tVef5VSgkFnDKy2qScpG6n0LYQW1bAHv/NnB0/80jZD+JpeuAwUjvSjFpWWFC0b4iwLuiziRAQFXw6KUhNBX+7cho9k03Erl543qFXhothQOSmixF2Co1GeaH9Ps1DKuQk9O5M=
