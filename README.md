@@ -40,7 +40,7 @@ changes (note: you may need to re-run this command after creating / deleting fil
 
 `gulp` or `gulp build` - packages, minifies, uglifies, and does a ton of other stuff
  to the source files before dumping them in the **dist/** directory. Those are the 
- files that hsould be hosted to go live.
+ files that should be hosted to go live.
 
 
 `gulp test` - Runs karma with unit tests (Jasmine), also recreates Istanbul code
