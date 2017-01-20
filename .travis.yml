@@ -14,6 +14,7 @@ install:
 - bower install
 script:
 - ls
+- gulp test
 - gulp build
 after_script:
 - echo ran script
