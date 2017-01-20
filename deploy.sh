@@ -1,6 +1,6 @@
 #o "Starting deployment"  
 # cd ..
-echo 'ng-nj.com' > CNAME
+echo 'ng-nj.com' > ./dist/CNAME
 git push origin :gh-pages
 
 git add --all
