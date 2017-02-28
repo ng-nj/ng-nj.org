@@ -21,7 +21,7 @@ exports.config = {
 
   // Capabilities to be passed to the webdriver instance.
   capabilities: {
-    'browserName': 'firefox'
+    'browserName': 'chrome'
   },
 
   onPrepare: function () {
@@ -30,7 +30,7 @@ exports.config = {
     }))
   },
 
-  resultJsonOutputFile: 'dist/reports/ui-e2e/ui-e2e-results.json',
+  // resultJsonOutputFile: 'dist/reports/ui-e2e/ui-e2e-results.json',
 
   baseUrl: 'http://localhost:3000',
 
