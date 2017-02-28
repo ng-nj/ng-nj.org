@@ -9,6 +9,7 @@
   function MainController($timeout, $log) {
     var vm = this;
 
+console.log('hello!');
    
 
   }
