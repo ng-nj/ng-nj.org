@@ -21,7 +21,7 @@ exports.config = {
 
   // Capabilities to be passed to the webdriver instance.
   capabilities: {
-    'browserName': 'chrome'
+    'browserName': 'firefox'
   },
 
   onPrepare: function () {
@@ -36,7 +36,7 @@ exports.config = {
 
   // Spec patterns are relative to the current working directory when
   // protractor is called.
-  specs: [paths.e2e + 'app/src/**/*.js'],
+  specs: [paths.e2e + '/**/*.js'],
 
   // Options to be passed to Jasmine-node.
   jasmineNodeOpts: {
