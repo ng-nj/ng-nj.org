@@ -3,7 +3,7 @@
 
 # ng-nj.org
 
-This is the source code for the webiste of ng-nj is the unofficial AngularJS group for New Jersey, USA. 
+This is the source code for the webiste of ng-nj is the unofficial AngularJS group for New Jersey, USA! 
 
 Please join our gitter here: [https://gitter.im/ng-nj/ng-nj.org](#https://gitter.im/ng-nj/ng-nj.org) 
 
