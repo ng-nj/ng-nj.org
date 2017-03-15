@@ -5,7 +5,7 @@
 
 Proudly running tests on Browserstack!
 
-<img src="./Logo-01.svg" width="250px"/>
+<img src="https://github.com/ng-nj/ng-nj.org/blob/master/Logo-01.svg" width="250px"/>
 
 ![Browserstack Logo](Logo-01.svg "Browserstack Logo")
 
