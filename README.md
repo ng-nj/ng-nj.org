@@ -1,6 +1,13 @@
 
 [![Build Status](https://travis-ci.org/ng-nj/ng-nj.org.svg?branch=master)](https://travis-ci.org/ng-nj/ng-nj.org)
 
+[![Build Status](https://travis-ci.org/ng-nj/ng-nj.org.svg?branch=master)](https://travis-ci.org/ng-nj/ng-nj.org)
+
+Proudly running tests on Browserstack!
+
+<img src="./Logo-01.svg" width="250px"/>
+
+
 # ng-nj.org
 
 This is the source code for the webiste of ng-nj is the unofficial AngularJS group for New Jersey, USA!! 
