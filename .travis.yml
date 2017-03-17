@@ -6,8 +6,8 @@ before_install:
 - if [ "${TRAVIS_NODE_VERSION}" == "0.8" ]; then npm install -g npm@2.11.1; fi
 install:
 - node --version
-- export DISPLAY=:99.0
-- sh -e /etc/init.d/xvfb start
+# - export DISPLAY=:99.0
+# - sh -e /etc/init.d/xvfb start
 - pwd
 - npm install
 - npm install bower
