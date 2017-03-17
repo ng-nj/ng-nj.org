@@ -22,7 +22,8 @@ gulp.task('styles', function() {
 
 var buildStyles = function() {
   var sassOptions = {
-    style: 'expanded'
+    outputStyle: 'expanded',
+    precision: 10
   };
 
   var injectFiles = gulp.src([

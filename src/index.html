@@ -5,16 +5,7 @@
     <title>ngNjOrg</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
-    <script
-      src="https://code.jquery.com/jquery-2.2.4.min.js"
-      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-      crossorigin="anonymous"></script>
-
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-
 
     <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
     <!-- bower:css -->
@@ -25,32 +16,16 @@
     <!-- build:css({.tmp/serve,src}) styles/app.css -->
     <!-- inject:css -->
     <!-- css files will be automatically insert here -->
-
-
-<!--<h1> ok</h1>-->
-
     <!-- endinject -->
     <!-- endbuild -->
-
-    <!--<link rel="stylesheet" type="text/scss" href="app/footer.scss">-->
-
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
-    <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
   </head>
-  <body layout-fill>
+  <body>
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
+    <div ui-view></div>
 
-    <div ng-include='"app/header/header.html"'></div>
-
-    <ui-view layout-fill class="bluer-bg"></ui-view>
-
-    <ng-include src="'app/footer/footer.html'"></ng-include>
-
-
-    <!--<div ng-include="'app/footer/footer.html'" class="footer"></div>-->
     <!-- build:js(src) scripts/vendor.js -->
     <!-- bower:js -->
     <!-- run `gulp inject` to automatically populate bower script dependencies -->
@@ -69,5 +44,3 @@
 
   </body>
 </html>
-
-

@@ -4,6 +4,7 @@
 
   angular
     .module('ngNjOrg')
-  .constant('FIREBASE_URL', 'https://ng-nj.firebaseio.com/')
+    .constant('malarkey', malarkey)
+    .constant('moment', moment);
 
 })();

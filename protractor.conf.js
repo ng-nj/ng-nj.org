@@ -1,17 +1,6 @@
 'use strict';
 
-//if (process.env.TRAVIS) {
-// config.sauceUser = process.env.SAUCE_USERNAME;
-//  config.sauceKey = process.env.SAUCE_ACCESS_KEY;
-//  config.capabilities = {
-//    'browserName': 'chrome',
-//    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-//    'build': process.env.TRAVIS_BUILD_NUMBER
-//  };
-// }
-
 var paths = require('./.yo-rc.json')['generator-gulp-angular'].props.paths;
-var ProtractorReporter = require('protractor-html-screenshot-reporter');
 
 // An example configuration file.
 exports.config = {
@@ -24,24 +13,15 @@ exports.config = {
     'browserName': 'chrome'
   },
 
-  // onPrepare: function () {
-  //   jasmine.getEnv().addReporter(new ProtractorReporter({
-  //     baseDirectory: paths.e2e + '/screenshots'
-  //   }))
-  // },
-
-  // resultJsonOutputFile: 'dist/reports/ui-e2e/ui-e2e-results.json',
-
   baseUrl: 'http://localhost:3004',
 
   // Spec patterns are relative to the current working directory when
   // protractor is called.
-  // specs: [paths.e2e + '/**/*.js', 'e2e/main.spec.js'],
-  specs: ['e2e/main.spec.js'],
+  specs: [paths.e2e + '/**/*.js'],
 
   // Options to be passed to Jasmine-node.
   jasmineNodeOpts: {
-   showColors: false,
+    showColors: true,
     defaultTimeoutInterval: 30000
   }
 };

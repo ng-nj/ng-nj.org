@@ -1,5 +1,4 @@
 'use strict';
-// process.env.PHANTOMJS_BIN = './node_modules/.bin/phantomjs'
 
 var path = require('path');
 var conf = require('./gulp/conf');
@@ -20,9 +19,9 @@ function listFiles() {
   var patterns = wiredep(wiredepOptions).js
     .concat([
       path.join(conf.paths.src, '/app/**/*.module.js'),
-      path.join(conf.paths.src, '/app/**/login.controller.js'),
-      path.join(conf.paths.src, '/**/*.unit.spec.js'),
-      // path.join(conf.paths.src, '/**/*.mock.js'),
+      path.join(conf.paths.src, '/app/**/*.js'),
+      path.join(conf.paths.src, '/**/*.spec.js'),
+      path.join(conf.paths.src, '/**/*.mock.js'),
     ])
     .concat(pathSrcHtml);
 
@@ -37,7 +36,6 @@ function listFiles() {
     served: true,
     watched: false
   });
-  files.unshift('bower_components/jquery/dist/jquery.js')
   return files;
 }
 
@@ -52,7 +50,7 @@ module.exports = function(config) {
 
     ngHtml2JsPreprocessor: {
       stripPrefix: conf.paths.src + '/',
-      moduleName: 'flexboxPushDrawerExample'
+      moduleName: 'ngNjOrg'
     },
 
     logLevel: 'WARN',
@@ -60,7 +58,7 @@ module.exports = function(config) {
     frameworks: ['phantomjs-shim', 'jasmine', 'angular-filesort'],
 
     angularFilesort: {
-      whitelist: [path.join(conf.paths.src, '/**/!(*.html|*.unit.spec|*.mock).js')]
+      whitelist: [path.join(conf.paths.src, '/**/!(*.html|*.spec|*.mock).js')]
     },
 
     browsers : ['PhantomJS'],
@@ -76,12 +74,10 @@ module.exports = function(config) {
 
     coverageReporter: {
       type : 'html',
-      dir : 'dist/reports/unit'
+      dir : 'coverage/'
     },
 
     reporters: ['progress'],
-
-    exclude:['/app/**/*.spec.js', '/app/**/*.step.js', '/app/**/*.steps.js'],
 
     proxies: {
       '/assets/': path.join('/base/', conf.paths.src, '/assets/')
