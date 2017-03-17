@@ -1,9 +1,17 @@
 
 [![Build Status](https://travis-ci.org/ng-nj/ng-nj.org.svg?branch=master)](https://travis-ci.org/ng-nj/ng-nj.org)
 
+![BrowserStack Status](https://www.browserstack.com/automate/badge.svg?badge_key=<badge_key>)
+
+Proudly running tests on Browserstack!
+
+<img src="./Logo-01.svg" width="250px"/>
+
+![Browserstack Logo](https://github.com/ng-nj/ng-nj.org/blob/master/Logo-01.svg "Browserstack Logo")
+
 # ng-nj.org
 
-This is the source code for the webiste of ng-nj is the unofficial AngularJS group for New Jersey, USA. 
+This is the source code for the webiste of ng-nj is the unofficial AngularJS group for New Jersey, USA!! 
 
 Please join our gitter here: [https://gitter.im/ng-nj/ng-nj.org](#https://gitter.im/ng-nj/ng-nj.org) 
 
