@@ -16,27 +16,28 @@ var ProtractorReporter = require('protractor-html-screenshot-reporter');
 // An example configuration file.
 exports.config = {
   // The address of a running selenium server.
-  //seleniumAddress: 'http://localhost:4444/wd/hub',
+  // seleniumAddress: 'http://localhost:4444/wd/hub',
   //seleniumServerJar: deprecated, this should be set on node_modules/protractor/config.json
 
   // Capabilities to be passed to the webdriver instance.
   capabilities: {
-    'browserName': 'firefox'
+    'browserName': 'chrome'
   },
 
-  onPrepare: function () {
-    jasmine.getEnv().addReporter(new ProtractorReporter({
-      baseDirectory: paths.e2e + '/screenshots'
-    }))
-  },
+  // onPrepare: function () {
+  //   jasmine.getEnv().addReporter(new ProtractorReporter({
+  //     baseDirectory: paths.e2e + '/screenshots'
+  //   }))
+  // },
 
   // resultJsonOutputFile: 'dist/reports/ui-e2e/ui-e2e-results.json',
 
-  baseUrl: 'http://localhost:3000',
+  baseUrl: 'http://localhost:3004',
 
   // Spec patterns are relative to the current working directory when
   // protractor is called.
-  specs: [paths.e2e + '/**/*.js'],
+  // specs: [paths.e2e + '/**/*.js', 'e2e/main.spec.js'],
+  specs: ['e2e/main.spec.js'],
 
   // Options to be passed to Jasmine-node.
   jasmineNodeOpts: {
