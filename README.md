@@ -61,7 +61,6 @@ coverage
 `gulp protractor:dist` - Runs protractor against the production build files
 and recreates a ui/e2e report.
 
-
 `./node_modules/protractor/bin/protractor protractor-acceptance.js` - runs the 
 cucumber acceptance tests with protractor ui tests in step definitions. 
 
@@ -76,3 +75,5 @@ e2e/screenshots/report.html
 
 ## Classic Code Coverage Report
 e2e/screenshots/report.html
+
+For protractor tests, use npm 4.2.0 (nvm use 6.9.5).
