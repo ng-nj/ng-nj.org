@@ -23,7 +23,7 @@ before_script:
 script:
 - ls
 - gulp test
-- protractor protractor.conf.js
+# - protractor protractor.conf.js
 - gulp build
 after_script:
 - echo ran script
