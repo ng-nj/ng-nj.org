@@ -3,27 +3,21 @@ language: node_js
 node_js:
 - 5.11.1
 before_install:
-# - if [ "${TRAVIS_NODE_VERSION}" == "0.8" ]; then npm install -g npm@2.11.1; fi
-- "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1280x1024x16"
-
+- /sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile
+  --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1280x1024x16
 install:
 - node --version
-# - export DISPLAY=:99.0
-# - sh -e /etc/init.d/xvfb start
 - pwd
 - npm install
 - npm install bower
 - bower install
-
 before_script:
-- "export DISPLAY=:99.0"
-- "sh -e /etc/init.d/xvfb start"
-- sleep 3 # give xvfb some time to start
-
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+- sleep 3
 script:
 - ls
 - gulp test
-# - protractor protractor.conf.js
 - gulp build
 - gulp protractor-browserstack
 after_script:
@@ -47,10 +41,11 @@ notifications:
     on_failure: change
 addons:
   browserstack:
-    username: "jameslynch3"
-    access_key: "p1Nz2bi9GHUG+c0nwhx+CXek52IanVI9uGxV3JVxtVTYto5u2+/FLeyqtYz56TrOjoz0dSkEv7TRm9v6WtN3xQqQkqIOM+SqXhQ2+tWYqB1S4fe3x3XZhs6mzHpyp/X9+Y6vcIglKTB3OXalJleZWrSCSoBjvkR6Uz9e+ADJbXt0/EQtPOBXxMDZfk/r8QL9U6ftw6cAsdRHvlLu3SoGmr/5v/t2Pi69TCN6E4PCLMPn1XOHkCVflBACSpMN018N04ZbiaweBWX2nKlb9+JMjZD58gSgCmw0Wz0PdemugXc2N+nN5KehUs4bW/jKFgDkBc+KK6xJig9b9iS1h/K7ln4nL0E95riqnwLGo1gCuHHlY4vbA0+amjyFZ8uKmk5OlgBaTezZE2ba6ShwxqiUg7W7AFgX55nX3AvM8AH1cNtMS0mBoCZW+/my4gnbYtt8d/W++csXiGEcoMEKStRbKxoaAhLZAah9XfUTI27oiC71rXz3XZPnEFBMtXTfjyD3j8hO22G+vSkjpZqT2E9yXKHhijPUOnfeW8Y8mLZnaappjVokSiIEA6LVtnUqoAXAlfrpdqBIHps2a77eJddVbHDmQKHUD/ndFnny3BCtzYXJhHvvz7I782lrVDS75f8+0R6iR0090TFMOwm21Mq3vnG7DtKdYyXjndF/xX3DqTQ="
-
+    username: jameslynch3
+    access_key: bs-key
 env:
   global:
   - GH_REF: github.com/ng-nj/ng-nj.org.git
   - secure: SYSJERymKf2YiJPculxBGF2C7g2CA9aSZNTYorCHZUpGjsooJGZnw4CFrioK9ElhIQNAZV/dne9CMNw531w8/bB2VOMvXDS26m0lSJZTN86mKpz5+IT7uQ+96ObUpBslxZ8J2+SiYAwvjXKmfrFIYNuT/cwUHAgDEARRdVZbMLfGupIszD9H0whMUnZQEimC75IyY7GB+35ZJov3OgpTsN4LQfkhwNkzX7J3vt2hGrO92hgtvAO7eINLvtTycaqQNpDjxr6dv5XEzPm8M3YqDOEjv/BFDuG6hGnORe15SPiPo3/kOHKv/fN+SbjSsk/5zIxCxUmIWQTQMhtDWyoBaUesKQO8PCKwMIbjxZh3xnA4fJ/QkVJUe6xz8yzsdE184r/n97Rv9RkcZCY7iIGbp17hpavgfooJ0qFhfgPyU18XaxAYiK0SFie+XLXEAm6BMWRmjASNZ0YEShgzbjzsRfhohF2teGOxh4DMce4UnCIl28brXMUjo1j7ptLMls6C/zjU8h94r/q5rsISzkkTQjdJRlp4mLyeBbqW/tVef5VSgkFnDKy2qScpG6n0LYQW1bAHv/NnB0/80jZD+JpeuAwUjvSjFpWWFC0b4iwLuiziRAQFXw6KUhNBX+7cho9k03Erl543qFXhothQOSmixF2Co1GeaH9Ps1DKuQk9O5M=
+  - secure: lacjM4z9iWON4L64S1bonRx+jx6JchIqfFGcKUKD5hOFSVYLBRAEdGO5MXcHCNybjTIfbloPURhLwg+I8F7k9SaZQCSpQL0yFTaLjElQ89iCdPnkRujUTvRs1+bZy2KKryoodpR0ccv+NFE8L9XqNAZsg+64B7E/N0J4UAysimUqZCx3Q2DTJJIE1wN2zm95Ho7agy7MSwVdfhedUQeEDXJ5Dem0ET4Km2lMfK7sG3LJpKjQKO3PmEvy6r9hA04CACXIWFfV0Cc0GY36QNMBplgOrftLRF2or6PZdkcUuxsaDWpp5acxzpMo6aswRHhm4hMc7ef29lSHf64aYEAmjR8L7/NtNtAkLjWUcXawTO5I23dSC7GVXIdfi5ZU8wLmnOeFZWDp9L3/MIqK69OOFOdwy8eur+vksA+yihdFRlBA9/FTG6yqr2zm7H67vwnBJHNZv3OoGK+Z7HwLp9grVtGco07OyCLXkVyegZ/TV+c3wE4YnBElzyrw0/DAboDZZ3s4l0Dv45wahpEE06hfU73R0NXiK1hTZ4QJWsJcmtj1/9gwxdgGJvMVcH5PuEOeJ4yIh2JrUOzuHMMFh55qrAd7UwOuMGlCx/oW1DQsveuqH2B1Yl+hmwvV51HlpEXBFno83rLqNGPNoy/SiIIW0dMR04jYUT6Qx5UXU9PfHI4=
+  - secure: wgyg91ePuW8/JqZ/RFJ8FtpPZ/7+EoUWJBURPpgnNpUs3DxDuseIdDyrE5pjZtt4n2XWl9SDQNI/O/JriGxKiTi/Xta3vAgqo3mD9Q2ltwpk8eaaE2poBC422tQYD8GXxwDkuvBv/nHLWo3d8o2lMdONPHrdApzxZGzQqaiMaQ6rTjTm6lqmuLFr+aQPkofrlpfGk69a5eFmDastopKDxFiV7rvuR1z1F6L9PmNIJH/BeeBAfAcrVegWE02+JBHhipOhXkAlEPsIuQ1MWJrfw6XyHat0QUXbLP2u489UTSvQMd6/75LBMPmoOTNuPTy5MkFNgYeOhMY0ZARZ2sLeIVq0B1y4LgmD/tHvDkt1o/j9STbj5F6EkYVwRaY9VEcmWhYDGY2i44OqNyGsWpFfiyoYT8TL4gQsMW+RldWbPUD/LvJk44U4lSIk5yP9eAA+MSTZiQkK3nZOJnMK0QRskWrfMeh7WKK9BNwJn2YIrDNy4Tv5F4pjP0LJjF89OiDZ/xA78HjZgv5jZYfewq1McnXZUi+4tF7EauWPBiGO1szpZP+roGeyH84bxmy2pRgZl77VrRZ61cQH4tv3G/LPBTZNQteGTVaSvk3pXSUm3++z7j4E4TDNtslBcUp8SI7bKuXGLBvhf869+mqpbHsXAZlS0e2oTxMdlZDlMbIJsDo=
