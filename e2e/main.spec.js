@@ -4,8 +4,9 @@ describe('The main view', function () {
   var page;
 
   beforeEach(function () {
-    browser.get('/index.html');
+    browser.get('http://localhost:3004');
     page = require('./main.po');
+    browser.refresh();
   });
 
   it('should include jumbotron with correct data', function() {

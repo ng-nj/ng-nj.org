@@ -25,6 +25,7 @@ script:
 - gulp test
 # - protractor protractor.conf.js
 - gulp build
+- gulp protractor-browserstack
 after_script:
 - echo ran script
 after_success:
