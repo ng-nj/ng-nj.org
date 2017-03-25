@@ -45,6 +45,10 @@ notifications:
     - irc.freenode.orgi#unshift
     on_success: change
     on_failure: change
+addons:
+  browserstack:
+    username: "jameslynch3"
+    access_key: "p1Nz2bi9GHUG+c0nwhx+CXek52IanVI9uGxV3JVxtVTYto5u2+/FLeyqtYz56TrOjoz0dSkEv7TRm9v6WtN3xQqQkqIOM+SqXhQ2+tWYqB1S4fe3x3XZhs6mzHpyp/X9+Y6vcIglKTB3OXalJleZWrSCSoBjvkR6Uz9e+ADJbXt0/EQtPOBXxMDZfk/r8QL9U6ftw6cAsdRHvlLu3SoGmr/5v/t2Pi69TCN6E4PCLMPn1XOHkCVflBACSpMN018N04ZbiaweBWX2nKlb9+JMjZD58gSgCmw0Wz0PdemugXc2N+nN5KehUs4bW/jKFgDkBc+KK6xJig9b9iS1h/K7ln4nL0E95riqnwLGo1gCuHHlY4vbA0+amjyFZ8uKmk5OlgBaTezZE2ba6ShwxqiUg7W7AFgX55nX3AvM8AH1cNtMS0mBoCZW+/my4gnbYtt8d/W++csXiGEcoMEKStRbKxoaAhLZAah9XfUTI27oiC71rXz3XZPnEFBMtXTfjyD3j8hO22G+vSkjpZqT2E9yXKHhijPUOnfeW8Y8mLZnaappjVokSiIEA6LVtnUqoAXAlfrpdqBIHps2a77eJddVbHDmQKHUD/ndFnny3BCtzYXJhHvvz7I782lrVDS75f8+0R6iR0090TFMOwm21Mq3vnG7DtKdYyXjndF/xX3DqTQ="
 env:
   global:
   - GH_REF: github.com/ng-nj/ng-nj.org.git
