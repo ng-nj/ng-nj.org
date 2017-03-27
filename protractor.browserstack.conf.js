@@ -11,10 +11,10 @@ exports.config = {
   'seleniumAddress': 'http://hub-cloud.browserstack.com/wd/hub',
 
   'capabilities': {
-    'browserstack.user': 'jameslynch3',
-    'browserstack.key': '1iaHQb9ygCnmfuTpT2wQ',
-    'browserName': 'chrome',
-    'browserstack.local' : 'true'
+    'browserstack.user': process.env.BROWSERSTACK_USER,
+    'browserstack.key': process.env.BROWSERSTACK_ACCESS_KEY,
+    'browserName': 'chrome'
+    // 'browserstack.local' : 'true'
   },
 
   // baseUrl: 'http://localhost:80',
